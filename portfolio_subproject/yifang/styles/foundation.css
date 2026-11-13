@@ -1,0 +1,20 @@
+/* Owner: foundation. Change this surface only; layout locks cover other pages. */
+html.folio-page-active,html.folio-page-active body { background:#141612; }
+html.folio-page-active :is(uni-app,uni-page,uni-page-wrapper,uni-page-body) { width:100%!important; max-width:none!important; margin:0!important; }
+html.folio-page-active uni-page-body { padding-top:0!important; }
+.folio-site { --ink:#171914; --paper:#f0eee6; --acid:#d5f458; --gutter:clamp(20px,5.5vw,106px); --line:#23251f38; --space-bg:var(--paper); --space-card:#fff; --space-border:#cccdc1; --space-ink:var(--ink); --space-muted:#57594e; --space-radius:4px; background:var(--paper); color:var(--ink); font:16px/1.55 'Segoe UI',Arial,sans-serif; overflow:clip; }
+.folio-site *,.folio-site *::before,.folio-site *::after { box-sizing:border-box; }
+.folio-site :is(h1,h2,h3,p,figure,dl,dd) { margin:0; }
+.folio-site :is(section,article)[tabindex] { scroll-margin-top:64px; outline:none; }
+.folio-site [type="button"]:not(.ps-button) { font:inherit; cursor:pointer; color:inherit; background:none; border:0; padding:0; text-align:inherit; }
+.folio-site [type="button"]:focus-visible,.folio-site a:focus-visible,.folio-site summary:focus-visible { outline:2px solid #678500; outline-offset:5px; }
+.folio-pad { padding-inline:var(--gutter); }
+.folio-sr,.folio-skip:not(:focus) { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.folio-skip:focus { position:fixed; top:10px; left:10px; z-index:500; padding:12px; background:var(--acid); color:var(--ink); }
+html.folio-page-active body { overflow:hidden; }
+.folio-site { --folio-bar-height:64px; --folio-view:calc(100dvh - var(--folio-bar-height)); height:100dvh; overflow-x:hidden; overflow-y:auto; overscroll-behavior-y:contain; overflow-anchor:none; }
+.folio-page { min-height:var(--folio-view); }
+.folio-site { --folio-section-pad:clamp(28px,5vw,80px); --folio-reading-gap:clamp(24px,4vw,64px); }
+@media (orientation:portrait) {
+ .folio-site { --folio-flow-gap:clamp(18px,3vw,44px); }
+}

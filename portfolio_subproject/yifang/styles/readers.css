@@ -1,0 +1,11 @@
+/* Owner: readers. Change this surface only; layout locks cover other pages. */
+.folio-document-empty { padding:22px 0; }
+.folio-dialog-enter-active,.folio-dialog-leave-active { transition:opacity .2s ease; }
+.folio-dialog-enter-from,.folio-dialog-leave-to { opacity:0; }
+.folio-fullscreen-dialog.ps-dialog-mask { padding:0; }
+.folio-fullscreen-dialog .ps-dialog { width:100%; height:100dvh; max-height:none; border:0; border-radius:0; }
+.folio-fullscreen-dialog .ps-dialog__footer { border-radius:0; }
+.folio-video-dialog .ps-dialog__body { padding:0; background:#111; }
+.folio-player { display:block; width:100%; height:100%; object-fit:contain; }
+.folio-player::-webkit-media-controls-fullscreen-button { display:none; }
+.folio-player::-webkit-media-controls-panel { cursor:none; }

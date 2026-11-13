@@ -1,0 +1,20 @@
+/* Owner: about. Change this surface only; layout locks cover other pages. */
+.folio-about { padding-block:clamp(54px,9vw,145px); }
+.folio-about h2 { font-size:clamp(54px,11vw,172px); line-height:.91; letter-spacing:-.045em; margin:24px 0 50px; }
+.folio-about h2 span { color:#5c7400; }
+.folio-about p { max-width:63ch; font-size:clamp(16px,1.65vw,21px); }
+.folio-about p+p { margin-top:16px; }
+.folio-about { background:#151713; color:#f6f4e9; padding-bottom:28px; }
+.folio-about h2 span { color:var(--acid); }
+.folio-about footer { display:flex; justify-content:space-between; gap:20px; border-top:1px solid #ffffff38; color:#c9c9ba; padding-top:18px; margin-top:clamp(45px,8vw,100px); font-size:13px; }
+@media (max-width:700px) {
+ .folio-about footer { padding-right:44px; }
+}
+.folio-about { align-content:start; padding-block:var(--folio-section-pad); }
+.folio-about p { max-width:62ch; }
+@media (orientation:landscape) and (max-height:900px) {
+ .folio-about { padding-block:clamp(20px,4dvh,36px); }
+ .folio-about h2 { font-size:clamp(54px,14dvh,126px); margin-block:16px 24px; }
+ .folio-about p { max-width:76ch; font-size:clamp(16px,2.5dvh,21px); }
+ .folio-about footer { margin-top:clamp(24px,4dvh,36px); padding-top:14px; }
+}

@@ -1,0 +1,133 @@
+{
+    "name" : "画匣子 Photolio",
+    "appid" : "",
+    "description" : "画匣子 Photolio：共同回忆平台。把照片与文字封存进 NFC 卡片，亲友碰一碰即可重温回忆。",
+    "versionName" : "1.1.0",
+    "versionCode" : "110",
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "usingComponents" : true,
+        "nvueStyleCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        /* 模块配置 */
+        "modules" : {},
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ]
+            },
+            /* ios打包配置 */
+            "ios" : {},
+            /* SDK配置 */
+            "sdkConfigs" : {}
+        }
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+        "appid" : "wx5ea018ce3dd2a6e5",
+        "setting" : {
+            "urlCheck" : false,
+            "ignoreDevUnusedFiles" : false,
+            "ignoreUploadUnusedFiles" : false
+        },
+        "usingComponents" : true
+        /* 微信隐私接口声明：
+           - requiredPrivateInfos 字段**仅接受位置类接口**（chooseAddress / chooseLocation /
+             choosePoi / getFuzzyLocation / getLocation / onLocationChange /
+             startLocationUpdate / startLocationUpdateBackground），基础库 3.15+ 校验很严，
+             写入非位置接口会导致 app.json 加载失败：「requiredPrivateInfos[N] field needs to be …」。
+             photolio 目前不用任何位置接口，故不声明 requiredPrivateInfos。
+           - chooseMedia / chooseImage / chooseVideo / chooseMessageFile / startRecord 等
+             读私有数据的接口，**只需在小程序管理后台 → 服务内容声明 → 用户隐私保护指引**
+             把对应「信息类型（相册 / 摄像头 / 麦克风 / 剪贴板 …）」加进去并提交审核通过即可，
+             manifest 侧无需再声明（我原先把它们塞进 requiredPrivateInfos 是**错的**，
+             基础库 3.15.2 起会直接报错）。
+           - permission.scope.writePhotosAlbum：2026-07-14 起 album/index.vue「下载媒体」会调
+             uni.saveImageToPhotosAlbum / saveVideoToPhotosAlbum。**这个 scope 无需在 manifest 声明**——
+             首次调用时微信自动弹权限授权；用户拒绝后 uni.openSetting 可以引导修改。
+             不同于隐私接口的一次性管理后台声明，saveXToPhotosAlbum 是运行时权限模型。 */
+    },
+    /* H5 网页版配置（2026-07-14 补充）
+       - publicPath: 2026-09-14 起新版网页端直接占用根域名 https://hxiazi.com/，用 "/"；
+         若改走 hxiazi.com/app/ 子路径部署，改成 "/app/"
+       - title: 浏览器标签页标题
+       - router.mode: "hash" 更保险（路由带 #，nginx 只需 serve 根 index.html），
+         "history" 需要后端把所有前端路由都 fallback 到 index.html
+       - devServer.disableHostCheck: 关本地 CORS 校验 */
+    "h5" : {
+        "publicPath" : "/",
+        "title" : "画匣子 Photolio",
+        /* 2026-09-14：rpx 换算基准配在 **pages.json 的 globalStyle**，不在这里 ——
+           uni-h5 源码 checkMaxWidth() 写死 `config = __uniConfig.globalStyle`（第 3190 行），
+           放进 manifest.h5 是**读不到**的（我第一版就放错了，实测 1rpx 仍是 0.5px）。
+           原始分析保留如下：
+           根因（node_modules/@dcloudio/uni-h5/dist/uni-h5.es.js 第 3210 行）：
+             width = (number === includeWidth || width <= maxWidth) ? width : baseWidth;
+           rpxCalcMaxDeviceWidth 默认 960、rpxCalcBaseDeviceWidth 默认 375。
+           于是窗口 800px 时 800 <= 960 成立 → rpx 按**窗口宽**算 → 750rpx = 800px，
+           可版心被 pages.json globalStyle.maxWidth=480 钉死在 480px →
+           800px 宽的内容挤进 480px 的框 → 用户实测「元素突然挤得特别大」、
+           「我的/喜欢/合集 偏移出去」、底栏高度和 .page 的 120rpx 底部留白一起失真。
+           改成 480/480 后：窗口 >480 时恒定 750rpx = 480px（正好等于版心），
+           窗口 <=480 时按真实窗口宽算（真手机，本来就该全宽），在 480 这个点连续。 */
+        /* 注：H5 桌面最大宽度是 [pages.json globalStyle.maxWidth]，不是 manifest.json 里配。
+           窗口 > maxWidth 时 uni-app 自动锁到 480px 居中，含所有 fixed 元素。 */
+        "router" : {
+            "mode" : "hash",
+            "base" : "/"
+        },
+        "devServer" : {
+            "port" : 5173,
+            "disableHostCheck" : true,
+            "https" : false,
+            /* 2026-07-23：host: "0.0.0.0" 让 vite dev server 绑定所有网卡，
+               这样局域网内手机 / iPad / 其它电脑用 http://<本机 LAN IP>:5173 就能访问
+               （默认只监听 127.0.0.1，只有本机能开） */
+            "host" : "0.0.0.0"
+        },
+        "async" : {
+            "loading" : "加载中…",
+            "error" : "加载失败，请刷新"
+        },
+        "template" : "index.html"
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true
+    },
+    "uniStatistics": {  
+        "enable": false
+    },
+    "vueVersion" : "3"
+}

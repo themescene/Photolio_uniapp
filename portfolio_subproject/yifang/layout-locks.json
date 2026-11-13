@@ -1,0 +1,467 @@
+{
+  "version": 1,
+  "locked": true,
+  "backup": ".local-backups/yifang-20261111-172947",
+  "contract": "Independent pages. Approved body geometry is frozen; explicit page-owner changes only.",
+  "viewports": [
+    [
+      320,
+      650
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      768,
+      1366
+    ],
+    [
+      1120,
+      2020
+    ],
+    [
+      1188,
+      2408
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "pages": [
+    {
+      "id": "top",
+      "label": "Home",
+      "locked": true
+    },
+    {
+      "id": "work",
+      "label": "Selected work",
+      "locked": true
+    },
+    {
+      "id": "Photolio",
+      "label": "Photolio",
+      "locked": true
+    },
+    {
+      "id": "photolio-brief",
+      "label": "Photolio / Brief",
+      "locked": true
+    },
+    {
+      "id": "photolio-theme-1",
+      "label": "An object with a story inside",
+      "locked": true
+    },
+    {
+      "id": "photolio-theme-2",
+      "label": "Designing for the way it reaches people",
+      "locked": true
+    },
+    {
+      "id": "photolio-theme-3",
+      "label": "From a shared collection to a personal space",
+      "locked": true
+    },
+    {
+      "id": "photolio-theme-4",
+      "label": "A clear path from choosing to publishing",
+      "locked": true
+    },
+    {
+      "id": "photolio-details",
+      "label": "Photolio / Details",
+      "locked": true
+    },
+    {
+      "id": "Miaozhuang",
+      "label": "Miaozhuang",
+      "locked": true
+    },
+    {
+      "id": "miaozhuang-brief",
+      "label": "Miaozhuang / Brief",
+      "locked": true
+    },
+    {
+      "id": "miaozhuang-theme-1",
+      "label": "Advice with somewhere to go",
+      "locked": true
+    },
+    {
+      "id": "miaozhuang-theme-2",
+      "label": "A plan organized around the home",
+      "locked": true
+    },
+    {
+      "id": "miaozhuang-theme-3",
+      "label": "A connected experience across three platforms",
+      "locked": true
+    },
+    {
+      "id": "miaozhuang-details",
+      "label": "Miaozhuang / Details",
+      "locked": true
+    },
+    {
+      "id": "Xiedao Renaissance",
+      "label": "Xiedao Renaissance",
+      "locked": true
+    },
+    {
+      "id": "xiedao-renaissance-brief",
+      "label": "Xiedao Renaissance / Brief",
+      "locked": true
+    },
+    {
+      "id": "xiedao-renaissance-theme-1",
+      "label": "The next question shapes the story",
+      "locked": true
+    },
+    {
+      "id": "xiedao-renaissance-theme-2",
+      "label": "Giving reference material a useful structure",
+      "locked": true
+    },
+    {
+      "id": "xiedao-renaissance-theme-3",
+      "label": "Specialization within practical limits",
+      "locked": true
+    },
+    {
+      "id": "xiedao-renaissance-details",
+      "label": "Xiedao Renaissance / Details",
+      "locked": true
+    },
+    {
+      "id": "Brookline Interactive Group",
+      "label": "Brookline Interactive Group",
+      "locked": true
+    },
+    {
+      "id": "brookline-brief",
+      "label": "Brookline Interactive Group / Brief",
+      "locked": true
+    },
+    {
+      "id": "brookline-details",
+      "label": "Brookline Interactive Group / Details",
+      "locked": true
+    },
+    {
+      "id": "media-samples",
+      "label": "Media samples",
+      "locked": true
+    },
+    {
+      "id": "Layout studies",
+      "label": "Layout studies",
+      "locked": true
+    },
+    {
+      "id": "study-scale",
+      "label": "Study 01 / Scale",
+      "locked": true
+    },
+    {
+      "id": "study-direction",
+      "label": "Study 02 / Direction",
+      "locked": true
+    },
+    {
+      "id": "study-gesture",
+      "label": "Study 03 / Gesture",
+      "locked": true
+    },
+    {
+      "id": "study-edge",
+      "label": "Study 04 / Edge",
+      "locked": true
+    },
+    {
+      "id": "study-rhythm",
+      "label": "Study 05 / Rhythm",
+      "locked": true
+    },
+    {
+      "id": "study-grid",
+      "label": "Study 06 / Construction",
+      "locked": true
+    },
+    {
+      "id": "study-split",
+      "label": "Study 07 / Cut",
+      "locked": true
+    },
+    {
+      "id": "archive",
+      "label": "Archive",
+      "locked": true
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "locked": true
+    },
+    {
+      "id": "Photolio / Visual",
+      "label": "Photolio / Visual",
+      "locked": true
+    },
+    {
+      "id": "Miaozhuang / Visual",
+      "label": "Miaozhuang / Visual",
+      "locked": true
+    },
+    {
+      "id": "Xiedao Renaissance / Visual",
+      "label": "Xiedao Renaissance / Visual",
+      "locked": true
+    },
+    {
+      "id": "Brookline Interactive Group / Visual",
+      "label": "Brookline Interactive Group / Visual",
+      "locked": true
+    }
+  ],
+  "files": {
+    "portfolio_subproject/yifang/DesignLab.vue": {
+      "owner": "design-lab",
+      "sha256": "a28db935c4f0497128ab0a12f624eef944d1c9168f9bc8ade8c495aa9f90a991"
+    },
+    "portfolio_subproject/yifang/FolioEntrance.vue": {
+      "owner": "shared-host",
+      "sha256": "7ead1321a298a2e9875d6a4bce7c31309fbc75fae7ad1e02be511482f4e9b5ef"
+    },
+    "portfolio_subproject/yifang/ImageWheel.vue": {
+      "owner": "shared-host",
+      "sha256": "4f857637ca71e223ae2714e6cbdff02136568a428e98499fdb09e9198dc508f5"
+    },
+    "portfolio_subproject/yifang/YifangPortfolio.vue": {
+      "owner": "shared-host",
+      "sha256": "3491937dc57f82b21ef47763bbaf0be1fd0ae0f62ad9e923c22c15e491f0851b"
+    },
+    "portfolio_subproject/yifang/copy.json": {
+      "owner": "approved-copy",
+      "sha256": "98f9d78a74de7da7a522fbee153537dc5106174e451139dc21386dab8d144190"
+    },
+    "portfolio_subproject/yifang/folio.css": {
+      "owner": "shared-host",
+      "sha256": "cb48dfb7b5571de933039eb1f6f1562f210446f81eea529b8d156a6b4186cdb0"
+    },
+    "portfolio_subproject/yifang/media.ts": {
+      "owner": "shared-host",
+      "sha256": "aa54075d2afbf7e7fbddd2e3e466ae045963b4a19ad203d0ab5803fcf9877ca3"
+    },
+    "portfolio_subproject/yifang/styles/about.css": {
+      "owner": "about",
+      "sha256": "ea0f901801e3576870943593e195a7dd1be09c9e637b4b56d22304f899ea2f26"
+    },
+    "portfolio_subproject/yifang/styles/archive.css": {
+      "owner": "archive",
+      "sha256": "2716c171af6593ecc687cd52e86fe404908e8957c2d789afd272a4bbdcf19488"
+    },
+    "portfolio_subproject/yifang/styles/case-brief.css": {
+      "owner": "case-brief",
+      "sha256": "5595591f96d9226e922157c2baf883e065a4ac7edeee41bd399dc796281e3fbe"
+    },
+    "portfolio_subproject/yifang/styles/case-details.css": {
+      "owner": "case-details",
+      "sha256": "6e3fdaba4a6a969abd07012bea1d73bf5ae907d0ddc024a333a77681b33f87e4"
+    },
+    "portfolio_subproject/yifang/styles/case-opening.css": {
+      "owner": "case-opening",
+      "sha256": "6c3ee84f2a4e41a8f0ef54c57a509548b5b404613395dc003a154ca2d6df7bc0"
+    },
+    "portfolio_subproject/yifang/styles/case-palette.css": {
+      "owner": "case-palette",
+      "sha256": "78f40a7e60613efa07cbd8733f22b57c8c1982e881deab81f4bfd02e30dc1cb9"
+    },
+    "portfolio_subproject/yifang/styles/case-themes.css": {
+      "owner": "case-themes",
+      "sha256": "39bede01c300312aef1bd0327a7b88f4a293951c3021d9c365d99ad5db561237"
+    },
+    "portfolio_subproject/yifang/styles/chrome.css": {
+      "owner": "chrome",
+      "sha256": "2428fd918a8a2a701a7e5169848f578526dea3c6dd821e27750eb793899f9e49"
+    },
+    "portfolio_subproject/yifang/styles/controls.css": {
+      "owner": "controls",
+      "sha256": "8648cd59ba208f4784f3745d27543aefb5fc01d562fcbc1c77b288853bb63a1a"
+    },
+    "portfolio_subproject/yifang/styles/cover.css": {
+      "owner": "cover",
+      "sha256": "c03c033bf8566dcc4ea2bc604ce8931c09c22cfa88bfb57c4ee01744fd95b42a"
+    },
+    "portfolio_subproject/yifang/styles/cursor.css": {
+      "owner": "cursor",
+      "sha256": "08ee35dec63eaf952f2ae81ac41a12dc700948da7bacfbaa7bbff26f741dac67"
+    },
+    "portfolio_subproject/yifang/styles/foundation.css": {
+      "owner": "foundation",
+      "sha256": "6953290eb446196fa6198a32e54d13b0e550f0a8164bbea1894e5a3024835bdf"
+    },
+    "portfolio_subproject/yifang/styles/media-controls.css": {
+      "owner": "media-controls",
+      "sha256": "90dfad387827605e4ca952890a749177d3829fe5bb286974f61c5009535e1054"
+    },
+    "portfolio_subproject/yifang/styles/media-samples.css": {
+      "owner": "media-samples",
+      "sha256": "2e872a58cc1738c289aa46f42cb6172e07fd74dde511f55892ab3f01a4965510"
+    },
+    "portfolio_subproject/yifang/styles/motion.css": {
+      "owner": "motion",
+      "sha256": "9ee82416da6e3c1f6b4335402d825d685cc0933af60ba816a253ec24e438bbde"
+    },
+    "portfolio_subproject/yifang/styles/readers.css": {
+      "owner": "readers",
+      "sha256": "37934735058eb3b730bcd5a1564752244f58a64e6333c44d9bf753b69d8b7a11"
+    },
+    "portfolio_subproject/yifang/styles/typography.css": {
+      "owner": "typography",
+      "sha256": "39a807e2ab230b07d4c518259d34d802860547f1a8a1e393e1a8c1e1c9fd2f50"
+    },
+    "portfolio_subproject/yifang/styles/work-index.css": {
+      "owner": "work-index",
+      "sha256": "c688baf4c19e8c0d6004e6efe18b700d0e0678c76f21910d25635e144991ca71"
+    },
+    "portfolio_subproject/yifang/ui/PageActions.vue": {
+      "owner": "page-actions",
+      "sha256": "ba314019e73aefe7da26125ce09759f98f6405e1f8df16c7e7c3d12bd62d9bf6"
+    },
+    "portfolio_subproject/yifang/useFolioCursor.ts": {
+      "owner": "cursor",
+      "sha256": "cd3ff574bc5b84b77b0d520bb091615e24c183f3a484b197c007e8b9bb7f1d34"
+    },
+    "portfolio_subproject/yifang/useFolioPaging.ts": {
+      "owner": "shared-host",
+      "sha256": "8cf20667313cad28da8a8cde21816402269c9369a7e3726f683c4e13407dfb8c"
+    },
+    "scripts/check-folio-layout-locks.mjs": {
+      "owner": "verification",
+      "sha256": "716b35cb8dc7b2c664da6908c30ce7abec91c645c1f4c9a0b9a1436d4ad14738"
+    },
+    "scripts/folio-layout-fixture.html": {
+      "owner": "verification",
+      "sha256": "3fa9e18343437b8770afaf754bff88aae97e8763fe75598188a9a9dd6d384dc1"
+    },
+    "scripts/folio-layout-snapshot.mjs": {
+      "owner": "verification",
+      "sha256": "abb8aba67af4ba045beb7deacfab0e44d75353680040a026d04fd898906c4119"
+    },
+    "src/App.vue": {
+      "owner": "shared-host",
+      "sha256": "e631d7399550d8949df35eb4bf21e222837ac2a843b92c8453f8bd8104b86a22"
+    },
+    "src/components/H5AnimatedImage.vue": {
+      "owner": "shared-host",
+      "sha256": "80db83fd3ea4559b8b9bdac271fe0d50cab6d5f821125d8fed1d4acc74747e58"
+    },
+    "src/pages/yifang-wang.vue": {
+      "owner": "shared-host",
+      "sha256": "9a1e3ed8e34f257e1d1554bb1ae6ab4def52e468ad9eb6fb60a001f14cb023ae"
+    },
+    "src/uni.scss": {
+      "owner": "shared-host",
+      "sha256": "e55f937f6f6ecfdfea81f4f7676db80d8ace35ae20b7d12004e5469ec59fe867"
+    }
+  },
+  "updates": [
+    {
+      "reason": "User-authorized style ownership, footer integration, cursor fill and Selected Work restoration.",
+      "owners": [
+        "work-index",
+        "case-details",
+        "design-lab",
+        "page-actions",
+        "cursor"
+      ],
+      "date": "2026-11-11"
+    },
+    {
+      "owners": [
+        "cover",
+        "case-opening",
+        "about",
+        "design-lab",
+        "cursor",
+        "shared-host",
+        "verification"
+      ],
+      "reason": "User authorized primary wheel image, landscape cover/About/lab fitting, project identity and cursor exit anchoring; 300 unaffected page instances unchanged across 10 viewports.",
+      "date": "2026-11-11T13:29:13.431Z"
+    },
+    {
+      "owners": [
+        "cover",
+        "case-opening",
+        "shared-host",
+        "verification"
+      ],
+      "reason": "User explicitly corrected wheel to persistent cards moving and scaling on a near semicircle, and requested Georgia project names; 320 unaffected page instances unchanged across 10 viewports.",
+      "date": "2026-11-11T13:43:59.718Z"
+    },
+    {
+      "owners": [
+        "case-opening",
+        "cursor",
+        "verification"
+      ],
+      "reason": "User requested sans-serif outline identities, simple direct fixed-size cursor, and safe case title line spacing; 13 viewport cover checks and 330 unaffected page comparisons passed.",
+      "date": "2026-11-11T14:07:48.925Z"
+    },
+    {
+      "owners": [
+        "shared-host",
+        "cursor",
+        "case-opening",
+        "verification"
+      ],
+      "reason": "User requires correct hand-following drag and arc tilt, restoration of magnetic cursor using one controlled animation clock, and 1.3px identity stroke; 487 page instances unchanged.",
+      "date": "2026-11-11T14:22:21.797Z"
+    },
+    {
+      "owners": [
+        "cursor"
+      ],
+      "reason": "Immediate pointer delta in dot mode only; retain approved magnet/morph algorithm. 160 moving dot frames with zero center error and full button/exit verification.",
+      "date": "2026-11-12T02:22:01.202Z"
+    },
+    {
+      "owners": [
+        "case-opening"
+      ],
+      "reason": "用户要求项目名取消线框改为实心，393和1440浏览器复验",
+      "date": "2026-11-13T08:42:27.410Z"
+    },
+    {
+      "owners": [
+        "shared-host"
+      ],
+      "reason": "仅ImageWheel照片中轴按真实圆心计算，横竖屏及切图偏差均小于0.001px",
+      "date": "2026-11-13T09:16:02.994Z"
+    },
+    {
+      "owners": [
+        "cover",
+        "shared-host"
+      ],
+      "reason": "用户授权从根本重做轮盘：固定圆形平面、等比适配和绕圆心拖动；13画幅基线及连续动画/触摸复验",
+      "date": "2026-11-13T09:37:36.504Z"
+    },
+    {
+      "owners": [
+        "cover",
+        "shared-host"
+      ],
+      "reason": "用户取消圆盘，授权改平直横向轮播；六画幅、水平跟手与10图循环已验",
+      "date": "2026-11-13T11:02:50.152Z"
+    }
+  ]
+}

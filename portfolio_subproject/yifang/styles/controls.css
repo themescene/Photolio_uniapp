@@ -1,0 +1,3 @@
+/* Owner: controls. Change this surface only; layout locks cover other pages. */
+.folio-site .folio-outline { display:inline-flex; gap:20px; padding:11px 15px; border:1px solid currentColor; margin-top:12px; }
+.folio-site .folio-outline:hover { background:var(--acid); color:var(--ink); }

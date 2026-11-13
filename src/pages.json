@@ -1,0 +1,188 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": { "navigationBarTitleText": "画匣子", "enablePullDownRefresh": true, "backgroundTextStyle": "dark" }
+    },
+    // #ifdef H5
+    {
+      "path": "pages/yifang-wang",
+      "style": { "navigationBarTitleText": "Yifang Wang — Portfolio", "navigationStyle": "custom", "enablePullDownRefresh": false }
+    },
+    {
+      "path": "pages/personal/index",
+      "style": { "navigationBarTitleText": "charles的作品集", "navigationStyle": "custom", "enablePullDownRefresh": false }
+    },
+    // #endif
+    {
+      "path": "pages/upload/index",
+      "style": { "navigationBarTitleText": "上传" }
+    },
+    {
+      "path": "pages/play/index",
+      "style": { "navigationBarTitleText": "播放" }
+    },
+    {
+      "path": "pages/nfc/index",
+      "style": { "navigationBarTitleText": "NFC" }
+    },
+    {
+      "path": "pages/my/index",
+      "style": { "navigationBarTitleText": "我的" }
+    },
+    {
+      "path": "pages/auth/login",
+      "style": { "navigationBarTitleText": "登录" }
+    },
+    {
+      "path": "pages/auth/wx-callback",
+      "style": { "navigationBarTitleText": "登录中" }
+    },
+    {
+      "path": "pages/nfc/landing",
+      "style": { "navigationBarTitleText": "正在打开", "enablePullDownRefresh": false }
+    },
+    {
+      "path": "pages/account/settings",
+      "style": { "navigationBarTitleText": "账号设置" }
+    },
+    {
+      "path": "pages/legal/privacy",
+      "style": { "navigationBarTitleText": "隐私协议" }
+    },
+    {
+      "path": "pages/legal/terms",
+      "style": { "navigationBarTitleText": "用户协议" }
+    },
+    {
+      "path": "pages/legal/voiceprint",
+      "style": { "navigationBarTitleText": "声纹授权协议" }
+    },
+    {
+      "path": "pages/create/index",
+      "style": { "navigationBarTitleText": "新建画匣子" }
+    },
+    {
+      "path": "pages/share/play",
+      "style": { "navigationBarTitleText": "回忆", "mp-weixin": { "pageOrientation": "auto" } }
+    },
+    {
+      "path": "pages/share/edit",
+      "style": { "navigationBarTitleText": "编辑画匣子" }
+    },
+    {
+      "path": "pages/nfc/bind",
+      "style": { "navigationBarTitleText": "绑定内容" }
+    },
+    {
+      "path": "pages/group/index",
+      "style": { "navigationBarTitleText": "合集" }
+    },
+    {
+      "path": "pages/share/invite",
+      "style": { "navigationBarTitleText": "邀请共创" }
+    },
+    {
+      "path": "pages/couplet/display",
+      "style": { "navigationBarTitleText": "春联", "navigationBarBackgroundColor": "#2a0d0d", "navigationBarTextStyle": "white" }
+    },
+    {
+      "path": "pages/dev/nfc-burn",
+      "style": { "navigationBarTitleText": "NFC 烧卡助手" }
+    },
+    {
+      "path": "pages/dev/nfc-write",
+      "style": { "navigationBarTitleText": "NFC 自动烧卡（安卓）" }
+    },
+    {
+      "path": "pages/friends/index",
+      "style": { "navigationBarTitleText": "好友" }
+    },
+    {
+      "path": "pages/album/index",
+      "style": { "navigationBarTitleText": "相册" }
+    },
+    {
+      "path": "pages/nfc/history",
+      "style": { "navigationBarTitleText": "重置 NFC 匣子内容" }
+    },
+    {
+      "path": "pages/storage/index",
+      "style": { "navigationBarTitleText": "存储空间" }
+    },
+    {
+      "path": "pages/storage/redeem",
+      "style": { "navigationBarTitleText": "兑换扩容包" }
+    },
+    {
+      "path": "pages/my/support",
+      "style": { "navigationBarTitleText": "联系客服" }
+    },
+    {
+      "path": "pages/dev/storage-boost",
+      "style": { "navigationBarTitleText": "扩容包管理" }
+    }
+  ],
+  "tabBar": {
+    "color": "#A89A8A",
+    "selectedColor": "#3D2E1F",
+    "backgroundColor": "#FDFBF8",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "画匣子",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/upload/index",
+        "text": "上传",
+        "iconPath": "static/tabbar/upload.png",
+        "selectedIconPath": "static/tabbar/upload-active.png"
+      },
+      {
+        "pagePath": "pages/play/index",
+        "text": "播放",
+        "iconPath": "static/tabbar/play.png",
+        "selectedIconPath": "static/tabbar/play-active.png"
+      },
+      {
+        "pagePath": "pages/nfc/index",
+        "text": "NFC",
+        "iconPath": "static/tabbar/nfc.png",
+        "selectedIconPath": "static/tabbar/nfc-active.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/profile.png",
+        "selectedIconPath": "static/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "画匣子",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff",
+    "maxWidth": 700,
+    /* 2026-09-14：rpx 换算基准必须钉死到版心宽度，且**只有写在这里才生效** ——
+       uni-h5 的 checkMaxWidth() 是 `const config = __uniConfig.globalStyle`（源码第 3190 行），
+       读的是 pages.json 的 globalStyle，不是 manifest.json 的 h5 段。
+
+       不设的话 maxWidth 默认 960、baseWidth 默认 375，换算公式（源码第 3210 行）是
+         width = (number === includeWidth || width <= maxWidth) ? width : baseWidth
+       于是：窗口 1325px → 走 baseWidth=375 → 750rpx=375px，可版心是 480px（内容偏小）；
+             窗口 800px  → 800<=960 成立 → 750rpx=800px，版心仍 480px（内容爆框、突然变巨大）。
+       实测证据：改前在 1325px 窗口下量 `.tab-content` 的 600rpx = 300px，即 1rpx=0.5px=375/750。
+
+       设成 480/480 后：窗口 >480 恒定 750rpx=480px（正好等于版心）；
+                        窗口 <=480 按真实窗口宽算（真手机全宽）。在 480 这个点连续，无跳变。*/
+    "rpxCalcMaxDeviceWidth": 480,
+    "rpxCalcBaseDeviceWidth": 480,
+    "h5": {
+      "titleNView": false
+    }
+  }
+}

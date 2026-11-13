@@ -1,0 +1,6 @@
+/* Owner: motion. Change this surface only; layout locks cover other pages. */
+@keyframes folio-type { from { transform:translateY(105%); opacity:0; } to { transform:translateY(0); opacity:1; } }
+@keyframes folio-mask { from { clip-path:inset(9% 3% 12% 3%); opacity:.66; } to { clip-path:inset(0); opacity:1; } }
+@media (prefers-reduced-motion:reduce) { .folio-site *,.folio-site *::before,.folio-site *::after { animation:none!important; transition:none!important; } }
+@keyframes folio-wheel-arrival { from { transform:translateX(60vw); opacity:0; } 25% { opacity:1; } to { transform:translateX(0); opacity:1; } }
+@keyframes folio-wheel-signal { 0%,23%,35%,66%,78%,100% { opacity:1; } 27%,71% { opacity:.68; } }

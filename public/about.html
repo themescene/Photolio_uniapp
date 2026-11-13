@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于画匣子 Photolio — 多人共创回忆录 · NFC 碰一碰相册</title>
+<meta name="description" content="画匣子 Photolio 是一个多人共创的回忆录工具：朋友、同学、家人各自上传照片、写下心声，AI 整理成一段有温度的回忆；配合 NFC 碰一碰精装相册、冰箱贴、钥匙扣，把记忆从手机带回手上。">
+<meta name="keywords" content="画匣子,Photolio,多人共创,回忆录,NFC,碰一碰,精装相册,AI 写作,冰箱贴,钥匙扣,共享记忆">
+<meta name="application-name" content="Photolio">
+<meta name="author" content="Photolio">
+<link rel="canonical" href="https://hxiazi.com/about.html">
+
+<!-- Icons：必应等爬虫优先认带 sizes 的 link，否则掉回默认图标 -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" sizes="256x256" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/favicon.ico">
+<meta name="msapplication-TileImage" content="/favicon.ico">
+<meta name="msapplication-TileColor" content="#3D2E1F">
+<meta name="theme-color" content="#3D2E1F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Photolio 画匣子">
+<meta property="og:title" content="关于画匣子 Photolio — 多人共创回忆录">
+<meta property="og:description" content="朋友、同学、家人各自上传照片和心声，AI 整理成一段有温度的回忆；配合 NFC 碰一碰相册，把记忆从手机带回手上。">
+<meta property="og:url" content="https://hxiazi.com/about.html">
+<meta property="og:image" content="https://hxiazi.com/favicon.ico">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="关于画匣子 Photolio — 多人共创回忆录">
+<meta name="twitter:description" content="朋友、同学、家人各自上传照片和心声，AI 整理成一段有温度的回忆。">
+<meta name="twitter:image" content="https://hxiazi.com/favicon.ico">
+
+<!-- Schema.org Organization + WebPage 复合结构，帮助搜索引擎识别品牌 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Photolio",
+      "alternateName": ["画匣子", "Photolio 画匣子"],
+      "url": "https://hxiazi.com/",
+      "logo": "https://hxiazi.com/favicon.ico",
+      "description": "多人共创回忆录与 NFC 碰一碰相册"
+    },
+    {
+      "@type": "WebPage",
+      "name": "关于画匣子 Photolio",
+      "url": "https://hxiazi.com/about.html",
+      "inLanguage": ["zh-CN", "en-US"],
+      "description": "画匣子 Photolio 项目背景、产品形态与服务流程介绍。"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFBF8;
+    --sand: #E8E0D4;
+    --caramel: #C4A882;
+    --deep-brown: #3D2E1F;
+    --medium-brown: #6B5744;
+    --soft-brown: #8B7A68;
+    --coral-accent: #D4836B;
+    --sage: #8B9A7E;
+    --text-primary: #2C2218;
+    --text-secondary: #6B5F52;
+    --text-light: #9B8E7F;
+    --divider: #E0D6C8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 70px; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--cream);
+    color: var(--text-primary);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(247, 243, 238, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--divider);
+  }
+  nav .nav-inner {
+    max-width: 1000px; margin: 0 auto; padding: 16px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo-text {
+    font-family: 'Noto Serif SC', serif; font-weight: 700;
+    font-size: 1.1rem; color: var(--deep-brown); letter-spacing: 0.08em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .logo-cn {
+    height: 22px;
+    width: auto;
+  }
+  #logo-main {
+    font-family: 'Noto Serif SC', serif; font-weight: 700;
+    font-size: 1.1rem; color: var(--deep-brown); letter-spacing: 0.08em;
+  }
+  .logo-text .logo-sub {
+    font-weight: 400; font-size: 0.72rem; color: var(--text-light);
+    letter-spacing: 0.14em; font-family: 'Noto Sans SC', sans-serif;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-secondary);
+    font-size: 0.85rem; font-weight: 400; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--deep-brown); }
+
+  /* ===== SHARED ===== */
+  .container { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+  .section-divider { width: 40px; height: 1px; background: var(--caramel); margin: 80px auto; }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif; font-size: 1.6rem;
+    font-weight: 600; color: var(--deep-brown);
+    margin-bottom: 20px; text-align: center;
+  }
+  .section-desc {
+    font-size: 0.95rem; color: var(--text-secondary); line-height: 2;
+    text-align: center; max-width: 580px; margin: 0 auto 48px; font-weight: 300;
+  }
+
+  /* ===== 1. HERO ===== */
+  .hero {
+    padding: 160px 32px 80px; max-width: 800px;
+    margin: 0 auto; text-align: center;
+  }
+  .hero-label {
+    font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--caramel); font-weight: 500; margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif SC', serif; font-size: 2.6rem; font-weight: 700;
+    color: var(--deep-brown); line-height: 1.4; margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem; color: var(--text-secondary); line-height: 1.9;
+    max-width: 560px; margin: 0 auto; font-weight: 300;
+    opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    text-align: center; padding: 80px 32px 40px;
+    max-width: 800px; margin: 0 auto;
+  }
+  .cta-section h2 {
+    font-family: 'Noto Serif SC', serif; font-size: 1.8rem;
+    font-weight: 600; color: var(--deep-brown); margin-bottom: 12px;
+  }
+  .cta-section > p {
+    font-size: 0.95rem; color: var(--text-secondary);
+    margin-bottom: 36px; font-weight: 300;
+  }
+  .cta-button {
+    display: inline-block; padding: 14px 44px;
+    background: var(--deep-brown); color: var(--cream);
+    font-size: 0.9rem; font-weight: 500; border-radius: 8px;
+    text-decoration: none; letter-spacing: 0.05em;
+    transition: all 0.3s ease; border: none; cursor: pointer;
+  }
+  .cta-button:hover {
+    background: var(--medium-brown); transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(61, 46, 31, 0.15);
+  }
+
+  /* ===== CONTACT ICONS ===== */
+  .contact-row {
+    display: flex; justify-content: center; gap: 28px; margin-top: 32px;
+  }
+  .contact-icon-btn {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    text-decoration: none; cursor: pointer; border: none; background: none;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  .contact-icon-btn .icon-circle {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--warm-white); border: 1px solid var(--divider);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .contact-icon-btn:hover .icon-circle {
+    border-color: var(--caramel); transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(61, 46, 31, 0.08);
+  }
+  .contact-icon-btn .icon-circle svg {
+    width: 22px; height: 22px; fill: var(--medium-brown); transition: fill 0.2s;
+  }
+  .contact-icon-btn:hover .icon-circle svg { fill: var(--deep-brown); }
+  .contact-icon-btn .icon-label {
+    font-size: 0.72rem; color: var(--text-light); font-weight: 400;
+  }
+
+  /* ===== WECHAT MODAL ===== */
+  .wechat-modal-content { text-align: center; padding: 16px 0; }
+  .wechat-id {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--cream); border: 1px solid var(--divider);
+    border-radius: 8px; padding: 12px 20px; margin: 20px 0;
+  }
+  .wechat-id .id-text {
+    font-size: 1.1rem; font-weight: 600; color: var(--deep-brown);
+    letter-spacing: 0.03em; font-family: monospace;
+  }
+  .copy-btn {
+    padding: 6px 16px; background: var(--deep-brown); color: var(--cream);
+    border: none; border-radius: 6px; font-size: 0.8rem; cursor: pointer;
+    font-family: 'Noto Sans SC', sans-serif; transition: all 0.2s;
+  }
+  .copy-btn:hover { background: var(--medium-brown); }
+  .copy-btn.copied { background: var(--sage); }
+  .wechat-hint { font-size: 0.8rem; color: var(--text-light); margin-top: 8px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top: 1px solid var(--divider); padding: 40px 32px;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-left { font-size: 0.78rem; color: var(--text-light); font-weight: 300; }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a {
+    font-size: 0.78rem; color: var(--text-light);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--deep-brown); }
+
+  /* ICP 备案：《互联网信息服务管理办法》要求在首页底部展示备案号并链接工信部 */
+  .footer-beian {
+    margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--divider);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 8px 18px; text-align: center;
+  }
+  .footer-beian a, .footer-beian span {
+    font-size: 0.74rem; color: var(--text-light); font-weight: 300;
+    text-decoration: none; letter-spacing: .02em; transition: color 0.2s;
+  }
+  .footer-beian a:hover { color: var(--deep-brown); }
+  .footer-beian .fb-entity { color: var(--text-secondary); }
+
+  /* ===== MODAL ===== */
+  .modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44, 34, 24, 0.5); backdrop-filter: blur(4px);
+    z-index: 1000; justify-content: center; align-items: center; padding: 32px;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--warm-white); border-radius: 16px;
+    max-width: 640px; width: 100%; max-height: 80vh;
+    overflow-y: auto; padding: 48px; position: relative;
+    box-shadow: 0 24px 64px rgba(44, 34, 24, 0.15);
+  }
+  .modal-sm { max-width: 420px; }
+  .modal-close {
+    position: absolute; top: 20px; right: 20px;
+    width: 32px; height: 32px; border: none;
+    background: var(--sand); border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: var(--text-secondary); transition: background 0.2s;
+  }
+  .modal-close:hover { background: var(--caramel); color: white; }
+  .modal h2 {
+    font-family: 'Noto Serif SC', serif; font-size: 1.4rem;
+    font-weight: 600; color: var(--deep-brown); margin-bottom: 8px;
+  }
+  .modal .updated { font-size: 0.75rem; color: var(--text-light); margin-bottom: 28px; }
+  .modal h3 {
+    font-size: 0.95rem; font-weight: 600; color: var(--deep-brown);
+    margin-top: 24px; margin-bottom: 8px;
+  }
+  .modal p, .modal li {
+    font-size: 0.85rem; color: var(--text-secondary);
+    line-height: 1.8; font-weight: 300;
+  }
+  .modal ul { padding-left: 20px; margin-top: 8px; }
+  .modal li { margin-bottom: 4px; }
+  /* 协议顶部的运营主体卡片（个人信息保护法要求明示处理者身份） */
+  .modal .legal-entity {
+    background: var(--sand); border: 1px solid var(--divider); border-radius: 10px;
+    padding: 14px 18px; margin: 0 0 22px; display: flex; flex-direction: column; gap: 7px;
+  }
+  .modal .legal-entity div { font-size: 0.8rem; color: var(--text-primary); line-height: 1.5; font-weight: 400; }
+  .modal .legal-entity span {
+    display: inline-block; min-width: 96px; color: var(--text-light);
+    font-size: 0.74rem; letter-spacing: .04em; font-weight: 300;
+  }
+  .modal .legal-entity a { color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--divider); }
+  .modal .legal-entity a:hover { color: var(--deep-brown); border-bottom-color: var(--deep-brown); }
+
+  /* ===== PRODUCT IMAGES ===== */
+  .hero-image {
+    margin-top: 48px;
+    opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+  .hero-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(61, 46, 31, 0.12);
+  }
+
+  /* ===== HERO CAROUSEL ===== */
+  .hero-carousel {
+    position: relative;
+    margin-top: 48px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(61, 46, 31, 0.12);
+    opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
+    aspect-ratio: 16 / 10;
+    background: var(--sand);
+    cursor: zoom-in;
+  }
+  .hero-carousel .slides {
+    position: absolute; inset: 0;
+  }
+  .hero-carousel .slide {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity 0.9s ease;
+  }
+  .hero-carousel .slide.active { opacity: 1; }
+  .hero-carousel .slide img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .hero-dots {
+    position: absolute; left: 0; right: 0; bottom: 18px;
+    display: flex; justify-content: center; gap: 10px; z-index: 2;
+  }
+  .hero-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    border: none; padding: 0; cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .hero-dot.active {
+    background: var(--coral-accent);
+    transform: scale(1.3);
+  }
+
+  /* ===== TRUST BAR (anchor strip) ===== */
+  .trust-bar {
+    background: var(--sand);
+    padding: 32px 32px;
+  }
+  .trust-bar-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1px 1fr 1px 1fr;
+    gap: 24px; align-items: center;
+  }
+  .trust-bar-divider {
+    width: 1px; height: 60px; background: var(--caramel); opacity: 0.45;
+  }
+  .trust-bar-item {
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .trust-bar-item .t-logo {
+    width: 42px; height: 42px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    opacity: 0.5;
+    /* yin-yang: thin marks = dark, big bg block = transparent.
+       multiply alone drops a white bg into the page color.
+       Logos whose source has a *dark* bg need invert first so the
+       big block becomes white and gets dropped by multiply. */
+    mix-blend-mode: multiply;
+  }
+  /* These two SVGs ship with a dark background + white content,
+     so they must be inverted before multiply takes the bg out. */
+  .trust-bar-item .t-logo[src*="miracleplus"],
+  .trust-bar-item .t-logo[src*="beijinglanguageuniversity"] {
+    filter: invert(1);
+  }
+  .trust-bar-item .t-up {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1rem; font-weight: 500;
+    color: var(--deep-brown);
+    margin-bottom: 6px;
+  }
+  .trust-bar-item .t-down {
+    font-size: 0.7rem; font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.18em;
+  }
+
+  /* ===== SCENARIO CARDS ===== */
+  .scenario-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+  .scenario-card {
+    padding: 32px 26px; background: var(--warm-white);
+    border-radius: 10px; border: 1px solid var(--divider);
+    transition: all 0.3s ease;
+  }
+  .scenario-card:hover {
+    border-color: var(--caramel);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(61, 46, 31, 0.06);
+  }
+  .scenario-card .s-icon {
+    width: 32px; height: 32px; margin-bottom: 14px; color: var(--caramel);
+  }
+  .scenario-card h3 {
+    font-size: 1rem; font-weight: 600;
+    color: var(--deep-brown); margin-bottom: 8px;
+  }
+  .scenario-card p {
+    font-size: 0.85rem; color: var(--text-light);
+    line-height: 1.75; font-weight: 300;
+  }
+
+  /* ===== TIMELINE (服务流程 × 使用场景) ===== */
+  .timeline { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .timeline-node {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 56px; align-items: center;
+    margin-bottom: 80px;
+  }
+  .timeline-node:last-child { margin-bottom: 0; }
+  .timeline-node.reverse .t-text { order: 2; }
+  .timeline-node.reverse .t-image { order: 1; }
+  .t-step {
+    display: inline-block;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.72rem; letter-spacing: 0.28em;
+    color: var(--caramel); font-weight: 500;
+    margin-bottom: 14px; text-transform: uppercase;
+  }
+  .t-text h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.5rem; font-weight: 600;
+    color: var(--deep-brown);
+    margin-bottom: 18px; line-height: 1.4;
+  }
+  .t-text p {
+    font-size: 0.95rem; color: var(--text-secondary);
+    line-height: 2; font-weight: 300;
+  }
+  .t-tags {
+    margin-top: 18px;
+    display: flex; flex-wrap: wrap; gap: 6px 14px;
+    font-size: 0.78rem; color: var(--text-light);
+    letter-spacing: 0.05em; font-weight: 300;
+  }
+  .t-tags .tag-dot { color: var(--caramel); margin: 0 2px; }
+  .t-image img {
+    width: 100%; border-radius: 12px;
+    box-shadow: 0 10px 32px rgba(61, 46, 31, 0.10);
+    aspect-ratio: 4 / 3; object-fit: cover;
+  }
+
+  /* ===== REVIEWS (模拟评论区) ===== */
+  .reviews-scroll {
+    display: flex; gap: 20px;
+    overflow-x: auto; overflow-y: hidden;
+    padding: 8px 32px 24px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    justify-content: safe center;
+  }
+  .reviews-scroll::-webkit-scrollbar { height: 6px; }
+  .reviews-scroll::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
+  .review-card {
+    flex: 0 0 320px;
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    padding: 24px 22px;
+    scroll-snap-align: start;
+    display: flex; flex-direction: column;
+  }
+  .review-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 6px;
+  }
+  .review-avatar {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .avatar-circle {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--sand); color: var(--medium-brown);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif SC', serif; font-size: 0.85rem; font-weight: 600;
+  }
+  .avatar-name {
+    font-size: 0.78rem; color: var(--text-light); font-weight: 400;
+  }
+  .review-stars { font-size: 0.78rem; color: var(--caramel); letter-spacing: 0.05em; }
+  .review-tag {
+    display: inline-block; font-size: 0.7rem;
+    color: var(--medium-brown); background: var(--cream);
+    padding: 3px 10px; border-radius: 12px;
+    margin-bottom: 14px; align-self: flex-start;
+    letter-spacing: 0.04em;
+  }
+  .review-body {
+    font-size: 0.86rem; color: var(--text-primary);
+    line-height: 1.85; font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .review-img {
+    width: 100%; aspect-ratio: 4 / 3;
+    object-fit: cover; border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  .review-reply {
+    margin-top: auto; padding-top: 14px;
+    border-top: 1px dashed var(--divider);
+    font-size: 0.76rem; color: var(--text-light);
+    line-height: 1.75; font-weight: 300;
+  }
+  .review-reply strong {
+    color: var(--medium-brown); font-weight: 500;
+  }
+
+  /* ===== PRODUCT FAMILY ===== */
+  .product-family {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .product-card {
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+    border-radius: 14px; overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(61, 46, 31, 0.08);
+    border-color: var(--caramel);
+  }
+  .product-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--sand);
+    cursor: zoom-in;
+  }
+  .product-media .pm-slide {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity 1.2s ease;
+  }
+  .product-media .pm-slide.active { opacity: 1; }
+  .product-media .pm-slide img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transform: scale(1.04);
+    transition: transform 5s ease-out;
+  }
+  .product-media .pm-slide.active img {
+    transform: scale(1.12);
+  }
+  .product-info { padding: 22px 20px 24px; }
+  .product-info h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--deep-brown); margin-bottom: 8px;
+  }
+  .product-tagline {
+    font-size: 0.88rem; color: var(--text-secondary);
+    line-height: 1.7; font-weight: 300; margin-bottom: 14px;
+  }
+  .product-fit {
+    font-size: 0.74rem; color: var(--text-light);
+    letter-spacing: 0.05em; font-weight: 300;
+    padding-top: 12px; border-top: 1px solid var(--divider);
+  }
+  .product-fit-label {
+    color: var(--caramel); font-weight: 500;
+    margin-right: 8px; letter-spacing: 0.15em;
+  }
+
+  .nfc-pillar {
+    text-align: center; max-width: 540px;
+    margin: 44px auto 0;
+    font-size: 0.85rem; color: var(--text-secondary);
+    font-weight: 300; line-height: 1.9;
+    padding: 18px 28px;
+    background: var(--cream); border-radius: 24px;
+  }
+
+  /* ===== UNIFORM / STYLE WARDROBE ===== */
+  .uniform-eyebrow {
+    text-align: center;
+    font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--caramel); font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .uniform-shelf {
+    display: flex; gap: 18px;
+    overflow-x: auto; overflow-y: hidden;
+    padding: 10px 32px 24px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    justify-content: safe center;
+  }
+  .uniform-shelf::-webkit-scrollbar { height: 6px; }
+  .uniform-shelf::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
+
+  .uniform-card {
+    flex: 0 0 220px;
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex; flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .uniform-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(61, 46, 31, 0.10);
+    border-color: var(--caramel);
+  }
+  .uniform-card.is-default {
+    border-color: var(--caramel);
+    box-shadow: 0 6px 20px rgba(196, 168, 130, 0.18);
+  }
+  .uniform-badge {
+    position: absolute; top: 12px; left: 12px; z-index: 3;
+    background: var(--deep-brown); color: var(--cream);
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 500;
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .uniform-media {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--sand);
+    cursor: zoom-in;
+  }
+  .uniform-media .uf-slide {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity 1.0s ease;
+    pointer-events: none;
+  }
+  .uniform-media .uf-slide.active { opacity: 1; pointer-events: auto; }
+  .uniform-media .uf-slide img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transform: scale(1.03);
+    transition: transform 6s ease-out;
+  }
+  .uniform-media .uf-slide.active img {
+    transform: scale(1.10);
+  }
+  .uniform-dots {
+    position: absolute; left: 0; right: 0; bottom: 10px;
+    display: flex; justify-content: center; gap: 6px; z-index: 2;
+  }
+  .uniform-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .uniform-dot.active {
+    background: var(--coral-accent);
+    transform: scale(1.4);
+  }
+
+  .uniform-info {
+    padding: 16px 18px 20px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .uniform-info h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--deep-brown);
+    letter-spacing: 0.02em;
+  }
+  .uniform-tag {
+    font-size: 0.78rem; color: var(--text-light);
+    line-height: 1.65; font-weight: 300;
+  }
+
+  .uniform-foot {
+    text-align: center; max-width: 540px;
+    margin: 30px auto 0;
+    font-size: 0.8rem; color: var(--text-light);
+    font-weight: 300; line-height: 1.85;
+    letter-spacing: 0.02em;
+  }
+  .uniform-foot .dot { color: var(--caramel); margin: 0 8px; }
+
+  /* ===== CTA paths ===== */
+  .cta-paths {
+    max-width: 1000px; margin: 44px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .cta-path {
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-decoration: none; color: inherit;
+    transition: all 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+    display: flex; flex-direction: column;
+    font-family: 'Noto Sans SC', sans-serif;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-path::before {
+    content: "";
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: var(--cream);
+    opacity: 0.6;
+    transition: transform 0.4s ease, background 0.4s ease;
+  }
+  .cta-path:hover::before {
+    transform: scale(1.4);
+    background: rgba(196, 168, 130, 0.18);
+  }
+  .cta-path:hover {
+    border-color: var(--caramel);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(61, 46, 31, 0.10);
+  }
+  .cta-path .p-icon {
+    width: 38px; height: 38px;
+    color: var(--caramel);
+    margin-bottom: 18px;
+    position: relative; z-index: 1;
+  }
+  .cta-path .p-q {
+    font-size: 1.05rem; font-weight: 500;
+    color: var(--deep-brown); line-height: 1.55;
+    margin-bottom: auto;
+    padding-bottom: 22px;
+    position: relative; z-index: 1;
+  }
+  .cta-path .p-a {
+    font-size: 0.95rem; color: var(--deep-brown);
+    letter-spacing: 0.04em; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid var(--divider);
+    position: relative; z-index: 1;
+  }
+  .cta-path .p-a svg {
+    width: 18px; height: 18px;
+    transition: transform 0.25s ease;
+  }
+  .cta-path:hover .p-a svg { transform: translateX(6px); }
+  .cta-path:hover .p-a { color: var(--coral-accent); }
+
+  .contact-row.highlight .contact-icon-btn .icon-circle {
+    animation: pulseStrong 0.7s ease 1, shakeWiggle 0.55s ease-in-out 1;
+  }
+  .contact-row.highlight .contact-icon-btn:nth-child(2) .icon-circle { animation-delay: 0.08s, 0.08s; }
+  .contact-row.highlight .contact-icon-btn:nth-child(3) .icon-circle { animation-delay: 0.16s, 0.16s; }
+  .contact-row.highlight .contact-icon-btn:nth-child(4) .icon-circle { animation-delay: 0.24s, 0.24s; }
+  @keyframes pulseStrong {
+    0%   { box-shadow: 0 0 0 0 rgba(214, 122, 75, 0.55); border-color: var(--caramel); transform: scale(1); }
+    40%  { box-shadow: 0 0 0 14px rgba(214, 122, 75, 0.0); border-color: var(--coral-accent); transform: scale(1.14); }
+    100% { box-shadow: 0 0 0 0 rgba(214, 122, 75, 0); border-color: var(--divider); transform: scale(1); }
+  }
+  @keyframes shakeWiggle {
+    0%, 100% { translate: 0 0; }
+    20%      { translate: -3px -2px; }
+    40%      { translate: 3px -2px; }
+    60%      { translate: -2px 1px; }
+    80%      { translate: 2px 1px; }
+  }
+
+  /* ===== LIGHTBOX ===== */
+  [data-zoom], [data-zoom-group] img { cursor: zoom-in; }
+  .hero-dots, .hero-dot { cursor: pointer; }
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 2000;
+    background: rgba(20, 14, 8, 0.78);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+    padding: 56px 72px;
+    animation: lbFade 0.25s ease;
+  }
+  .lightbox.active { display: flex; }
+  @keyframes lbFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .lightbox-img {
+    max-width: 100%; max-height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+    object-fit: contain;
+    user-select: none;
+  }
+  .lightbox-btn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .lightbox-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: scale(1.06);
+  }
+  .lightbox-btn svg {
+    width: 22px; height: 22px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .lightbox-close {
+    top: 24px; right: 24px;
+    width: 44px; height: 44px;
+  }
+  .lightbox-prev, .lightbox-next {
+    top: 50%; transform: translateY(-50%);
+    width: 52px; height: 52px;
+  }
+  .lightbox-prev { left: 24px; }
+  .lightbox-next { right: 24px; }
+  .lightbox-prev:hover, .lightbox-next:hover { transform: translateY(-50%) scale(1.06); }
+  .lightbox-counter {
+    position: absolute; bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem; font-weight: 300;
+    letter-spacing: 0.1em;
+  }
+  .lightbox[data-single="true"] .lightbox-prev,
+  .lightbox[data-single="true"] .lightbox-next,
+  .lightbox[data-single="true"] .lightbox-counter { display: none; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===== LANG TOGGLE ===== */
+  .lang-toggle {
+    background: none; border: 1px solid var(--caramel);
+    color: var(--medium-brown); font-family: 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+    padding: 5px 14px; border-radius: 20px; cursor: pointer;
+    transition: all 0.2s ease; flex-shrink: 0;
+  }
+  .lang-toggle:hover {
+    background: var(--caramel); color: white;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero { padding: 130px 24px 60px; }
+    .hero h1 { font-size: 1.8rem; }
+    .container { padding: 0 24px; }
+    nav .nav-inner { flex-wrap: wrap; row-gap: 8px; padding: 12px 18px; }
+    .nav-tabs { order: 3; flex-basis: 100%; justify-content: center; }
+    .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    .modal { padding: 32px 24px; }
+    .contact-row { gap: 20px; }
+    .section-divider { margin: 60px auto; }
+    .hero-image img { border-radius: 12px; }
+    .trust-bar { padding: 22px 16px; }
+    .trust-bar-inner {
+      grid-template-columns: 1fr; gap: 20px;
+    }
+    .trust-bar-divider { display: none; }
+    .trust-bar-item .t-logo { width: 36px; height: 36px; }
+    .timeline { padding: 0 24px; }
+    .timeline-node {
+      grid-template-columns: 1fr; gap: 24px; margin-bottom: 56px;
+    }
+    .timeline-node.reverse .t-text { order: 1; }
+    .timeline-node.reverse .t-image { order: 2; }
+    .t-text h3 { font-size: 1.25rem; }
+    .scenario-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .scenario-card { padding: 22px 18px; }
+    .reviews-scroll { padding: 8px 16px 20px; }
+    .review-card { flex: 0 0 280px; }
+    .product-family { grid-template-columns: 1fr; gap: 16px; }
+    .uniform-shelf { padding: 8px 16px 20px; gap: 14px; }
+    .uniform-card { flex: 0 0 180px; }
+    .uniform-info { padding: 14px 14px 18px; }
+    .uniform-info h3 { font-size: 0.95rem; }
+    .uniform-tag { font-size: 0.74rem; }
+    .uniform-foot { font-size: 0.76rem; padding: 0 24px; }
+    .cta-paths { grid-template-columns: 1fr; gap: 14px; }
+    .cta-path { min-height: 0; padding: 24px 22px; }
+    .cta-path .p-icon { width: 32px; height: 32px; margin-bottom: 14px; }
+    .cta-path .p-q { font-size: 0.98rem; padding-bottom: 16px; }
+    .cta-path .p-a { padding-top: 14px; font-size: 0.9rem; }
+    .lightbox { padding: 48px 16px; }
+    .lightbox-close { top: 14px; right: 14px; width: 40px; height: 40px; }
+    .lightbox-prev, .lightbox-next { width: 44px; height: 44px; }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+  }
+  /* Landscape phones / small tablets: keep 3-up CTA but compact */
+  @media (max-width: 900px) and (min-width: 600px) and (orientation: landscape) {
+    .cta-paths { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .cta-path { min-height: 0; padding: 20px 18px; }
+    .cta-path .p-icon { width: 28px; height: 28px; margin-bottom: 12px; }
+    .cta-path .p-q { font-size: 0.9rem; padding-bottom: 14px; }
+    .cta-path .p-a { font-size: 0.85rem; padding-top: 12px; gap: 6px; }
+    .scenario-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  /* ===== Tab system (二分 Tab) ===== */
+  .nav-tabs { display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:center; }
+  .tabs-bar { display:none; }
+  .tab-btn { font-family:inherit; font-size:.82rem; font-weight:600; color:var(--soft-brown); background:transparent; border:1.5px solid var(--divider); padding:7px 16px; border-radius:999px; cursor:pointer; transition:all .2s ease; white-space:nowrap; }
+  .tab-btn:hover { border-color:var(--caramel); color:var(--medium-brown); }
+  .tab-btn.active { background:var(--deep-brown); border-color:var(--deep-brown); color:var(--warm-white); }
+  .tab-panel { display:none; }
+  .tab-panel.active { display:block; animation:tabfade .4s ease; }
+  @keyframes tabfade { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  /* ===== Real product shop grid ===== */
+  .shop-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; max-width:1120px; margin:0 auto; padding:0 24px; }
+  .shop-card { background:var(--warm-white); border:1px solid var(--divider); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease; text-decoration:none; color:inherit; }
+  .shop-card:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(60,46,31,.12); }
+  .shop-card-media { position:relative; aspect-ratio:1/1; background:var(--sand); overflow:hidden; }
+  .shop-card-media img { width:100%; height:100%; object-fit:cover; display:block; }
+  .shop-badge { position:absolute; top:10px; left:10px; background:var(--coral-accent); color:#fff; font-size:.7rem; padding:3px 9px; border-radius:999px; font-weight:600; letter-spacing:.02em; }
+  .shop-badge.flagship { background:var(--deep-brown); }
+  .shop-cat { position:absolute; top:10px; right:10px; background:rgba(253,251,248,.9); color:var(--medium-brown); font-size:.68rem; padding:3px 8px; border-radius:999px; }
+  .shop-info { padding:14px 14px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .shop-name { font-size:.9rem; line-height:1.45; color:var(--text-primary); font-weight:500; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.6em; }
+  .shop-meta { margin-top:auto; display:flex; align-items:baseline; justify-content:space-between; }
+  .shop-price { color:var(--coral-accent); font-weight:700; font-size:1.05rem; }
+  .shop-price small { font-size:.72rem; font-weight:500; }
+  .shop-go { font-size:.75rem; color:var(--soft-brown); white-space:nowrap; }
+
+  /* ===== Version selector (小程序 / H5) ===== */
+  .cta-primary { display:inline-flex; align-items:center; gap:10px; background:var(--deep-brown); color:var(--warm-white); border:none; font-family:inherit; font-size:1.05rem; font-weight:600; padding:16px 38px; border-radius:999px; cursor:pointer; transition:all .22s ease; margin:4px auto 26px; }
+  .cta-primary:hover { transform:translateY(-2px); box-shadow:0 12px 30px rgba(60,46,31,.25); }
+  .hero-cta { display:inline-flex; align-items:center; gap:9px; margin-top:20px; background:var(--deep-brown); color:var(--warm-white); border:none; font-family:inherit; font-size:1rem; font-weight:600; padding:14px 30px; border-radius:999px; cursor:pointer; transition:all .22s ease; }
+  .hero-cta:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(60,46,31,.22); }
+  .version-cards { display:flex; flex-direction:column; gap:14px; margin-top:10px; }
+  .version-card { display:flex; gap:14px; align-items:center; padding:16px; border:1.5px solid var(--divider); border-radius:14px; text-decoration:none; color:inherit; transition:all .2s ease; cursor:pointer; background:var(--warm-white); width:100%; text-align:left; font-family:inherit; }
+  .version-card:hover { border-color:var(--caramel); transform:translateY(-2px); box-shadow:0 8px 22px rgba(60,46,31,.1); }
+  .version-card .vc-icon { width:46px; height:46px; flex:none; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--cream); color:var(--deep-brown); }
+  .version-card.primary .vc-icon { background:var(--deep-brown); color:var(--warm-white); }
+  .vc-text { flex:1; }
+  .vc-title { font-weight:600; color:var(--text-primary); font-size:1rem; display:flex; align-items:center; gap:8px; }
+  .vc-title .vc-tag { font-size:.64rem; background:var(--coral-accent); color:#fff; padding:2px 7px; border-radius:999px; font-weight:600; }
+  .vc-desc { font-size:.8rem; color:var(--text-secondary); margin-top:3px; line-height:1.4; }
+  .vc-qr { margin-top:16px; text-align:center; display:none; }
+  .vc-qr.show { display:block; }
+  .vc-qr img { width:170px; border-radius:10px; }
+  .vc-qr p { font-size:.78rem; color:var(--text-secondary); margin-top:10px; }
+
+  /* ===== Album tab intro ===== */
+  .album-hero { text-align:center; padding:110px 24px 8px; max-width:820px; margin:0 auto; }
+  .album-hero .album-eyebrow { font-size:.8rem; letter-spacing:.12em; color:var(--caramel); font-weight:600; text-transform:uppercase; margin-bottom:14px; }
+  .album-hero h2 { font-size:1.9rem; color:var(--text-primary); line-height:1.3; margin-bottom:16px; }
+  .album-hero p { font-size:1rem; color:var(--text-secondary); line-height:1.7; }
+  .album-cta { display:inline-flex; align-items:center; gap:9px; margin-top:24px; background:var(--deep-brown); color:var(--warm-white); text-decoration:none; font-size:.98rem; font-weight:600; padding:13px 30px; border-radius:999px; transition:all .22s ease; }
+  .album-cta:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(60,46,31,.2); }
+
+  @media (max-width:600px) {
+    .shop-grid { grid-template-columns:repeat(2,1fr); gap:12px; padding:0 14px; }
+    .shop-name { font-size:.8rem; }
+    .shop-price { font-size:.95rem; }
+    .tab-btn { padding:6px 12px; font-size:.76rem; }
+    .album-hero h2 { font-size:1.5rem; }
+  }
+  /* ===== About / Reliability tab (site-consistent) ===== */
+  .about-intro { text-align:center; max-width:720px; margin:0 auto; padding:100px 24px 4px; }
+  .about-eyebrow { font-family:'Noto Serif SC',serif; font-size:.72rem; letter-spacing:.28em; color:var(--caramel); font-weight:500; text-transform:uppercase; margin-bottom:16px; }
+  .about-stat-band { max-width:720px; margin:24px auto 0; text-align:center; padding:0 24px; }
+  .about-stat-num { font-family:'Noto Serif SC',serif; font-size:2.9rem; font-weight:700; color:var(--deep-brown); line-height:1; letter-spacing:.01em; }
+  .about-stat-num small { font-size:1.05rem; font-weight:600; color:var(--caramel); margin-left:8px; letter-spacing:.02em; }
+  .about-stat-cap { font-size:.9rem; color:var(--text-secondary); margin-top:14px; line-height:1.8; font-weight:300; }
+  .about-stat-cap b { color:var(--text-primary); font-weight:600; }
+  .about-lead { font-family:'Noto Serif SC',serif; font-size:1.95rem; font-weight:700; color:var(--deep-brown); line-height:1.32; letter-spacing:.01em; }
+  .diagram-card { background:var(--warm-white); border:1px solid var(--divider); border-radius:12px; box-shadow:0 10px 32px rgba(61,46,31,.08); padding:20px 20px 14px; }
+  .diagram-card svg { width:100%; height:auto; display:block; }
+  .diagram-cap { text-align:center; font-size:.76rem; color:var(--text-light); margin-top:10px; letter-spacing:.03em; font-weight:300; }
+  .about-key { font-size:.95rem; font-weight:600; color:var(--medium-brown); padding:12px 16px; background:var(--cream); border-radius:10px; border-left:3px solid var(--caramel); margin-top:18px; }
+  .about-tick { list-style:none; margin:16px 0 0; padding:0; }
+  .about-tick li { position:relative; padding-left:24px; font-size:.9rem; margin-bottom:10px; color:var(--text-secondary); line-height:1.7; font-weight:300; }
+  .about-tick li::before { content:""; position:absolute; left:2px; top:7px; width:7px; height:7px; border-right:2px solid var(--sage); border-bottom:2px solid var(--sage); transform:rotate(45deg); }
+  .about-tick li b { color:var(--text-primary); font-weight:600; }
+  .chart-legend { display:flex; gap:20px; justify-content:center; margin-top:4px; font-size:.74rem; color:var(--text-light); flex-wrap:wrap; }
+  .chart-legend span { display:inline-flex; align-items:center; gap:6px; }
+  .chart-legend .k { width:9px; height:9px; border-radius:2px; }
+  .license-card { background:#fff; border:1px solid var(--divider); border-radius:12px; box-shadow:0 10px 32px rgba(61,46,31,.08); padding:12px; }
+  .license-card img { width:100%; height:auto; display:block; border-radius:6px; cursor:zoom-in; }
+  .reg-list { margin-top:18px; display:flex; flex-direction:column; gap:13px; }
+  .reg-list dt { font-size:.74rem; color:var(--text-light); letter-spacing:.04em; margin-bottom:3px; }
+  .reg-list dd { font-size:.92rem; color:var(--text-primary); font-weight:500; line-height:1.5; }
+  .reg-list dd a.reg-beian-link { color:var(--text-primary); text-decoration:none; border-bottom:1px solid var(--divider); transition:border-color .2s, color .2s; }
+  .reg-list dd a.reg-beian-link:hover { color:var(--deep-brown); border-bottom-color:var(--deep-brown); }
+  .about-company { width:calc(100% - 48px); max-width:720px; margin:56px auto 0; padding:26px 30px; background:var(--warm-white); border:1px solid var(--divider); border-radius:14px; }
+  .about-company .ac-eyebrow { font-size:.72rem; letter-spacing:.2em; color:var(--text-light); text-transform:uppercase; font-weight:700; margin-bottom:10px; }
+  .about-company .ac-body { font-size:.92rem; color:var(--text-secondary); line-height:1.9; }
+  .about-company .ac-body b { color:var(--text-primary); font-weight:600; }
+  .about-company .ac-legal { margin-top:20px; padding-top:18px; border-top:1px solid var(--divider); display:flex; flex-direction:column; gap:9px; }
+  .about-company .ac-legal-row { display:flex; gap:14px; align-items:baseline; font-size:.82rem; line-height:1.6; }
+  .about-company .ac-legal-k { flex:0 0 62px; color:var(--text-light); letter-spacing:.04em; }
+  .about-company .ac-legal-v { color:var(--text-secondary); }
+  .about-company .ac-legal-v a { color:var(--text-secondary); text-decoration:none; border-bottom:1px solid var(--divider); transition:color .2s, border-color .2s; }
+  .about-company .ac-legal-v a:hover { color:var(--deep-brown); border-bottom-color:var(--deep-brown); }
+  @media (max-width:600px){
+    .about-intro { padding-top:122px; }
+    .about-stat-num { font-size:2.1rem; }
+    .about-lead { font-size:1.5rem; }
+  }
+  @media (max-width:900px) and (orientation:landscape){
+    .about-intro { padding-top:112px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo-text">
+      <svg id="logo-svg" class="logo-cn" viewBox="55 72 608 252" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#3d2e1f" d="M80.13,74.95h175.92v21.95H80.13v-21.95ZM84,321.46v-187.28h21.69v165.33h111.7c3.7,0,6.89-1.33,9.6-4.05,2.67-2.67,4.05-5.98,4.05-9.86v-151.73h21.95v151.73c0,6.5-1.64,12.44-4.86,17.91-3.23,5.47-7.53,9.81-12.91,13.04-5.38,3.23-11.32,4.86-17.78,4.86H84v.04ZM118.18,119.42h100.33v131.71c0,8.69-3.1,16.23-9.3,22.51-6.2,6.28-13.77,9.47-22.64,9.47h-68.35V119.42h-.04ZM157.39,171.37v-30h-17.22v30h17.22ZM157.39,261.42v-68.09h-17.22v68.09h17.22ZM196.82,171.37v-30h-17.52v30h17.52ZM186.53,261.42c2.8,0,5.17-1.03,7.23-3.06,2.02-2.02,3.06-4.43,3.06-7.23v-57.81h-17.52v68.09h7.23Z"/>
+        <path fill="#3d2e1f" d="M281.87,74.95h175.62v21.69h-153.66v202.6h153.66v21.95h-175.62V75h0v-.04ZM319.11,113.86h128.96v86.99c0,7.96-2.8,14.72-8.35,20.27-5.55,5.55-12.31,8.35-20.27,8.35h-25.01v58.93h-21.69v-58.93h-53.63v-115.61h0ZM372.74,171.37v-35.55h-31.68v35.55h31.68ZM372.74,207.53v-14.16h-31.68v14.16h31.68ZM426.11,171.37v-35.55h-31.68v35.55h31.68ZM419.44,207.53c1.85,0,3.44-.65,4.73-1.94s1.94-2.88,1.94-4.73v-7.49h-31.68v14.16h25.01,0Z"/>
+        <path fill="#3d2e1f" d="M524.21,299.21h6.11c8.52,0,15.32-2.58,20.45-7.79,5.08-5.21,7.66-12.05,7.66-20.57v-77.52H59.12v-21.95h499.26v-3.31l7.23-2.8c18.9-6.84,33.27-16.66,43.09-29.44,9.81-12.78,15.93-25.57,18.34-38.35h-139.24v-21.95h162.57v11.11c0,7.79-1.55,16.66-4.61,26.69-3.06,9.99-8.26,20.19-15.58,30.56s-16.83,19.54-28.49,27.5h54.19v21.95h-75.58v77.52c0,9.81-2.15,18.51-6.41,26.13-4.26,7.58-10.2,13.52-17.78,17.78-7.62,4.26-16.23,6.37-25.83,6.37h-6.11v-21.95h.04v.04Z"/>
+      </svg>
+      <span id="logo-main" style="display:none">Photolio</span>
+      <span class="logo-sub" id="logo-sub">PHOTOLIO</span>
+    </div>
+    <div class="nav-tabs">
+      <button class="tab-btn active" id="tab-btn-main" onclick="switchTab('main')">NFC 礼品</button>
+      <button class="tab-btn" id="tab-btn-album" onclick="switchTab('album')">毕业纪念册</button>
+      <button class="tab-btn" id="tab-btn-about" onclick="switchTab('about')">关于我们</button>
+    </div>
+    <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<div id="tab-main" class="tab-panel active">
+
+<!-- ====== 1. HERO ====== -->
+<section class="hero">
+  <div class="hero-label" id="hero-label">多人共创回忆 · 一站式定制</div>
+  <h1 id="hero-title">那次聚会的照片，<br>还散在几十个人的手机里</h1>
+  <p class="hero-subtitle" id="hero-subtitle">
+    画匣子帮你和朋友、同学、家人一起，把散落在各自手机里的照片和感受，做成可以碰一碰就回来的精美礼品——纪念册、冰箱贴、钥匙扣，一站式定制。
+  </p>
+  <button type="button" class="hero-cta" onclick="openModal('versionModal')"><span id="hero-cta-label">立即体验画匣子</span>
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </button>
+  <div class="hero-carousel" data-zoom-group="hero">
+    <div class="slides">
+      <div class="slide active"><img src="about/main product on white table.jpg" alt="画匣子精装纪念册摊开摆在白桌面上" data-alt-zh="画匣子精装纪念册摊开摆在白桌面上" data-alt-en="Photolio memory book"></div>
+      <div class="slide"><img src="about/A series of carefully designed pages.jpg" alt="扇形展开的纪念册内页，每页独立排版设计" data-alt-zh="扇形展开的纪念册内页，每页独立排版设计" data-alt-en="Photolio memory book"></div>
+      <div class="slide"><img src="about/Keychain picture useage case.jpg" alt="画匣子 NFC 钥匙扣的实际使用场景" data-alt-zh="画匣子 NFC 钥匙扣的实际使用场景" data-alt-en="Photolio NFC keychain"></div>
+      <div class="slide"><img src="about/backpage of a lite version of product.jpg" alt="轻装版纪念册手持翻阅时的封底视角" data-alt-zh="轻装版纪念册手持翻阅时的封底视角" data-alt-en="Photolio memory book"></div>
+    </div>
+    <div class="hero-dots">
+      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 2. TRUST BAR ====== -->
+<section class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-bar-item">
+      <img class="t-logo" src="about/svg/worldculturefestival.svg" alt="" aria-hidden="true">
+      <div class="t-up" id="trust-a-up">世界文化节</div>
+      <div class="t-down" id="trust-a-down">第二十一届独家合作</div>
+    </div>
+    <div class="trust-bar-divider"></div>
+    <div class="trust-bar-item">
+      <img class="t-logo" src="about/svg/miracleplus.svg" alt="" aria-hidden="true">
+      <div class="t-up" id="trust-b-up">奇绩创坛</div>
+      <div class="t-down" id="trust-b-down">孵化项目</div>
+    </div>
+    <div class="trust-bar-divider"></div>
+    <div class="trust-bar-item">
+      <img class="t-logo" src="about/svg/beijinglanguageuniversity.svg" alt="" aria-hidden="true">
+      <div class="t-up" id="trust-c-up">北京语言大学</div>
+      <div class="t-down" id="trust-c-down">校内首批合作</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====== 3. PROCESS × SCENARIO TIMELINE ====== -->
+<section class="fade-in" id="process">
+  <h2 class="section-title" id="process-title">从一次拍照，到一份能反复回去的礼物</h2>
+  <p class="section-desc" id="process-desc">五个步骤，把每个人手机里散落的那天，拼回成一份完整的回忆。</p>
+  <div class="timeline">
+    <!-- Node 1 -->
+    <div class="timeline-node">
+      <div class="t-text">
+        <div class="t-step" id="node1-step">01 — 那天</div>
+        <h3 id="node1-title">你们拍下了那天</h3>
+        <p id="node1-desc">不管是毕业散伙、婚礼、文化节还是一次旅行——总有那么几天值得被好好记住。每个人的手机里都有那天的一角，但没有人把它们拼在一起。</p>
+        <div class="t-tags" id="node1-tags">
+          <span data-static-zh="毕业季" data-static-en="Graduation">毕业季</span><span class="tag-dot">·</span>
+          <span data-static-zh="婚礼" data-static-en="Weddings">婚礼</span><span class="tag-dot">·</span>
+          <span data-static-zh="文化活动" data-static-en="Cultural events">文化活动</span><span class="tag-dot">·</span>
+          <span data-static-zh="旅行纪念" data-static-en="Travel keepsakes">旅行纪念</span><span class="tag-dot">·</span>
+          <span data-static-zh="课程结业" data-static-en="Course completion">课程结业</span>
+        </div>
+      </div>
+      <div class="t-image">
+        <img data-zoom src="about/important one_frigemagnent directly with World Culture Festival poster in Beijing language University.jpg" alt="北京语言大学世界文化节现场的画匣子冰箱贴" data-alt-zh="北京语言大学世界文化节现场的画匣子冰箱贴" data-alt-en="Photolio NFC fridge magnet">
+      </div>
+    </div>
+
+    <!-- Node 2 -->
+    <div class="timeline-node reverse">
+      <div class="t-text">
+        <div class="t-step" id="node2-step">02 — 一起加进来</div>
+        <h3 id="node2-title">发个链接，大家一起加进来</h3>
+        <p id="node2-desc">在画匣子创建一份回忆，把链接发给所有人。每个人上传自己拍的照片、视频，写下当时的感受。不需要下载 App，手机直接打开。</p>
+      </div>
+      <div class="t-image">
+        <img data-zoom src="about/users loves and are taking pictures of booklets and posting in social media.jpg" alt="用户围着画匣子纪念册一起翻看、拍照分享" data-alt-zh="用户围着画匣子纪念册一起翻看、拍照分享" data-alt-en="Photolio memory book">
+      </div>
+    </div>
+
+    <!-- Node 3 -->
+    <div class="timeline-node">
+      <div class="t-text">
+        <div class="t-step" id="node3-step">03 — 我们来做</div>
+        <h3 id="node3-title">我们来排版、印刷、NFC 写入</h3>
+        <p id="node3-desc">你们只需要提供内容，剩下的交给我们。杂志级排版设计，每一份都单独打磨，不用模板。选好产品形态，我们完成印刷和 NFC 芯片写入。</p>
+      </div>
+      <div class="t-image">
+        <img data-zoom src="about/A series of carefully designed pages.jpg" alt="扇形展开的纪念册内页，展示每页独立的杂志级排版" data-alt-zh="扇形展开的纪念册内页，展示每页独立的杂志级排版" data-alt-en="Photolio memory book">
+      </div>
+    </div>
+
+    <!-- Node 4 -->
+    <div class="timeline-node reverse">
+      <div class="t-text">
+        <div class="t-step" id="node4-step">04 — 寄到你手上</div>
+        <h3 id="node4-title">精美礼品寄到你手上</h3>
+        <p id="node4-desc">纪念册、冰箱贴、钥匙扣——不同场合选不同形态，都内嵌了 NFC 芯片。收到的那一刻，就是礼物。</p>
+      </div>
+      <div class="t-image">
+        <img data-zoom src="about/Keychain picture useage case.jpg" alt="画匣子 NFC 钥匙扣的实际使用场景" data-alt-zh="画匣子 NFC 钥匙扣的实际使用场景" data-alt-en="Photolio NFC keychain">
+      </div>
+    </div>
+
+    <!-- Node 5 -->
+    <div class="timeline-node">
+      <div class="t-text">
+        <div class="t-step" id="node5-step">05 — 碰一碰</div>
+        <h3 id="node5-title">手机碰一碰，随时回到那天</h3>
+        <p id="node5-desc">不只是一个实体礼品。手机轻轻碰一下，当时的视频、音频、所有人写下的感受就全部活过来。一年后再碰，五年后再碰，还在。</p>
+      </div>
+      <div class="t-image">
+        <img data-zoom src="about/main product with hand and phone touching NFC.jpg" alt="手机贴近画匣子的 NFC 区域，瞬间唤起当时的内容" data-alt-zh="手机贴近画匣子的 NFC 区域，瞬间唤起当时的内容" data-alt-en="Photolio product and customer photograph">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====== 3.5 SCENARIOS ====== -->
+<section class="container fade-in" id="scenarios">
+  <h2 class="section-title" id="scenarios-title">适合哪些场合</h2>
+  <p class="section-desc" id="scenarios-desc">几乎所有值得被记住的“那一天”。</p>
+  <div class="scenario-grid">
+    <div class="scenario-card">
+      <svg class="s-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 4L2 11l14 7 14-7-14-7z"/>
+        <path d="M6 14v8c0 0 4 4 10 4s10-4 10-4v-8"/>
+        <line x1="28" y1="11" x2="28" y2="23"/>
+        <circle cx="28" cy="24" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+      <h3 id="scenario1-title">毕业纪念</h3>
+      <p id="scenario1-desc">全班每人上传一张照片、写一句话，做成一本只属于你们班的毕业回忆录</p>
+    </div>
+    <div class="scenario-card">
+      <svg class="s-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="6" y1="6" x2="6" y2="28"/>
+        <path d="M6 6c4-2 8 2 12 0s8 2 12 0v12c-4 2-8-2-12 0s-8-2-12 0"/>
+      </svg>
+      <h3 id="scenario2-title">团队活动</h3>
+      <p id="scenario2-desc">拓展、团建、军训结束后，每个人上传自己的视角，拼出一份完整的活动记录</p>
+    </div>
+    <div class="scenario-card">
+      <svg class="s-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="14" width="24" height="14" rx="2"/>
+        <path d="M4 20h24"/>
+        <rect x="8" y="10" width="16" height="4" rx="1"/>
+        <line x1="12" y1="10" x2="12" y2="6"/>
+        <line x1="16" y1="10" x2="16" y2="5"/>
+        <line x1="20" y1="10" x2="20" y2="6"/>
+        <circle cx="12" cy="5" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="4" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="20" cy="5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <h3 id="scenario3-title">生日纪念</h3>
+      <p id="scenario3-desc">朋友们各自写一段话、配上合照，做成一份收到就会感动的生日礼物</p>
+    </div>
+    <div class="scenario-card">
+      <svg class="s-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="10" cy="8" r="3"/>
+        <circle cx="22" cy="8" r="3"/>
+        <path d="M4 22c0-4 3-6 6-6 1.5 0 2.8.5 3.8 1.3"/>
+        <path d="M28 22c0-4-3-6-6-6-1.5 0-2.8.5-3.8 1.3"/>
+        <circle cx="16" cy="13" r="2.5"/>
+        <path d="M10 28c0-3.5 2.5-5.5 6-5.5s6 2 6 5.5"/>
+      </svg>
+      <h3 id="scenario4-title">家庭聚会</h3>
+      <p id="scenario4-desc">过年、寿宴、家庭旅行，让每一代人都留下自己的照片和故事</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====== 4. REVIEWS ====== -->
+<section class="fade-in" id="reviews">
+  <h2 class="section-title" id="reviews-title">来自真实用户的反馈</h2>
+  <p class="section-desc" id="reviews-desc">真实的购买场景，真实的评价——好评不全是好评，中评里也有我们要做的事。</p>
+  <div class="reviews-scroll">
+    <!-- Card A -->
+    <div class="review-card">
+      <div class="review-head">
+        <div class="review-avatar">
+          <div class="avatar-circle">奇</div>
+          <div class="avatar-name" id="review-a-name">奇偶E</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <span class="review-tag" id="review-a-tag">世界文化节 · 现场购买</span>
+      <p class="review-body" id="review-a-body">以为只是普通的冰箱贴，结果手机贴一下就能听到歌、看到视频，真的太划算了。买了两个，一个送对象一个自己留着。</p>
+      <img class="review-img" data-zoom src="about/Users are selecting and buying fridge magnets and keychains.jpg" alt="文化节展位购买现场" data-alt-zh="文化节展位购买现场" data-alt-en="Photolio product and customer photograph">
+    </div>
+
+    <!-- Card B -->
+    <div class="review-card">
+      <div class="review-head">
+        <div class="review-avatar">
+          <div class="avatar-circle">大</div>
+          <div class="avatar-name" id="review-b-name">大红红金鱼</div>
+        </div>
+        <div class="review-stars">★★★★☆</div>
+      </div>
+      <span class="review-tag" id="review-b-tag">课程结业纪念册</span>
+      <p class="review-body" id="review-b-body">昨天收到快递忘拍拆封图了。今天白天我带它去上了最后一次户外课。</p>
+      <img class="review-img" data-zoom src="about/I've received the goods_I took the booklet to an outdoor class.jpg" alt="用户带着画匣子纪念册去户外课" data-alt-zh="用户带着画匣子纪念册去户外课" data-alt-en="Photolio memory book">
+    </div>
+
+    <!-- Card C -->
+    <div class="review-card">
+      <div class="review-head">
+        <div class="review-avatar">
+          <div class="avatar-circle">言</div>
+          <div class="avatar-name" id="review-c-name">言</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <span class="review-tag" id="review-c-tag">文化节 · 批量购买</span>
+      <p class="review-body" id="review-c-body">在北语世界文化节看到这个小东西，特意买了 6 个给办公室同事。别人的礼物过几天就压箱底了，这个每天贴在冰箱上都能看见。</p>
+      <img class="review-img" data-zoom src="about/The customized fridge magnet for the World Culture Festival of Beijing Language University.jpg" alt="北语世界文化节定制冰箱贴" data-alt-zh="北语世界文化节定制冰箱贴" data-alt-en="Photolio NFC fridge magnet">
+    </div>
+
+    <!-- Card D - 中评 -->
+    <div class="review-card">
+      <div class="review-head">
+        <div class="review-avatar">
+          <div class="avatar-circle">5</div>
+          <div class="avatar-name" id="review-d-name">52Hertz</div>
+        </div>
+        <div class="review-stars">★★★☆☆</div>
+      </div>
+      <span class="review-tag" id="review-d-tag">旅游纪念定制</span>
+      <p class="review-body" id="review-d-body">好好欣赏了下。背面是与姥姥的合影，会好好收藏，怕磨损。NFC 在鸿蒙系统不是很方便，要是有小程序就好了。</p>
+      <div class="review-reply" id="review-d-reply"><strong>商家回复：</strong>感谢您的反馈，我们后续新品会附赠保护套预防磨损，以及提供微信小程序的 NFC 支持！</div>
+    </div>
+
+    <!-- Card E -->
+    <div class="review-card">
+      <div class="review-head">
+        <div class="review-avatar">
+          <div class="avatar-circle">山</div>
+          <div class="avatar-name" id="review-e-name">山椒鱼</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+      </div>
+      <span class="review-tag" id="review-e-tag">旅行纪念定制</span>
+      <p class="review-body" id="review-e-body">带给同学们看了，她们很羡慕都围着这个册子拍照。打开后跟杂志一样的设计，每页都不一样，真的不像我以为的那种模板册。</p>
+      <img class="review-img" data-zoom src="about/users loves and are taking pictures of booklets and posting in social media.jpg" alt="同学们围着画匣子纪念册拍照" data-alt-zh="同学们围着画匣子纪念册拍照" data-alt-en="Photolio memory book">
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====== 5. PRODUCT FAMILY ====== -->
+<section class="container fade-in" id="products">
+  <h2 class="section-title" id="products-title">在售 NFC 礼品</h2>
+  <p class="section-desc" id="products-desc">手机碰一碰，回忆瞬间开启。以下均为淘宝店在售商品，点击直达下单。</p>
+  <div class="shop-grid">
+    <a class="shop-card" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener">
+      <div class="shop-card-media">
+        <img loading="lazy" src="about/tb-magnet.jpg" alt="来图定制NFC冰箱贴 会说话的照片" data-alt-zh="来图定制NFC冰箱贴 会说话的照片" data-alt-en="Photolio NFC fridge magnet">
+        <span class="shop-badge" data-static-zh="招牌" data-static-en="Signature">招牌</span>
+        <span class="shop-cat" data-static-zh="冰箱贴" data-static-en="Fridge magnet">冰箱贴</span>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name" data-static-zh="来图定制NFC冰箱贴 会说话的照片 情侣礼物数字记忆毕业纪念品" data-static-en="Custom NFC photo magnet · Photos with stories · Gifts and graduation keepsakes">来图定制NFC冰箱贴 会说话的照片 情侣礼物数字记忆毕业纪念品</div>
+        <div class="shop-meta"><span class="shop-go" data-static-zh="去淘宝下单 ›" data-static-en="Order on Taobao \u203a">去淘宝下单 ›</span></div>
+      </div>
+    </a>
+    <a class="shop-card" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener">
+      <div class="shop-card-media">
+        <img loading="lazy" src="about/tb-frame.jpg" alt="NFC相框碰一碰播放视频" data-alt-zh="NFC相框碰一碰播放视频" data-alt-en="Photolio product and customer photograph">
+        <span class="shop-cat" data-static-zh="相框" data-static-en="Photo frame">相框</span>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name" data-static-zh="NFC相框 碰一碰播放视频 礼品合影团建婚礼伴手礼纪念品" data-static-en="NFC photo frame · Tap to play videos · Gifts, group photos and wedding keepsakes">NFC相框 碰一碰播放视频 礼品合影团建婚礼伴手礼纪念品</div>
+        <div class="shop-meta"><span class="shop-go" data-static-zh="去淘宝下单 ›" data-static-en="Order on Taobao \u203a">去淘宝下单 ›</span></div>
+      </div>
+    </a>
+    <a class="shop-card" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener">
+      <div class="shop-card-media">
+        <img loading="lazy" src="about/tb-record-keychain.jpg" alt="NFC唱片钥匙扣可旋转亚克力" data-alt-zh="NFC唱片钥匙扣可旋转亚克力" data-alt-en="Photolio NFC keychain">
+        <span class="shop-cat" data-static-zh="唱片钥匙扣" data-static-en="Record keychain">唱片钥匙扣</span>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name" data-static-zh="NFC唱片钥匙扣可旋转亚克力DIY 播放音乐视频 情侣生日毕业表白礼物" data-static-en="Custom spinning record keychain · Tap to play music or videos · Birthday and graduation gifts">NFC唱片钥匙扣可旋转亚克力DIY 播放音乐视频 情侣生日毕业表白礼物</div>
+        <div class="shop-meta"><span class="shop-go" data-static-zh="去淘宝下单 ›" data-static-en="Order on Taobao \u203a">去淘宝下单 ›</span></div>
+      </div>
+    </a>
+    <a class="shop-card" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener">
+      <div class="shop-card-media">
+        <img loading="lazy" src="about/tb-nightlight-cube.jpg" alt="DIY小夜灯NFC智能纪念礼物" data-alt-zh="DIY小夜灯NFC智能纪念礼物" data-alt-en="Photolio product and customer photograph">
+        <span class="shop-cat" data-static-zh="小夜灯" data-static-en="Night light">小夜灯</span>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name" data-static-zh="DIY小夜灯NFC智能纪念礼物 定制照片复古胶片相框走心礼物" data-static-en="Custom NFC night light · Personal photo and film-style frame keepsake">DIY小夜灯NFC智能纪念礼物 定制照片复古胶片相框走心礼物</div>
+        <div class="shop-meta"><span class="shop-go" data-static-zh="去淘宝下单 ›" data-static-en="Order on Taobao \u203a">去淘宝下单 ›</span></div>
+      </div>
+    </a>
+    <a class="shop-card" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener">
+      <div class="shop-card-media">
+        <img loading="lazy" src="about/tb-slidelamp.jpg" alt="定制照片小夜灯DIY透光相框灯" data-alt-zh="定制照片小夜灯DIY透光相框灯" data-alt-en="Photolio product and customer photograph">
+        <span class="shop-cat" data-static-zh="相框灯" data-static-en="Light-up frame">相框灯</span>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name" data-static-zh="定制照片小夜灯DIY透光相框灯 NFC智能碰一碰礼物纪念日创意摆件" data-static-en="Custom light-up photo frame · Tap-to-open NFC anniversary keepsake">定制照片小夜灯DIY透光相框灯 NFC智能碰一碰礼物纪念日创意摆件</div>
+        <div class="shop-meta"><span class="shop-go" data-static-zh="去淘宝下单 ›" data-static-en="Order on Taobao \u203a">去淘宝下单 ›</span></div>
+      </div>
+    </a>
+    <a class="shop-card" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener">
+      <div class="shop-card-media">
+        <img loading="lazy" src="about/tb-keychain.jpg" alt="NFC定制钥匙扣来图定制情侣照片" data-alt-zh="NFC定制钥匙扣来图定制情侣照片" data-alt-en="Photolio NFC keychain">
+        <span class="shop-cat" data-static-zh="钥匙扣" data-static-en="Keychain">钥匙扣</span>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name" data-static-zh="NFC定制钥匙扣 来图定制情侣照片 手机照片个性纪念定制" data-static-en="Custom NFC keychain · Personalized photo keepsake">NFC定制钥匙扣 来图定制情侣照片 手机照片个性纪念定制</div>
+        <div class="shop-meta"><span class="shop-go" data-static-zh="去淘宝下单 ›" data-static-en="Order on Taobao \u203a">去淘宝下单 ›</span></div>
+      </div>
+    </a>
+    <a class="shop-card" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener">
+      <div class="shop-card-media">
+        <img loading="lazy" src="about/tb-nightlight-kodak.jpg" alt="小夜灯DIYNFC智能纪念礼物" data-alt-zh="小夜灯DIYNFC智能纪念礼物" data-alt-en="Photolio product and customer photograph">
+        <span class="shop-cat" data-static-zh="小夜灯" data-static-en="Night light">小夜灯</span>
+      </div>
+      <div class="shop-info">
+        <div class="shop-name" data-static-zh="小夜灯DIYNFC智能纪念礼物 定制照片复古胶片相框走心礼物" data-static-en="Custom NFC night light · Personal photo and film-style frame keepsake">小夜灯DIYNFC智能纪念礼物 定制照片复古胶片相框走心礼物</div>
+        <div class="shop-meta"><span class="shop-go" data-static-zh="去淘宝下单 ›" data-static-en="Order on Taobao \u203a">去淘宝下单 ›</span></div>
+      </div>
+    </a>
+  </div>
+  <p class="nfc-pillar" id="products-pillar">所有礼品共享同一个 NFC + 数字内容内核——买回家碰一碰，即进入画匣子小程序里的专属回忆页。</p>
+</section>
+
+</div><!-- /#tab-main -->
+
+<!-- ====== TAB PANEL: 毕业纪念册 · 案例合作 ====== -->
+<div id="tab-album" class="tab-panel">
+
+<section class="album-hero fade-in">
+  <div class="album-eyebrow" id="album-eyebrow">GRADUATION · CULTURE · EVENTS</div>
+  <h2 id="album-title">把一整届人的那一年，做成一本可以碰一碰的纪念册</h2>
+  <p id="album-desc">毕业季、世界文化节、企业团建——我们从这里起步。硬壳照片书内嵌 NFC 动态视频，全班 / 全团队共创，杂志级排版，一本只属于你们的深度定制纪念册。</p>
+  <a class="album-cta" href="https://hxiazi.taobao.com/" target="_blank" rel="noopener" id="album-cta">看毕业纪念册 →</a>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ====== 5.5 UNIFORM / STYLE WARDROBE ====== -->
+<section class="container fade-in" id="styles">
+  <div class="uniform-eyebrow" id="styles-eyebrow">SHOOT WARDROBE</div>
+  <h2 class="section-title" id="styles-title">不止学士服 · 风格定拍</h2>
+  <p class="section-desc" id="styles-desc">如果你需要我们派摄影师定拍，衣橱里还有几套别的——挑一种你想成为的样子！</p>
+
+  <div class="uniform-shelf">
+    <!-- 1. Bachelor — default -->
+    <div class="uniform-card is-default">
+      <span class="uniform-badge" id="style-bachelor-badge">默认</span>
+      <div class="uniform-media" data-zoom-group="style-bachelor">
+        <div class="uf-slide active"><img src="uniform/bachelor-default.jpg" alt="学士服合影风格" data-alt-zh="学士服合影风格" data-alt-en="Photolio product and customer photograph"></div>
+      </div>
+      <div class="uniform-info">
+        <h3 id="style-bachelor-name">学士服</h3>
+        <p class="uniform-tag" id="style-bachelor-tag">稳稳的毕业款，谁穿都不出错。</p>
+      </div>
+    </div>
+
+    <!-- 2. Hong Kong retro -->
+    <div class="uniform-card">
+      <div class="uniform-media" data-zoom-group="style-hongkong">
+        <div class="uf-slide active"><img src="uniform/hongkong-1.jpg" alt="港式怀旧校服风格" data-alt-zh="港式怀旧校服风格" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uf-slide"><img src="uniform/hongkong-2.jpg" alt="港式怀旧校服风格 备选" data-alt-zh="港式怀旧校服风格 备选" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uniform-dots">
+          <span class="uniform-dot active"></span>
+          <span class="uniform-dot"></span>
+        </div>
+      </div>
+      <div class="uniform-info">
+        <h3 id="style-hongkong-name">港式怀旧</h3>
+        <p class="uniform-tag" id="style-hongkong-tag">白衬衫格子裙，借一段港片青春。</p>
+      </div>
+    </div>
+
+    <!-- 3. British collegiate -->
+    <div class="uniform-card">
+      <div class="uniform-media" data-zoom-group="style-british">
+        <div class="uf-slide active"><img src="uniform/british.jpg" alt="英伦学院风风格" data-alt-zh="英伦学院风风格" data-alt-en="Photolio product and customer photograph"></div>
+      </div>
+      <div class="uniform-info">
+        <h3 id="style-british-name">英伦学院风</h3>
+        <p class="uniform-tag" id="style-british-tag">深色西装外套配领带，老派书院的腔调。</p>
+      </div>
+    </div>
+
+    <!-- 4. 80s retro -->
+    <div class="uniform-card">
+      <div class="uniform-media" data-zoom-group="style-retro80s">
+        <div class="uf-slide active"><img src="uniform/retro80s-1.jpg" alt="80年代怀旧风格" data-alt-zh="80年代怀旧风格" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uf-slide"><img src="uniform/retro80s-2.jpg" alt="80年代怀旧风格 备选" data-alt-zh="80年代怀旧风格 备选" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uf-slide"><img src="uniform/retro80s-3.jpg" alt="80年代怀旧风格 备选" data-alt-zh="80年代怀旧风格 备选" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uniform-dots">
+          <span class="uniform-dot active"></span>
+          <span class="uniform-dot"></span>
+          <span class="uniform-dot"></span>
+        </div>
+      </div>
+      <div class="uniform-info">
+        <h3 id="style-retro80s-name">80 年代复古</h3>
+        <p class="uniform-tag" id="style-retro80s-tag">彩色卫衣运动外套，回到爸妈年轻时。</p>
+      </div>
+    </div>
+
+    <!-- 5. Modern formal -->
+    <div class="uniform-card">
+      <div class="uniform-media" data-zoom-group="style-modern">
+        <div class="uf-slide active"><img src="uniform/modern-1.jpg" alt="现代正式风格" data-alt-zh="现代正式风格" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uf-slide"><img src="uniform/modern-2.jpg" alt="现代正式风格 备选" data-alt-zh="现代正式风格 备选" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uf-slide"><img src="uniform/modern-3.jpg" alt="现代正式风格 备选" data-alt-zh="现代正式风格 备选" data-alt-en="Photolio product and customer photograph"></div>
+        <div class="uniform-dots">
+          <span class="uniform-dot active"></span>
+          <span class="uniform-dot"></span>
+          <span class="uniform-dot"></span>
+        </div>
+      </div>
+      <div class="uniform-info">
+        <h3 id="style-modern-name">现代正式</h3>
+        <p class="uniform-tag" id="style-modern-tag">简洁西装通勤衬衫，干净利落的当下感。</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="uniform-foot" id="styles-foot">想要的风格不在这里？<span class="dot">·</span>告诉我们，按你的想象去拍。</p>
+</section>
+
+</div><!-- /#tab-album -->
+
+<!-- ====== TAB PANEL: 关于我们 · 可靠性 ====== -->
+<div id="tab-about" class="tab-panel">
+
+  <section class="about-intro fade-in">
+    <div class="about-eyebrow">关于画匣子</div>
+    <h2 class="section-title">存得住，更拿得走</h2>
+    <p class="section-desc">画匣子专注做一件事——把每个人的回忆，长久而完整地保存下来。下面是我们的存储架构、备份机制，以及公司本身。</p>
+  </section>
+
+  <section class="about-stat-band fade-in">
+    <div class="about-lead">云端一份，本地再存一份</div>
+    <p class="about-stat-cap">你的每一份回忆，都同时存在<b>阿里云</b>和我们<b>自己的本地服务器</b>上——一处出问题，另一处还在。</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="timeline fade-in">
+
+    <!-- 01 数据主权 -->
+    <div class="timeline-node">
+      <div class="t-text">
+        <div class="t-step">01 — 数据主权</div>
+        <h3>照片永远属于你，随时可以带走</h3>
+        <p>每一份照片和视频，都能在小程序里<b>一键下载原图</b>，存回自己的手机或电脑。云端一份、你手里也能有一份，导入导出完全由你掌控。</p>
+        <ul class="about-tick">
+          <li><b>原图原画质</b>导出，不压缩、不加水印。</li>
+          <li>回忆里的<b>文字与结构</b>也能一起打包带走。</li>
+        </ul>
+        <div class="about-key">你的回忆，随时可以完整带走。</div>
+      </div>
+      <div class="t-image">
+        <div class="diagram-card">
+          <svg viewBox="0 0 400 322" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans SC',sans-serif">
+            <!-- cloud -->
+            <!-- symmetric cloud: stroked layer, then fill layer on top to hide inner seams -->
+            <g fill="#F7F3EE" stroke="#C4A882" stroke-width="3" stroke-linejoin="round">
+              <rect x="146" y="86" width="108" height="30" rx="15"/>
+              <circle cx="164" cy="84" r="24"/><circle cx="236" cy="84" r="24"/>
+              <circle cx="184" cy="80" r="22"/><circle cx="216" cy="80" r="22"/>
+              <circle cx="200" cy="68" r="33"/>
+            </g>
+            <g fill="#F7F3EE">
+              <rect x="146" y="86" width="108" height="30" rx="15"/>
+              <circle cx="164" cy="84" r="24"/><circle cx="236" cy="84" r="24"/>
+              <circle cx="184" cy="80" r="22"/><circle cx="216" cy="80" r="22"/>
+              <circle cx="200" cy="68" r="33"/>
+            </g>
+            <text x="200" y="80" text-anchor="middle" font-size="14" fill="#3D2E1F" font-weight="600">你的照片</text>
+            <text x="200" y="99" text-anchor="middle" font-size="10" fill="#8B7A68">云端 · 原图</text>
+            <!-- arrow -->
+            <line x1="200" y1="142" x2="200" y2="170" stroke="#C4A882" stroke-width="2" stroke-dasharray="5 4"/>
+            <polygon points="200,180 192,168 208,168" fill="#C4A882"/>
+            <text x="214" y="160" font-size="11" fill="#8B7A68">一键下载原图</text>
+            <!-- phone -->
+            <g transform="translate(110,190)">
+              <rect x="0" y="0" width="72" height="106" rx="14" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="2"/>
+              <rect x="9" y="13" width="54" height="72" rx="5" fill="#F7F3EE"/>
+              <circle cx="26" cy="36" r="5.5" fill="#C4A882"/>
+              <path d="M13 63 L31 44 L44 57 L54 47 L61 63 Z" fill="#8B9A7E"/>
+              <rect x="27" y="93" width="18" height="4" rx="2" fill="#E8E0D4"/>
+            </g>
+            <text x="146" y="314" text-anchor="middle" font-size="11" fill="#6B5F52">手机</text>
+            <!-- laptop -->
+            <g transform="translate(212,206)">
+              <rect x="0" y="0" width="120" height="72" rx="8" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="2"/>
+              <rect x="10" y="10" width="100" height="52" rx="3" fill="#F7F3EE"/>
+              <circle cx="34" cy="30" r="6" fill="#C4A882"/>
+              <path d="M20 52 L44 32 L60 48 L78 34 L92 52 Z" fill="#8B9A7E"/>
+            </g>
+            <path d="M200 288 h150 a4 4 0 0 1 -4 6 h-142 a4 4 0 0 1 -4 -6 z" fill="#F7F3EE" stroke="#3D2E1F" stroke-width="1.6" stroke-linejoin="round"/>
+            <text x="272" y="314" text-anchor="middle" font-size="11" fill="#6B5F52">电脑</text>
+          </svg>
+        </div>
+        <p class="diagram-cap">云端原图 → 一键下载 → 你的手机 / 电脑</p>
+      </div>
+    </div>
+
+    <!-- 02 冗余与容灾 -->
+    <div class="timeline-node reverse">
+      <div class="t-text">
+        <div class="t-step">02 — 双重存储</div>
+        <h3>一份回忆，两个地方同时存着</h3>
+        <p>你的照片存在<b>阿里云的服务器</b>上，我们还在<b>自己的本地服务器</b>（异地）再备份一份。两处独立、互为兜底——一处出意外，另一处照样完整。</p>
+        <ul class="about-tick">
+          <li><b>异地双份</b>：云端 + 本地，物理上就分处两地。</li>
+          <li><b>全程加密</b>：数据传输走 HTTPS，本地备份落盘再加一层加密。</li>
+          <li><b>互为兜底</b>：任意一处出问题，另一处都是完整的一份。</li>
+        </ul>
+      </div>
+      <div class="t-image">
+        <div class="diagram-card">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans SC',sans-serif">
+            <!-- source memory -->
+            <g transform="translate(22,116)">
+              <rect x="0" y="0" width="64" height="64" rx="9" fill="#F7F3EE" stroke="#C4A882" stroke-width="2"/>
+              <circle cx="20" cy="22" r="6" fill="#D4836B"/>
+              <path d="M8 55 L26 34 L40 48 L52 36 L58 55 Z" fill="#8B9A7E"/>
+            </g>
+            <text x="54" y="198" text-anchor="middle" font-size="11" fill="#6B5F52">一份回忆</text>
+            <!-- arrows -->
+            <path d="M92 146 C150 146 152 76 204 76" fill="none" stroke="#C4A882" stroke-width="1.8"/>
+            <polygon points="205,76 194,71 196,82" fill="#C4A882"/>
+            <path d="M92 152 C150 152 152 224 204 224" fill="none" stroke="#C4A882" stroke-width="1.8"/>
+            <polygon points="205,224 194,219 196,230" fill="#C4A882"/>
+            <!-- 阿里云 -->
+            <rect x="208" y="40" width="168" height="76" rx="12" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="1.6"/>
+            <g transform="translate(224,60) scale(1.7)" fill="#F7F3EE" stroke="#C4A882" stroke-width="1" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></g>
+            <text x="286" y="74" font-size="12.5" fill="#3D2E1F" font-weight="600">阿里云</text>
+            <text x="286" y="93" font-size="10" fill="#8B7A68">云端 · 随时访问</text>
+            <!-- 本地服务器 -->
+            <rect x="208" y="184" width="168" height="76" rx="12" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="1.6"/>
+            <g transform="translate(224,200)" fill="#F7F3EE" stroke="#8B9A7E" stroke-width="1.6">
+              <rect x="0" y="0" width="36" height="13" rx="2.5"/><rect x="0" y="17" width="36" height="13" rx="2.5"/><rect x="0" y="34" width="36" height="13" rx="2.5"/>
+            </g>
+            <circle cx="230" cy="206.5" r="1.8" fill="#8B9A7E"/><circle cx="230" cy="223.5" r="1.8" fill="#8B9A7E"/><circle cx="230" cy="240.5" r="1.8" fill="#8B9A7E"/>
+            <text x="286" y="216" font-size="12.5" fill="#3D2E1F" font-weight="600">本地服务器</text>
+            <text x="286" y="235" font-size="10" fill="#8B7A68">异地 · 加密备份</text>
+          </svg>
+        </div>
+        <p class="diagram-cap">一份回忆 → 阿里云 + 本地服务器，两处各存一份</p>
+      </div>
+    </div>
+
+    <!-- 03 持续备份 -->
+    <div class="timeline-node">
+      <div class="t-text">
+        <div class="t-step">03 — 持续备份</div>
+        <h3>系统一直在为你的回忆做备份</h3>
+        <p>系统自动、持续地为你的回忆做备份：<b>账号与画匣子结构每小时增量备份一次</b>，<b>照片视频每天全量同步一次</b>——哪怕你昨天刚上传，今天就已经有备份。</p>
+        <ul class="about-tick">
+          <li><b>文字永久在线</b>：哪怕多年以后，回忆的文字与结构也一直都在。</li>
+          <li>任何数据转移，都<b>先确认备份完好</b>才执行——宁可不动，也绝不误删。</li>
+        </ul>
+      </div>
+      <div class="t-image">
+        <div class="diagram-card">
+          <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans SC',sans-serif">
+            <!-- 元数据 row -->
+            <text x="18" y="66" font-size="11" fill="#3D2E1F" font-weight="600">元数据</text>
+            <text x="18" y="82" font-size="9" fill="#9B8E7F">每小时</text>
+            <line x1="82" y1="64" x2="374" y2="64" stroke="#E0D6C8" stroke-width="2"/>
+            <g fill="#C4A882">
+              <circle cx="82" cy="64" r="3.4"/><circle cx="106" cy="64" r="3.4"/><circle cx="131" cy="64" r="3.4"/><circle cx="155" cy="64" r="3.4"/><circle cx="179" cy="64" r="3.4"/><circle cx="204" cy="64" r="3.4"/><circle cx="228" cy="64" r="3.4"/><circle cx="252" cy="64" r="3.4"/><circle cx="277" cy="64" r="3.4"/><circle cx="301" cy="64" r="3.4"/><circle cx="325" cy="64" r="3.4"/><circle cx="350" cy="64" r="3.4"/><circle cx="374" cy="64" r="3.4"/>
+            </g>
+            <!-- 媒体 row -->
+            <text x="18" y="146" font-size="11" fill="#3D2E1F" font-weight="600">媒体</text>
+            <text x="18" y="162" font-size="9" fill="#9B8E7F">每日</text>
+            <line x1="82" y1="144" x2="374" y2="144" stroke="#E0D6C8" stroke-width="2"/>
+            <text x="140" y="126" text-anchor="middle" font-size="9" fill="#3D2E1F">凌晨全量一次</text>
+            <g transform="translate(140,144)"><rect x="-7" y="-7" width="14" height="14" transform="rotate(45)" fill="#3D2E1F"/></g>
+            <!-- axis -->
+            <text x="82" y="192" font-size="9" fill="#9B8E7F">0h</text>
+            <text x="374" y="192" text-anchor="end" font-size="9" fill="#9B8E7F">24h</text>
+          </svg>
+        </div>
+        <p class="diagram-cap">元数据每小时、媒体每日的备份时刻表</p>
+      </div>
+    </div>
+
+    <!-- 04 退出承诺 -->
+    <div class="timeline-node reverse">
+      <div class="t-text">
+        <div class="t-step">04 — 数据可携带</div>
+        <h3>你的数据，永远可以迁出</h3>
+        <p>数据可携带是我们写进承诺的底线：服务如有任何重大变更，我们会<b>提前 30 天通知</b>，并提供<b>不少于 90 天的免费导出期</b>，确保你能完整取回全部原始照片与视频，一张不少。</p>
+        <p>你的回忆，进得来，也随时出得去。</p>
+      </div>
+      <div class="t-image">
+        <div class="diagram-card">
+          <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans SC',sans-serif">
+            <line x1="44" y1="88" x2="356" y2="88" stroke="#E0D6C8" stroke-width="2"/>
+            <line x1="70" y1="88" x2="196" y2="88" stroke="#C4A882" stroke-width="5" stroke-linecap="round"/>
+            <line x1="204" y1="88" x2="332" y2="88" stroke="#8B9A7E" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="70" cy="88" r="6" fill="#3D2E1F"/>
+            <text x="70" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F">提前通知</text>
+            <circle cx="200" cy="88" r="6" fill="#3D2E1F"/>
+            <text x="200" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F">导出期开始</text>
+            <circle cx="332" cy="88" r="6" fill="#3D2E1F"/>
+            <text x="332" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F">迁出完成</text>
+            <text x="133" y="112" text-anchor="middle" font-size="10" fill="#8C6014">提前 30 天通知</text>
+            <text x="268" y="112" text-anchor="middle" font-size="10" fill="#4E7350">≥ 90 天免费导出</text>
+          </svg>
+        </div>
+        <p class="diagram-cap">提前 30 天通知 · 不少于 90 天导出期</p>
+      </div>
+    </div>
+
+    <!-- 05 正规主体 -->
+    <div class="timeline-node">
+      <div class="t-text">
+        <div class="t-step">05 — 正规主体</div>
+        <h3>一家依法登记、依法备案的实体公司</h3>
+        <p>画匣子的运营主体是一家依法登记的公司，网站已通过工信部 ICP 备案。以下信息均可在国家企业信用信息公示系统和工信部备案系统查询核实。</p>
+        <dl class="reg-list">
+          <div><dt>公司全称</dt><dd>上海奏星人工智能科技有限责任公司</dd></div>
+          <div><dt>统一社会信用代码</dt><dd>91310104MAG2695N58</dd></div>
+          <div><dt>法定代表人</dt><dd>魏万韬</dd></div>
+          <div><dt>成立日期</dt><dd>2025 年 10 月 31 日</dd></div>
+          <div><dt>注册地址</dt><dd>上海市徐汇区古美路 1528 号 6 幢 9 层 904 室</dd></div>
+          <div><dt>ICP 备案号</dt><dd><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="reg-beian-link">沪ICP备2025153256号-2</a></dd></div>
+          <div><dt>备案网站名称</dt><dd>奏星画匣子（hxiazi.com）</dd></div>
+        </dl>
+      </div>
+      <div class="t-image">
+        <div class="license-card">
+          <img data-zoom src="about/business-license.jpg" alt="上海奏星人工智能科技有限责任公司 营业执照" data-alt-zh="上海奏星人工智能科技有限责任公司 营业执照" data-alt-en="Photolio product and customer photograph">
+        </div>
+        <p class="diagram-cap">点击查看营业执照大图</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="about-company fade-in">
+    <div class="ac-eyebrow">关于我们</div>
+    <p class="ac-body">画匣子由 <b>奇绩创坛</b>（国内知名科技孵化器）投资孵化，创始团队来自 <b>斯坦福大学</b>、<b>波士顿大学</b> 与 <b>中山大学</b>，并先后与 <b>北京语言大学</b>、<b>中国地质大学（北京）</b> 等院校达成合作。我们长期专注于一件事：把每个人的回忆，长久而完整地保存下来。</p>
+    <div class="ac-legal">
+      <div class="ac-legal-row"><span class="ac-legal-k">运营主体</span><span class="ac-legal-v">上海奏星人工智能科技有限责任公司</span></div>
+      <div class="ac-legal-row"><span class="ac-legal-k">网站备案</span><span class="ac-legal-v"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></span></div>
+      <div class="ac-legal-row"><span class="ac-legal-k">服务域名</span><span class="ac-legal-v">hxiazi.com</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ====== 6. CTA (两个 Tab 共享) ====== -->
+<section class="cta-section" id="contact">
+  <h2 id="cta-title">现在，把回忆碰一碰</h2>
+  <p id="cta-desc">先进画匣子体验，或按你的场景挑一条路径。</p>
+
+  <button type="button" class="cta-primary" onclick="openModal('versionModal')" id="cta-primary-btn">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+    <span id="cta-primary-label">立即体验画匣子</span>
+  </button>
+
+  <div class="cta-paths">
+    <button type="button" class="cta-path" onclick="openModal('taobaoModal')">
+      <svg class="p-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9z"/>
+      </svg>
+      <span class="p-q" id="cta-path1-q">我想买实体 NFC 礼品</span>
+      <span class="p-a">
+        <span id="cta-path1-a">进淘宝店</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </button>
+    <button type="button" class="cta-path" onclick="highlightContacts()">
+      <svg class="p-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      <span class="p-q" id="cta-path2-q">我想了解文化活动批量合作</span>
+      <span class="p-a">
+        <span id="cta-path2-a">联系我们</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </button>
+    <button type="button" class="cta-path" onclick="switchTab('album')">
+      <svg class="p-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </svg>
+      <span class="p-q" id="cta-path3-q">我要做毕业纪念册</span>
+      <span class="p-a">
+        <span id="cta-path3-a">查看纪念册</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </button>
+  </div>
+
+  <div class="contact-row" id="contact-row">
+    <!-- Taobao -->
+    <button class="contact-icon-btn" onclick="openModal('taobaoModal')">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9z"/></svg>
+      </div>
+      <span class="icon-label" id="contact-taobao">淘宝</span>
+    </button>
+    <!-- WeChat -->
+    <button class="contact-icon-btn" onclick="openModal('wechatModal')">
+      <div class="icon-circle">
+        <svg viewBox="0 0 1024 1024"><path d="M664.250054 368.541681c10.015098 0 19.892049 0.732687 29.67281 1.795902-26.647917-122.810047-159.358451-214.077703-310.826188-214.077703-169.353083 0-308.085774 114.232694-308.085774 259.274068 0 83.708494 46.165436 152.460344 123.281791 205.78483l-30.80868 91.730191 107.688651-53.455469c38.558178 7.53665 69.459978 15.308661 107.924012 15.308661 9.66308 0 19.230993-0.470721 28.752858-1.225921-6.025227-20.36584-9.521864-41.723264-9.521864-63.862493C402.328693 476.632491 517.908058 368.541681 664.250054 368.541681zM498.62897 285.87389c23.200398 0 38.557154 15.120372 38.557154 38.061874 0 22.846334-15.356756 38.156018-38.557154 38.156018-23.107277 0-46.260603-15.309684-46.260603-38.156018C452.368366 300.994262 475.522716 285.87389 498.62897 285.87389zM283.016307 362.090758c-23.107277 0-46.402843-15.309684-46.402843-38.156018 0-22.941502 23.295566-38.061874 46.402843-38.061874 23.081695 0 38.46301 15.120372 38.46301 38.061874C321.479317 346.782098 306.098002 362.090758 283.016307 362.090758zM945.448458 606.151333c0-121.888048-123.258255-221.236753-261.683954-221.236753-146.57838 0-262.015505 99.348706-262.015505 221.236753 0 122.06508 115.437126 221.200938 262.015505 221.200938 30.66644 0 61.617359-7.609305 92.423993-15.262612l84.513836 45.786813-23.178909-76.17082C899.379213 735.776599 945.448458 674.90216 945.448458 606.151333zM598.803483 567.994292c-15.332197 0-30.807656-15.096836-30.807656-30.501688 0-15.190981 15.47546-30.477129 30.807656-30.477129 23.295566 0 38.558178 15.286148 38.558178 30.477129C637.361661 552.897456 622.099049 567.994292 598.803483 567.994292zM768.25071 567.994292c-15.213493 0-30.594809-15.096836-30.594809-30.501688 0-15.190981 15.381315-30.477129 30.594809-30.477129 23.107277 0 38.558178 15.286148 38.558178 30.477129C806.808888 552.897456 791.357987 567.994292 768.25071 567.994292z"/></svg>
+      </div>
+      <span class="icon-label" id="contact-wechat">微信</span>
+    </button>
+    <!-- QQ -->
+    <button class="contact-icon-btn" onclick="openModal('qqModal')">
+      <div class="icon-circle">
+        <svg viewBox="0 0 1024 1024"><path d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z"/></svg>
+      </div>
+      <span class="icon-label" id="contact-qq">QQ</span>
+    </button>
+    <!-- Feishu -->
+    <button class="contact-icon-btn" onclick="openModal('feishuModal')">
+      <div class="icon-circle">
+        <svg viewBox="0 0 1024 1024"><path d="M512 0c282.76736 0 512 229.23264 512 512s-229.23264 512-512 512S0 794.76736 0 512 229.23264 0 512 0zM224.03072 421.59104l-0.03072 7.08096 0.4096 186.0096-0.23552 37.09952 0.26624 15.8976 0.29184 5.43232 0.41984 3.74272 0.08192 0.4608c0.0512 0.29184 0.11264 0.54784 0.17408 0.77824 1.1776 4.42368 3.72224 8.2432 7.64416 11.79136 3.47648 3.14368 7.74144 5.91872 14.21824 9.48736 31.46752 17.26976 61.6448 29.952 92.3904 38.62016 31.83616 8.97536 64.68608 13.77792 100.12672 14.54592 36.62336 0.7936 70.79936-3.02592 104.2176-11.50464 32-8.12032 63.69792-20.61312 97.18272-38.02624 24.92928-12.96896 52.0704-33.23392 76.96896-57.216l8.82688-8.76032 8.48896-8.94464 3.44576-3.88096-1.95584 1.1264-7.22432 3.67616-2.62656 1.24416c-28.04736 12.99456-57.18528 16.68096-89.65632 12.78464l-9.90208-1.37216-9.82528-1.7408-2.4832-0.512-2.5088-0.53248-10.3936-2.4576-2.71872-0.70144-2.77504-0.73728-11.80672-3.35872-2.09408-0.62464c-1.408-0.41984-2.8416-0.85504-4.31104-1.3056l-21.78048-6.95296-10.61888-3.5328-31.03744-11.21792-15.2576-5.7344-13.03552-5.07904-6.9632-2.85696-7.40864-3.34336-0.70144-0.35328a22.59968 22.59968 0 0 1-2.09408-1.19296l-10.0352-5.01248-26.25536-12.30336-16.32768-8.07424-5.85728-3.05152c-29.27616-15.44192-58.2144-33.7152-86.9888-54.71744-27.76576-20.26496-55.21408-42.94656-82.79552-68.16256l-13.80864-12.82048-3.64032-3.69664z m553.72288-7.5008l-10.3936 0.21504-3.97824 0.2048a230.64576 230.64576 0 0 0-46.27456 7.36768 215.62368 215.62368 0 0 0-40.13568 15.24736 229.7856 229.7856 0 0 0-37.248 23.31136l-6.50752 5.11488-1.5872 1.28-1.57696 1.3056-6.36928 5.43232-6.72768 6.0416-7.45472 6.96832-34.86208 33.85344-2.32448 2.21184c-16.8704 15.9744-29.45536 26.55232-43.93472 36.51584l-5.71904 3.84-15.09376 9.76896-2.17088 1.36704c-2.85184 1.792-5.5552 3.45088-8.11008 4.98176l-7.53152 4.34176 11.02336 4.3776 32.4352 12.1088 20.10112 7.1424 22.68672 7.38816 12.85632 3.95264 11.45856 3.26656 2.688 0.7168c2.65728 0.70656 5.2224 1.35168 7.72608 1.9456l9.72288 2.12992 2.36544 0.4608 2.34496 0.4352 9.35424 1.4848 2.3552 0.3072 2.37056 0.30208c30.6432 3.68128 57.8304 0.02048 83.98336-12.66176 33.47968-16.24064 49.3056-32.82944 71.41376-73.24672l7.2192-13.58336 11.38176-22.23104 4.99712-9.61536 1.536-2.93376c15.29344-28.96896 26.82368-46.68416 42.68032-63.05792l1.54624-1.5872-3.71712-1.42848-4.5568-1.63328-9.50784-3.1488-8.13056-2.42176-3.66592-0.96256a229.76512 229.76512 0 0 0-46.30016-6.656l-10.368-0.22016zM332.4672 272.64l9.1136 6.56384 12.90752 9.48224 5.1712 3.88096a809.55392 809.55392 0 0 1 42.68544 34.47808 730.65984 730.65984 0 0 1 55.808 53.9648c16.384 17.55136 30.5664 33.78176 43.63776 50.0224 10.24 12.71808 19.968 25.64096 29.50656 39.22432l11.19232 16.44032 18.08384 28.75904 11.2896-10.47552 17.11616-16.39424 9.8304-9.22112 12.94336-11.84256 3.00032-2.6624a403.51744 403.51744 0 0 1 25.61536-20.9408c7.12704-5.33504 15.616-10.56768 25.02656-15.50848a268.47744 268.47744 0 0 1 20.0192-9.4208l11.42272-4.51584 6.1952-2.05312-0.1536-0.91136-0.33792-1.37728c-1.42336-5.63712-3.82464-12.7744-7.00416-20.92032l-4.55168-11.1104-1.05472-2.4576c-7.1168-16.3584-15.64672-33.2544-22.03648-43.776l-12.83584-19.85536-7.08096-10.35264-1.2032-1.6896c-9.5488-13.27104-17.11616-21.36064-23.57248-24.32-4.35712-2.00192-8.14592-2.7648-14.73024-2.93888h-7.64416l-5.51936 0.08192-260.74624-0.03584-2.09408-0.11776z"/></svg>
+      </div>
+      <span class="icon-label" id="contact-feishu">飞书</span>
+    </button>
+    <!-- Xiaohongshu -->
+    <button class="contact-icon-btn" onclick="openModal('xhsModal')">
+      <div class="icon-circle">
+        <svg viewBox="0 0 1024 1024"><path d="M787.456 442.368h-18.944v41.984h27.136V450.56c0-4.608-3.584-8.192-8.192-8.192z"/><path d="M512 0C229.376 0 0.512 229.376 0.512 512S229.376 1024 512 1024s511.488-228.864 511.488-512c0-282.624-228.864-512-511.488-512z m342.528 414.72c0-14.336 11.776-26.112 26.112-26.112s26.112 11.776 26.112 26.112-11.776 26.112-26.112 26.112h-26.112V414.72zM394.24 460.8l44.032-88.576h51.712l-36.864 70.656c-1.536 3.584 0.512 7.168 4.608 7.168h3.072l3.072-6.144h51.712l-44.544 87.04c-1.536 3.584 0.512 7.168 4.608 7.168h29.696l-23.552 43.008H421.888c-25.6-1.024-9.728-32.256-9.728-32.256l27.136-55.808h-35.84C378.368 492.032 394.24 460.8 394.24 460.8z m-248.32 162.816l-29.696-54.272s17.408-54.272 12.8-125.952H184.32s0.512 163.328-38.4 180.224z m126.976-11.776s-1.536 40.448-36.864 40.448h-17.408s-34.304-3.584-34.304-44.032h34.816V371.712h53.76v240.128z m34.816-168.448h54.784c-4.608 71.68 12.8 125.952 12.8 125.952l-29.696 54.272c-38.4-16.896-37.888-180.224-37.888-180.224z m79.872 208.896c-9.216 0-13.312-6.144-13.312-6.144l26.624-51.2c4.608 4.608 10.752 3.584 10.752 3.584h70.144l-28.16 53.76H387.584z m275.968-0.512H481.792l25.6-51.712h51.2V443.392h-34.304V388.608h121.856v54.784h-33.792v156.672h51.712v51.712z m198.656 0h-13.824c-25.088 0-45.056-19.968-45.056-45.056h50.176v-56.32c0-7.168-5.632-12.8-12.8-12.8h-72.192v114.176h-52.736V537.6h-52.736V483.84h52.736v-41.984h-33.28V388.608h33.28v-16.896h52.736v16.896h20.48c33.28 0 59.904 26.624 59.904 59.904v35.328h6.144c28.672 0 51.712 23.04 51.712 51.712v71.168c0.512 25.088-19.456 45.056-44.544 45.056z"/></svg>
+      </div>
+      <span class="icon-label" id="contact-xhs">小红书</span>
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left" id="footer-copy">© 2026 画匣子 PHOTOLIO. All rights reserved.</div>
+    <ul class="footer-links">
+      <li><a href="#" id="footer-privacy" onclick="openModal('privacyModal'); return false;">隐私协议</a></li>
+      <li><a href="#" id="footer-terms" onclick="openModal('termsModal'); return false;">用户协议</a></li>
+    </ul>
+  </div>
+  <!-- ICP 备案信息：必须可点击跳转工信部查询系统，不可只写纯文本 -->
+  <div class="footer-beian">
+    <span class="fb-entity" id="footer-beian-entity">上海奏星人工智能科技有限责任公司</span>
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a>
+  </div>
+</footer>
+
+<!-- TAOBAO MODAL -->
+<div class="modal-overlay" id="taobaoModal">
+  <div class="modal modal-sm">
+    <button class="modal-close" onclick="closeModal('taobaoModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-taobao-title">进入淘宝店</h2>
+    <div class="wechat-modal-content">
+      <p id="modal-taobao-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">手机淘宝扫一扫，进入「画匣子礼物」淘宝店</p>
+      <img src="about/taobao-qr.jpg" alt="画匣子淘宝店二维码" data-alt-zh="画匣子淘宝店二维码" data-alt-en="Photolio QR code" style="width: 200px; border-radius: 8px; margin: 0 auto; display: block;">
+      <p class="wechat-hint" id="modal-taobao-hint" style="margin-top: 16px;">或直接打开 <a href="https://hxiazi.taobao.com/" target="_blank" rel="noopener noreferrer">hxiazi.taobao.com</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- VERSION SELECT MODAL (小程序 / H5) -->
+<div class="modal-overlay" id="versionModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('versionModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-version-title">选择体验版本</h2>
+    <p id="modal-version-desc" style="font-size:.85rem; color:var(--text-secondary); margin-bottom:6px;">两个版本内容一致，按你的设备挑一个即可。</p>
+    <div class="version-cards">
+      <button type="button" class="version-card primary" onclick="toggleMpQr()">
+        <span class="vc-icon">
+          <svg viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor"><path d="M664.25 368.54c10.02 0 19.89.73 29.67 1.8-26.65-122.81-159.36-214.08-310.83-214.08-169.35 0-308.09 114.23-308.09 259.27 0 83.71 46.17 152.46 123.28 205.78l-30.81 91.73 107.69-53.45c38.56 7.54 69.46 15.31 107.92 15.31 9.66 0 19.23-.47 28.75-1.23-6.03-20.37-9.52-41.72-9.52-63.86 0-133.28 115.58-241.37 261.92-241.37zM498.63 285.87c23.2 0 38.56 15.12 38.56 38.06 0 22.85-15.36 38.16-38.56 38.16-23.11 0-46.26-15.31-46.26-38.16 0-22.94 23.15-38.06 46.26-38.06zM283.02 362.09c-23.11 0-46.4-15.31-46.4-38.16 0-22.94 23.29-38.06 46.4-38.06 23.08 0 38.46 15.12 38.46 38.06 0 22.85-15.38 38.16-38.46 38.16zM945.45 606.15c0-121.89-123.26-221.24-261.68-221.24-146.58 0-262.02 99.35-262.02 221.24 0 122.07 115.44 221.2 262.02 221.2 30.67 0 61.62-7.61 92.42-15.26l84.51 45.79-23.18-76.17c61.68-45.93 107.75-106.8 107.75-175.56zM598.8 567.99c-15.33 0-30.81-15.1-30.81-30.5 0-15.19 15.48-30.48 30.81-30.48 23.3 0 38.56 15.29 38.56 30.48 0 15.4-15.26 30.5-38.56 30.5zM768.25 567.99c-15.21 0-30.59-15.1-30.59-30.5 0-15.19 15.38-30.48 30.59-30.48 23.11 0 38.56 15.29 38.56 30.48 0 15.4-15.45 30.5-38.56 30.5z"/></svg>
+        </span>
+        <span class="vc-text">
+          <span class="vc-title" id="vc-mp-title">微信小程序版 <span class="vc-tag" id="vc-mp-tag">推荐</span></span>
+          <span class="vc-desc" id="vc-mp-desc">微信直接打开，碰一碰 NFC 即进入。</span>
+        </span>
+      </button>
+      <div class="vc-qr show" id="mp-qr">
+        <img src="about/miniprogram-qr.png" alt="画匣子微信小程序码" data-alt-zh="画匣子微信小程序码" data-alt-en="Photolio product and customer photograph" onerror="this.style.display='none';var h=document.getElementById('vc-mp-hint');if(h)h.textContent='请将小程序码图片保存为 about/miniprogram-qr.png；或在微信搜索「画匣子」小程序';">
+        <p id="vc-mp-hint">微信扫码 / 长按识别，进入画匣子小程序</p>
+      </div>
+      <a class="version-card" href="https://hxiazi.com" target="_blank" rel="noopener">
+        <span class="vc-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+        </span>
+        <span class="vc-text">
+          <span class="vc-title" id="vc-h5-title">H5 网页版</span>
+          <span class="vc-desc" id="vc-h5-desc">电脑 / 非微信浏览器直接打开 hxiazi.com，无需安装。</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WECHAT MODAL -->
+<div class="modal-overlay" id="wechatModal">
+  <div class="modal modal-sm">
+    <button class="modal-close" onclick="closeModal('wechatModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-wechat-title">添加微信</h2>
+    <div class="wechat-modal-content">
+      <p id="modal-wechat-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">微信扫码添加，或长按识别二维码</p>
+      <img src="about/devwechat.png" alt="微信二维码" data-alt-zh="微信二维码" data-alt-en="Photolio QR code" style="width: 220px; border-radius: 8px; margin: 0 auto; display: block;">
+      <p class="wechat-hint" id="modal-wechat-hint" style="margin-top: 16px;">添加时请备注「回忆册咨询」</p>
+    </div>
+  </div>
+</div>
+
+<!-- QQ MODAL -->
+<div class="modal-overlay" id="qqModal">
+  <div class="modal modal-sm">
+    <button class="modal-close" onclick="closeModal('qqModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-qq-title">添加 QQ</h2>
+    <div class="wechat-modal-content">
+      <p id="modal-qq-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">QQ 扫码添加，或长按识别二维码</p>
+      <img src="about/devqq.jpg" alt="QQ二维码" data-alt-zh="QQ二维码" data-alt-en="Photolio QR code" style="width: 220px; border-radius: 8px; margin: 0 auto; display: block;">
+      <p class="wechat-hint" style="margin-top: 16px;">QQ号：2549300089</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEISHU MODAL -->
+<div class="modal-overlay" id="feishuModal">
+  <div class="modal modal-sm">
+    <button class="modal-close" onclick="closeModal('feishuModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-feishu-title">添加飞书</h2>
+    <div class="wechat-modal-content">
+      <p id="modal-feishu-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">飞书扫码添加，或长按识别二维码</p>
+      <img src="about/devfeishu.png" alt="飞书二维码" data-alt-zh="飞书二维码" data-alt-en="Photolio QR code" style="width: 220px; border-radius: 8px; margin: 0 auto; display: block;">
+      <p class="wechat-hint" id="modal-feishu-hint" style="margin-top: 16px;">添加时请备注「回忆册咨询」</p>
+    </div>
+  </div>
+</div>
+
+<!-- XIAOHONGSHU MODAL -->
+<div class="modal-overlay" id="xhsModal">
+  <div class="modal modal-sm">
+    <button class="modal-close" onclick="closeModal('xhsModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-xhs-title">关注小红书</h2>
+    <div class="wechat-modal-content">
+      <p id="modal-xhs-desc" style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">小红书扫码关注，或搜索小红书号</p>
+      <img src="about/devxiaohongshu.jpg" alt="小红书二维码" data-alt-zh="小红书二维码" data-alt-en="Photolio QR code" style="width: 220px; border-radius: 8px; margin: 0 auto; display: block;">
+      <p class="wechat-hint" style="margin-top: 16px;">小红书号：11532310412</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('privacyModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-privacy-title">隐私保护协议</h2>
+    <p class="updated">最后更新：2026年8月</p>
+    <div class="legal-entity">
+      <div><span>个人信息处理者</span>上海奏星人工智能科技有限责任公司</div>
+      <div><span>服务名称</span>画匣子 PHOTOLIO（hxiazi.com）</div>
+      <div><span>ICP 备案号</span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></div>
+    </div>
+    <p>画匣子（PHOTOLIO，下称“我们”）由上海奏星人工智能科技有限责任公司运营，深知个人信息对您的重要性。我们将按照《中华人民共和国个人信息保护法》《中华人民共和国网络安全法》等法律法规的规定，保护您的个人信息及隐私安全。</p>
+    <h3>一、我们收集的信息</h3>
+    <p>在您使用画匣子服务时，我们可能会收集以下信息：</p>
+    <ul>
+      <li>您上传的照片、视频及文字内容</li>
+      <li>您的昵称和头像（用于多人协作时的身份识别）</li>
+      <li>设备信息和访问日志（用于服务优化和故障排查）</li>
+    </ul>
+    <h3>二、信息的使用</h3>
+    <p>您上传的所有内容仅用于生成您的回忆录成品，我们不会将您的照片、视频或文字内容用于以下任何用途：</p>
+    <ul>
+      <li>AI 模型训练</li>
+      <li>广告投放或商业推广</li>
+      <li>向任何第三方出售或分享</li>
+      <li>未经您许可的任何其他用途</li>
+    </ul>
+    <h3>三、信息的存储与保护</h3>
+    <p>我们采用行业标准的安全措施保护您的数据。您的内容存储在安全的云服务器上，仅授权人员可以访问，且仅在提供服务所必需时访问。</p>
+    <h3>四、信息的删除</h3>
+    <p>您可以随时要求我们删除您上传的所有内容。收到删除请求后，我们将在 7 个工作日内完成删除，且不可恢复。</p>
+    <h3>五、未成年人保护</h3>
+    <p>我们高度重视未成年人的隐私保护。如果您是未满 18 周岁的未成年人，请在监护人的指导下使用我们的服务。涉及未成年人照片的内容，我们将格外谨慎处理，严格遵守《未成年人保护法》相关规定。</p>
+    <h3>六、协议更新</h3>
+    <p>我们可能会不定期更新本协议。更新后的协议将在本页面公布，重大变更时我们会通过显著方式通知您。</p>
+    <h3>七、联系我们</h3>
+    <p>如您对本协议有任何疑问，或需要行使查阅、复制、更正、删除个人信息等权利，请通过页面上的联系方式与我们取得联系。</p>
+    <p>运营主体：上海奏星人工智能科技有限责任公司<br>注册地址：上海市徐汇区古美路 1528 号 6 幢 9 层 904 室<br>ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></p>
+  </div>
+</div>
+
+<!-- TERMS MODAL -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('termsModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2 id="modal-terms-title">用户服务协议</h2>
+    <p class="updated">最后更新：2026年8月</p>
+    <div class="legal-entity">
+      <div><span>服务提供方</span>上海奏星人工智能科技有限责任公司</div>
+      <div><span>服务名称</span>画匣子 PHOTOLIO（hxiazi.com）</div>
+      <div><span>ICP 备案号</span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></div>
+    </div>
+    <p>欢迎使用画匣子（PHOTOLIO）提供的服务。本服务由上海奏星人工智能科技有限责任公司提供并运营。使用我们的服务即表示您同意以下条款。</p>
+    <h3>一、服务内容</h3>
+    <p>画匣子提供多人共创回忆录的在线平台服务，包括但不限于：照片和文字的上传与整合、回忆录的自动排版与生成、实体纪念册的印制与 NFC 功能嵌入。</p>
+    <h3>二、用户责任</h3>
+    <ul>
+      <li>您应确保上传的内容不侵犯他人的肖像权、著作权等合法权益</li>
+      <li>多人共创时，您应确保已获得其他参与者的知情同意</li>
+      <li>您不得上传违反法律法规或公序良俗的内容</li>
+    </ul>
+    <h3>三、知识产权</h3>
+    <p>您上传的原始内容（照片、文字）的知识产权归您所有。画匣子生成的排版设计的知识产权归画匣子所有，但您享有永久的、非排他性的使用权。</p>
+    <h3>四、服务费用</h3>
+    <p>在线回忆录生成功能免费使用。实体纪念册印制、NFC 嵌入等增值服务按照具体方案收费，具体价格以双方确认的订单为准。</p>
+    <h3>五、免责声明</h3>
+    <p>因不可抗力、第三方服务中断等非我们原因导致的服务中断或数据丢失，我们不承担赔偿责任，但会尽最大努力协助恢复。</p>
+    <h3>六、争议解决</h3>
+    <p>本协议适用中华人民共和国法律。如发生争议，双方应友好协商解决。</p>
+    <h3>七、联系方式</h3>
+    <p>如有疑问，请通过页面上的联系方式与我们取得联系。</p>
+    <p>服务提供方：上海奏星人工智能科技有限责任公司<br>统一社会信用代码：91310104MAG2695N58<br>注册地址：上海市徐汇区古美路 1528 号 6 幢 9 层 904 室<br>ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></p>
+  </div>
+</div>
+
+<!-- ====== LIGHTBOX ====== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <button type="button" class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Close">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <button type="button" class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button type="button" class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Next image">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<script>
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Modal
+  function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) { overlay.classList.remove('active'); document.body.style.overflow = ''; } });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active')); document.body.style.overflow = ''; }
+  });
+
+  // i18n
+  const i18n = {
+    zh: {
+      'logo-main': '',
+      'logo-sub': 'PHOTOLIO',
+      'nav-process': '服务流程',
+      'nav-reviews': '用户反馈',
+      'nav-products': '产品家族',
+      'nav-contact': '联系我们',
+      'hero-label': '多人共创回忆 · 一站式定制',
+      'hero-title': '那次聚会的照片，<br>还散在几十个人的手机里',
+      'hero-subtitle': '画匣子帮你和朋友、同学、家人一起，把散落在各自手机里的照片和感受，做成可以碰一碰就回来的精美礼品——纪念册、冰箱贴、钥匙扣，一站式定制。',
+      'trust-a-up': '世界文化节',
+      'trust-a-down': '第二十一届独家合作',
+      'trust-b-up': '奇绩创坛',
+      'trust-b-down': '孵化项目',
+      'trust-c-up': '北京语言大学',
+      'trust-c-down': '校内首批合作',
+      'process-title': '从一次拍照，到一份能反复回去的礼物',
+      'process-desc': '五个步骤，把每个人手机里散落的那天，拼回成一份完整的回忆。',
+      'node1-step': '01 — 那天',
+      'node1-title': '你们拍下了那天',
+      'node1-desc': '不管是毕业散伙、婚礼、文化节还是一次旅行——总有那么几天值得被好好记住。每个人的手机里都有那天的一角，但没有人把它们拼在一起。',
+      'node2-step': '02 — 一起加进来',
+      'node2-title': '发个链接，大家一起加进来',
+      'node2-desc': '在画匣子创建一份回忆，把链接发给所有人。每个人上传自己拍的照片、视频，写下当时的感受。不需要下载 App，手机直接打开。',
+      'node3-step': '03 — 我们来做',
+      'node3-title': '我们来排版、印刷、NFC 写入',
+      'node3-desc': '你们只需要提供内容，剩下的交给我们。杂志级排版设计，每一份都单独打磨，不用模板。选好产品形态，我们完成印刷和 NFC 芯片写入。',
+      'node4-step': '04 — 寄到你手上',
+      'node4-title': '精美礼品寄到你手上',
+      'node4-desc': '纪念册、冰箱贴、钥匙扣——不同场合选不同形态，都内嵌了 NFC 芯片。收到的那一刻，就是礼物。',
+      'node5-step': '05 — 碰一碰',
+      'node5-title': '手机碰一碰，随时回到那天',
+      'node5-desc': '不只是一个实体礼品。手机轻轻碰一下，当时的视频、音频、所有人写下的感受就全部活过来。一年后再碰，五年后再碰，还在。',
+      'scenarios-title': '适合哪些场合',
+      'scenarios-desc': '几乎所有值得被记住的“那一天”。',
+      'scenario1-title': '毕业纪念',
+      'scenario1-desc': '全班每人上传一张照片、写一句话，做成一本只属于你们班的毕业回忆录',
+      'scenario2-title': '团队活动',
+      'scenario2-desc': '拓展、团建、军训结束后，每个人上传自己的视角，拼出一份完整的活动记录',
+      'scenario3-title': '生日纪念',
+      'scenario3-desc': '朋友们各自写一段话、配上合照，做成一份收到就会感动的生日礼物',
+      'scenario4-title': '家庭聚会',
+      'scenario4-desc': '过年、寿宴、家庭旅行，让每一代人都留下自己的照片和故事',
+      'reviews-title': '来自真实用户的反馈',
+      'reviews-desc': '真实的购买场景，真实的评价——好评不全是好评，中评里也有我们要做的事。',
+      'review-a-name': '奇偶E',
+      'review-a-tag': '世界文化节 · 现场购买',
+      'review-a-body': '以为只是普通的冰箱贴，结果手机贴一下就能听到歌、看到视频，9.9 一个真的太划算了。买了两个，一个送对象一个自己留着。',
+      'review-b-name': '大红红金鱼',
+      'review-b-tag': '课程结业纪念册',
+      'review-b-body': '昨天收到快递忘拍拆封图了。今天白天我带它去上了最后一次户外课。',
+      'review-c-name': '言',
+      'review-c-tag': '文化节 · 批量购买',
+      'review-c-body': '在北语世界文化节看到这个小东西，特意买了 6 个给办公室同事。别人的礼物过几天就压箱底了，这个每天贴在冰箱上都能看见。',
+      'review-d-name': '52Hertz',
+      'review-d-tag': '旅游纪念定制',
+      'review-d-body': '好好欣赏了下。背面是与姥姥的合影，会好好收藏，怕磨损。NFC 在鸿蒙系统不是很方便，要是有小程序就好了。',
+      'review-d-reply': '<strong>商家回复：</strong>感谢您的反馈，我们后续新品会附赠保护套预防磨损，以及提供微信小程序的 NFC 支持！',
+      'review-e-name': '山椒鱼',
+      'review-e-tag': '旅行纪念定制',
+      'review-e-body': '带给同学们看了，她们很羡慕都围着这个册子拍照。打开后跟杂志一样的设计，每页都不一样，真的不像我以为的那种模板册。',
+      'products-title': '在售 NFC 礼品',
+      'products-desc': '手机碰一碰，回忆瞬间开启。以下均为小红书 / 抖店在售商品，点击直达下单。',
+      'tab-btn-main': 'NFC 礼品',
+      'tab-btn-album': '毕业纪念册',
+      'tab-btn-about': '关于我们',
+      'album-eyebrow': 'GRADUATION · CULTURE · EVENTS',
+      'album-title': '把一整届人的那一年，做成一本可以碰一碰的纪念册',
+      'album-desc': '毕业季、世界文化节、企业团建——我们从这里起步。硬壳照片书内嵌 NFC 动态视频，全班 / 全团队共创，杂志级排版，一本只属于你们的深度定制纪念册。',
+      'album-cta': '看毕业纪念册 →',
+      'cta-primary-label': '立即体验画匣子',
+      'hero-cta-label': '立即体验画匣子',
+      'modal-version-title': '选择体验版本',
+      'modal-version-desc': '两个版本内容一致，按你的设备挑一个即可。',
+      'vc-mp-title': '微信小程序版 <span class="vc-tag" id="vc-mp-tag">推荐</span>',
+      'vc-mp-desc': '微信直接打开，碰一碰 NFC 即进入。',
+      'vc-mp-hint': '微信扫码 / 长按识别，进入画匣子小程序',
+      'vc-h5-title': 'H5 网页版',
+      'vc-h5-desc': '电脑 / 非微信浏览器直接打开 hxiazi.com，无需安装。',
+      'product-1-name': '纪念册',
+      'product-1-tag': '翻开是一本书，碰一下是那天。',
+      'product-1-fit-label': '适合',
+      'product-1-fit': '毕业 / 婚礼 / 深度定制',
+      'product-2-name': 'NFC 冰箱贴',
+      'product-2-tag': '贴在冰箱上，每天都看得到。',
+      'product-2-fit-label': '适合',
+      'product-2-fit': '文化节 / 批量礼品 / 送礼',
+      'product-3-name': 'NFC 钥匙扣',
+      'product-3-tag': '带在身上，随时碰一碰。',
+      'product-3-fit-label': '适合',
+      'product-3-fit': '日常纪念 / 个人化定制',
+      'products-pillar': '所有礼品共享同一个 NFC + 数字内容内核——买回家碰一碰，即进入画匣子小程序里的专属回忆页。',
+      'styles-eyebrow': '定拍风格 · SHOOT WARDROBE',
+      'styles-title': '不止学士服 · 风格定拍',
+      'styles-desc': '如果你需要我们派摄影师定拍，衣橱里还有几套别的——挑一种你想成为的样子，剩下的交给镜头。',
+      'style-bachelor-badge': '默认',
+      'style-bachelor-name': '学士服',
+      'style-bachelor-tag': '稳稳的毕业款，谁穿都不出错。',
+      'style-hongkong-name': '港式怀旧',
+      'style-hongkong-tag': '白衬衫格子裙，借一段港片青春。',
+      'style-british-name': '英伦学院风',
+      'style-british-tag': '深色西装外套配领带，老派书院的腔调。',
+      'style-retro80s-name': '80 年代复古',
+      'style-retro80s-tag': '彩色卫衣运动外套，回到爸妈年轻时。',
+      'style-modern-name': '现代正式',
+      'style-modern-tag': '简洁西装通勤衬衫，干净利落的当下感。',
+      'styles-foot': '想要的风格不在这里？告诉我们，按你的想象去拍。',
+      'cta-title': '现在，把回忆碰一碰',
+      'cta-desc': '先进画匣子体验，或按你的场景挑一条路径。',
+      'cta-path1-q': '我想买实体 NFC 礼品',
+      'cta-path1-a': '进入店铺',
+      'cta-path2-q': '我想了解文化活动批量合作',
+      'cta-path2-a': '联系我们',
+      'cta-path3-q': '我要做毕业纪念册',
+      'cta-path3-a': '查看纪念册',
+      'contact-wechat': '微信',
+      'contact-qq': 'QQ',
+      'contact-feishu': '飞书',
+      'contact-xhs': '小红书',
+      'footer-copy': '© 2026 画匣子 PHOTOLIO. All rights reserved.',
+      'footer-privacy': '隐私协议',
+      'footer-terms': '用户协议',
+      'modal-wechat-title': '添加微信',
+      'modal-wechat-desc': '微信扫码添加，或长按识别二维码',
+      'modal-wechat-hint': '添加时请备注「回忆册咨询」',
+      'modal-qq-title': '添加 QQ',
+      'modal-qq-desc': 'QQ 扫码添加，或长按识别二维码',
+      'modal-feishu-title': '添加飞书',
+      'modal-feishu-desc': '飞书扫码添加，或长按识别二维码',
+      'modal-feishu-hint': '添加时请备注「回忆册咨询」',
+      'modal-xhs-title': '关注小红书',
+      'modal-xhs-desc': '小红书扫码关注，或搜索小红书号',
+      'modal-privacy-title': '隐私保护协议',
+      'modal-terms-title': '用户服务协议',
+      'lang-toggle': 'EN',
+    },
+    en: {
+      'logo-main': 'Photolio',
+      'logo-sub': '',
+      'nav-process': 'How It Works',
+      'nav-reviews': 'Reviews',
+      'nav-products': 'Product Family',
+      'nav-contact': 'Contact',
+      'hero-label': 'Co-created memories · End-to-end custom',
+      'hero-title': 'The photos from that day<br>are still scattered across dozens of phones.',
+      'hero-subtitle': 'Photolio helps you, your friends, classmates, and family pull together the photos and feelings from everyone\'s phones into beautiful keepsakes you can bring back with a tap — memory books, fridge magnets, keychains, all customized end-to-end.',
+      'trust-a-up': 'World Culture Festival',
+      'trust-a-down': '21st edition · Exclusive partner',
+      'trust-b-up': 'MiraclePlus',
+      'trust-b-down': 'Incubated startup',
+      'trust-c-up': 'Beijing Language University',
+      'trust-c-down': 'First on-campus partner',
+      'process-title': 'From a few photos to a gift you can return to, again and again',
+      'process-desc': 'Five steps to gather everyone\'s scattered fragments of that day into one complete memory.',
+      'node1-step': '01 — That Day',
+      'node1-title': 'You took the photos',
+      'node1-desc': 'Graduation, weddings, festivals, a trip — some days deserve to be remembered well. Everyone has a corner of that day in their phone, but nobody puts the pieces together.',
+      'node2-step': '02 — Bring Everyone In',
+      'node2-title': 'Send a link. Everyone joins in.',
+      'node2-desc': 'Create a memory on Photolio and share the link with everyone. Each person uploads their own photos and videos, writes how they felt — no app to download, just open it on the phone.',
+      'node3-step': '03 — Our Part',
+      'node3-title': 'We handle layout, printing, NFC',
+      'node3-desc': 'You provide the content, we do the rest. Magazine-quality design — every album is individually crafted, no templates. Pick a form factor and we take care of printing and NFC writing.',
+      'node4-step': '04 — In Your Hands',
+      'node4-title': 'A beautiful keepsake arrives',
+      'node4-desc': 'Memory books, fridge magnets, keychains — different forms for different moments, all with NFC inside. The moment you open it, it\'s a gift.',
+      'node5-step': '05 — Tap to Return',
+      'node5-title': 'Tap your phone. Back to that day.',
+      'node5-desc': 'It\'s more than an object. A gentle tap and the videos, audio, everyone\'s words come back to life. Tap again a year from now, five years from now — it\'s still there.',
+      'scenarios-title': 'What occasions fit',
+      'scenarios-desc': 'Almost any day that deserves to be remembered.',
+      'scenario1-title': 'Graduation',
+      'scenario1-desc': 'Each classmate uploads a photo and a line — together they make a graduation memory book that belongs only to your class.',
+      'scenario2-title': 'Team Events',
+      'scenario2-desc': 'After offsites, team-building, or training, everyone uploads their angle to assemble one complete record of the event.',
+      'scenario3-title': 'Birthdays',
+      'scenario3-desc': 'Friends each write a note and add a photo together — a birthday gift that moves them the moment it arrives.',
+      'scenario4-title': 'Family Gatherings',
+      'scenario4-desc': 'New Year, milestone birthdays, family trips — every generation leaves their own photos and stories behind.',
+      'reviews-title': 'Real feedback from real users',
+      'reviews-desc': 'Real scenes of purchase, real reviews — not all five stars, and the middling ones tell us what to build next.',
+      'review-a-name': '奇偶E',
+      'review-a-tag': 'World Culture Festival · Booth',
+      'review-a-body': 'Thought it was just a fridge magnet. Turns out you tap your phone and you hear songs, see videos — at 9.9 yuan each it\'s a steal. Got two: one for my partner, one for me.',
+      'review-b-name': '大红红金鱼',
+      'review-b-tag': 'Class graduation album',
+      'review-b-body': 'Got the package yesterday and forgot to film the unboxing. Today I brought it with me to the last outdoor class of the term.',
+      'review-c-name': '言',
+      'review-c-tag': 'Festival · Bulk order',
+      'review-c-body': 'Saw this tiny thing at BLCU\'s World Culture Festival and bought six for my coworkers. Most gifts end up forgotten in a drawer — this one is on the fridge, you see it every day.',
+      'review-d-name': '52Hertz',
+      'review-d-tag': 'Travel keepsake',
+      'review-d-body': 'Spent a long while admiring it. The back has a photo with my grandma — I\'ll keep this carefully, worried about scratches. NFC on HarmonyOS isn\'t the smoothest; a mini-program would be great.',
+      'review-d-reply': '<strong>From us:</strong> Thanks for the feedback — upcoming versions will ship with a protective sleeve, and we\'re bringing WeChat mini-program NFC support.',
+      'review-e-name': '山椒鱼',
+      'review-e-tag': 'Travel memory book',
+      'review-e-body': 'Showed it to my classmates and they all crowded around to photograph it. Inside it looks like a magazine, every page different — nothing like the template books I expected.',
+      'products-title': 'NFC gifts on sale',
+      'products-desc': 'Tap your phone and the memory opens. All items below are on sale on Xiaohongshu / Douyin — tap a card to order.',
+      'tab-btn-main': 'NFC Gifts',
+      'tab-btn-album': 'Graduation Album',
+      'tab-btn-about': 'About Us',
+      'album-eyebrow': 'GRADUATION · CULTURE · EVENTS',
+      'album-title': 'Turn a whole class\'s whole year into a book you can tap',
+      'album-desc': 'Graduation, the World Culture Festival, corporate offsites — this is where we started. A hardcover photo book with NFC video inside, co-created by the whole class or team, magazine-grade layout — a deeply customized album that belongs only to you.',
+      'album-cta': 'See the graduation album →',
+      'cta-primary-label': 'Try Photolio now',
+      'hero-cta-label': 'Try Photolio now',
+      'modal-version-title': 'Choose a version',
+      'modal-version-desc': 'Both versions have the same content — pick the one for your device.',
+      'vc-mp-title': 'WeChat Mini-Program <span class="vc-tag" id="vc-mp-tag">Recommended</span>',
+      'vc-mp-desc': 'Opens right in WeChat — tap the NFC to enter.',
+      'vc-mp-hint': 'Scan / long-press in WeChat to open the Photolio mini-program',
+      'vc-h5-title': 'H5 Web Version',
+      'vc-h5-desc': 'Open hxiazi.com on a computer or any browser — no install needed.',
+      'product-1-name': 'Memory Book',
+      'product-1-tag': 'Open it like a book. Tap it and that day returns.',
+      'product-1-fit-label': 'For',
+      'product-1-fit': 'Graduation / Weddings / Deep custom work',
+      'product-2-name': 'NFC Fridge Magnet',
+      'product-2-tag': 'On the fridge. Seen every single day.',
+      'product-2-fit-label': 'For',
+      'product-2-fit': 'Festivals / Bulk gifts / Giveaways',
+      'product-3-name': 'NFC Keychain',
+      'product-3-tag': 'With you anywhere. Tap any time.',
+      'product-3-fit-label': 'For',
+      'product-3-fit': 'Everyday keepsakes / Personal use',
+      'products-pillar': 'Every gift shares the same NFC + digital-content core — tap it at home and you land on your own memory page inside the Photolio mini-program.',
+      'styles-eyebrow': 'SHOOT WARDROBE',
+      'styles-title': 'Beyond the bachelor\'s gown — pick a look',
+      'styles-desc': 'If you book one of our photographers for the shoot, there are a few other outfits in the wardrobe. Pick the version of yourself you want on camera; we\'ll handle the rest.',
+      'style-bachelor-badge': 'Default',
+      'style-bachelor-name': 'Bachelor\'s Gown',
+      'style-bachelor-tag': 'The classic graduation look — hard to go wrong.',
+      'style-hongkong-name': 'Hong Kong Retro',
+      'style-hongkong-tag': 'White shirts and plaid skirts — borrowed from a HK movie.',
+      'style-british-name': 'British Collegiate',
+      'style-british-tag': 'Dark blazer and tie — old-world boarding-school feel.',
+      'style-retro80s-name': '80s Throwback',
+      'style-retro80s-tag': 'Bright sweatshirts, sport jackets — back when our parents were young.',
+      'style-modern-name': 'Modern Formal',
+      'style-modern-tag': 'Clean suit or work shirt — sharp and contemporary.',
+      'styles-foot': 'Don\'t see the look you want? Tell us — we\'ll shoot to your imagination.',
+      'cta-title': 'Now — tap the memory back',
+      'cta-desc': 'Try Photolio first, or pick the path that matches your scenario.',
+      'cta-path1-q': 'I want to buy a physical NFC gift',
+      'cta-path1-a': 'Enter shop',
+      'cta-path2-q': 'I\'m interested in bulk partnerships for events',
+      'cta-path2-a': 'Contact us',
+      'cta-path3-q': 'I want a graduation memory book',
+      'cta-path3-a': 'See albums',
+      'contact-wechat': 'WeChat',
+      'contact-qq': 'QQ',
+      'contact-feishu': 'Lark',
+      'contact-xhs': 'Xiaohongshu',
+      'footer-copy': '© 2026 Photolio. All rights reserved.',
+      'footer-privacy': 'Privacy Policy',
+      'footer-terms': 'Terms of Service',
+      'modal-wechat-title': 'Add on WeChat',
+      'modal-wechat-desc': 'Scan the QR code or long-press to recognize it',
+      'modal-wechat-hint': 'Please note "Memory Book" when adding',
+      'modal-qq-title': 'Add on QQ',
+      'modal-qq-desc': 'Scan the QR code with QQ or long-press to recognize it',
+      'modal-feishu-title': 'Add on Lark',
+      'modal-feishu-desc': 'Scan the QR code with Lark or long-press to recognize it',
+      'modal-feishu-hint': 'Please note "Memory Book" when adding',
+      'modal-xhs-title': 'Follow on Xiaohongshu',
+      'modal-xhs-desc': 'Scan the QR code or search by Xiaohongshu ID',
+      'modal-privacy-title': 'Privacy Policy',
+      'modal-terms-title': 'Terms of Service',
+      'lang-toggle': '中文',
+    }
+  };
+
+  // HTML-only keys (contain <br> or other tags)
+  const htmlKeys = new Set(['hero-title', 'review-d-reply', 'vc-mp-title']);
+
+  const originalTitle = document.title;
+  const originalDescription = document.querySelector('meta[name=description]')?.content || '';
+  let savedLang = '';
+  try { savedLang = localStorage.getItem('pianyu_lang') || ''; } catch {}
+  let currentLang = ['zh', 'en'].includes(savedLang) ? savedLang : (/^zh/i.test(navigator.language || 'zh') ? 'zh' : 'en');
+
+  function applyLang(lang) {
+    const t = i18n[lang];
+    document.querySelectorAll('[data-static-zh]').forEach(el => { el.textContent = lang === 'zh' ? el.dataset.staticZh : el.dataset.staticEn; });
+    document.querySelectorAll('[data-alt-zh]').forEach(el => { el.alt = lang === 'zh' ? el.dataset.altZh : el.dataset.altEn; });
+    for (const [id, text] of Object.entries(t)) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (htmlKeys.has(id)) {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
+      el.style.display = text === '' ? 'none' : '';
+    }
+    // Toggle SVG logo vs text logo
+    const svgLogo = document.getElementById('logo-svg');
+    if (svgLogo) svgLogo.style.display = lang === 'zh' ? '' : 'none';
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = lang === 'zh' ? originalTitle : 'Photolio — Memories, one tap away';
+    const description = document.querySelector('meta[name=description]');
+    if (description) description.content = lang === 'zh' ? originalDescription : 'Keep shared memories in a card and relive them with a tap.';
+  }
+
+  function toggleLang() {
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    try { localStorage.setItem('pianyu_lang', currentLang); } catch {}
+    applyLang(currentLang);
+  }
+
+  applyLang(currentLang);
+
+  function highlightContacts() {
+    const row = document.getElementById('contact-row');
+    if (!row) return;
+    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    row.classList.remove('highlight');
+    void row.offsetWidth;
+    row.classList.add('highlight');
+    setTimeout(() => row.classList.remove('highlight'), 1100);
+  }
+
+  // ===== Tab switching (二分 Tab) =====
+  function switchTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    const panel = document.getElementById('tab-' + name);
+    const btn = document.getElementById('tab-btn-' + name);
+    if (panel) {
+      panel.classList.add('active');
+      panel.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
+    if (btn) btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try { history.replaceState(null, '', name === 'album' ? '#album' : location.pathname); } catch (e) {}
+  }
+
+  function toggleMpQr() {
+    const q = document.getElementById('mp-qr');
+    if (q) q.classList.toggle('show');
+  }
+
+  if (location.hash === '#album') switchTab('album');
+
+  // ===== Hero carousel =====
+  (function () {
+    const carousel = document.querySelector('.hero-carousel');
+    if (!carousel) return;
+    const slides = carousel.querySelectorAll('.slide');
+    const dots = carousel.querySelectorAll('.hero-dot');
+    if (!slides.length) return;
+    let idx = 0;
+    let timer = null;
+
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+      dots.forEach((d, k) => d.classList.toggle('active', k === idx));
+    }
+    function next() { show(idx + 1); }
+    function start() { stop(); timer = setInterval(next, 5000); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const i = parseInt(dot.dataset.slide, 10);
+        if (!Number.isNaN(i)) { show(i); start(); }
+      });
+    });
+
+    start();
+    // pause on hover
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+  })();
+
+  // ===== Product carousels =====
+  (function () {
+    document.querySelectorAll('.product-media').forEach((media, mediaIdx) => {
+      const slides = media.querySelectorAll('.pm-slide');
+      if (slides.length < 2) return;
+      let i = 0;
+      // stagger so they don't all flip at the same instant
+      setTimeout(() => {
+        setInterval(() => {
+          i = (i + 1) % slides.length;
+          slides.forEach((s, k) => s.classList.toggle('active', k === i));
+        }, 5000);
+      }, mediaIdx * 800);
+    });
+  })();
+
+  // ===== Uniform / style carousels =====
+  (function () {
+    document.querySelectorAll('.uniform-media').forEach((media, mediaIdx) => {
+      const slides = media.querySelectorAll('.uf-slide');
+      const dots = media.querySelectorAll('.uniform-dot');
+      if (slides.length < 2) return;
+      let i = 0;
+      setTimeout(() => {
+        setInterval(() => {
+          i = (i + 1) % slides.length;
+          slides.forEach((s, k) => s.classList.toggle('active', k === i));
+          dots.forEach((d, k) => d.classList.toggle('active', k === i));
+        }, 4500);
+      }, 400 + mediaIdx * 700);
+    });
+  })();
+
+  // ===== Lightbox =====
+  (function () {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    const imgEl = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    const counter = document.getElementById('lightbox-counter');
+
+    let group = [];
+    let cur = 0;
+
+    function render() {
+      const src = group[cur];
+      if (!src) return;
+      imgEl.src = src;
+      imgEl.alt = '';
+      counter.textContent = group.length > 1 ? (cur + 1) + ' / ' + group.length : '';
+      lb.dataset.single = group.length <= 1 ? 'true' : 'false';
+    }
+    function open(images, startIndex) {
+      group = images;
+      cur = startIndex || 0;
+      render();
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+      imgEl.src = '';
+    }
+    function step(d) {
+      if (group.length <= 1) return;
+      cur = (cur + d + group.length) % group.length;
+      render();
+    }
+
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'ArrowRight') step(1);
+    });
+
+    // Open handlers — delegate from document
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('img');
+      if (!img) return;
+      // Don't intercept clicks inside the lightbox itself
+      if (lb.contains(img)) return;
+
+      const groupEl = img.closest('[data-zoom-group]');
+      if (groupEl) {
+        const imgs = Array.from(groupEl.querySelectorAll('img'));
+        const sources = imgs.map(i => i.getAttribute('src')).filter(Boolean);
+        const idx = imgs.indexOf(img);
+        if (sources.length) {
+          e.preventDefault();
+          open(sources, Math.max(0, idx));
+        }
+        return;
+      }
+      if (img.hasAttribute('data-zoom')) {
+        e.preventDefault();
+        open([img.getAttribute('src')], 0);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

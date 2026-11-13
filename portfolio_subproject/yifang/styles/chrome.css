@@ -1,0 +1,27 @@
+/* Owner: chrome. Change this surface only; layout locks cover other pages. */
+.folio-bar { height:64px; position:sticky; top:0; z-index:35; display:flex; align-items:center; justify-content:space-between; gap:16px; padding-inline:var(--gutter); background:#151713; color:#f6f4e9; border-bottom:1px solid #ffffff24; }
+.folio-bar nav { display:flex; white-space:nowrap; align-items:center; gap:clamp(12px,3vw,42px); font-size:13px; }
+.folio-bar [type="button"]:hover { color:var(--acid); }
+.folio-bar .folio-mark { font-size:23px; font-weight:800; letter-spacing:-.05em; }
+.folio-bar--paper { background:var(--paper); color:var(--ink); border-color:var(--line); }
+.folio-bar--paper :is(.folio-mark span,.folio-resume span,[type="button"]:hover) { color:#546800; }
+.folio-bar--paper .folio-progress { background:#647a18; }
+.folio-mark span,.folio-resume span { color:var(--acid); }
+.folio-progress { position:absolute; bottom:0; left:0; width:100%; height:2px; background:var(--acid); transform-origin:left; }
+.folio-chapter { font:600 11px/1.35 'Courier New',monospace; letter-spacing:.12em; text-transform:uppercase; }
+.folio-bar[class*="folio-case--"] { background:var(--ground); color:var(--tone); border-color:var(--ground); }
+.folio-bar[class*="folio-case--"] :is(.folio-mark span,.folio-resume span) { color:var(--tone); }
+.folio-bar[class*="folio-case--"] .folio-progress { background:var(--tone); }
+.folio-site .folio-back-work[type="button"] { padding:5px 9px; font-size:inherit; line-height:1.3; color:var(--ground); background:var(--tone); border:1px solid var(--tone); border-radius:2px; }
+.folio-chapter { position:fixed; z-index:25; right:10px; bottom:12px; display:flex; gap:6px; padding:8px 9px; background:#151713; color:#f6f4e9; pointer-events:none; }
+.folio-chapter span:first-child { color:var(--acid); border-right:1px solid #a0aa82; padding-right:6px; }
+@media(max-width:400px) { .folio-bar nav { gap:9px; font-size:12px; } }
+.folio-chapter { max-width:min(42vw,280px); overflow:hidden; white-space:nowrap; text-overflow:ellipsis; display:block; }
+@media (orientation:portrait) {
+ .folio-chapter { visibility:hidden; }
+}
+@media (orientation:portrait) and (max-width:350px) {
+ .folio-bar { gap:8px; }
+ .folio-bar nav { gap:5px; font-size:10.5px; }
+ .folio-site .folio-back-work[type="button"] { padding-inline:6px; }
+}

@@ -1,0 +1,262 @@
+{
+  "name": "Yifang Wang",
+  "discipline": "Product strategy, design, and engineering.",
+  "statement": "I shape and build products, from their purpose and business model to the details of how they work.",
+  "projects": [
+    {
+      "id": "photolio",
+      "name": "Photolio",
+      "summary": "A physical home for digital memories. Product strategy, NFC interactions, and a publishing platform for stories people share.",
+      "title": "Giving shared memories a place in everyday life",
+      "lead": "Product strategy, design, and development for an NFC-connected platform that brings photographs, voices, and shared stories into physical keepsakes.",
+      "brief": [
+        "Develop a memory product around the moments people already celebrate and share. Connect a physical gift with a digital space where friends and family can contribute their own photographs, recordings, and words—and where the recipient can return to the story."
+      ],
+      "responseLabel": "Solution",
+      "response": [
+        "Working with my co-founder, I helped shape Photolio around NFC-connected keepsakes, bringing the object, its content, and the experience of giving it into one product. I led product and interaction design, built the frontend, and worked across backend integration and deployment.",
+        "The platform brings media collection, shared editing, and playback into a connected experience. An NFC-enabled object provides access to the story; the digital space gives that story room for multiple voices and formats. My work extended into product selection and promotional design, connecting what we built with how people would encounter and understand it.",
+        "I later extended the platform into personal publishing, allowing people to arrange existing content into their own public spaces. My portfolio became the first use case for this new direction."
+      ],
+      "caption": "",
+      "themes": [
+        {
+          "heading": "An object with a story inside",
+          "text": [
+            "A photograph can sit on a shelf. A recording can preserve a voice. Photolio brings them together through an object someone can give, keep, and revisit. I designed the interactions around preparing the content, inviting contributions, and opening the finished collection."
+          ],
+          "caption": "Physical keepsakes connected to photographs, video, audio, and shared writing."
+        },
+        {
+          "heading": "Designing for the way it reaches people",
+          "text": [
+            "We explored graduation keepsakes, event commissions, and partnerships with florists and photography studios. Each setting placed different demands on the product and its presentation. Conversations with prospective partners also brought service credibility and content preservation into focus, informing clearer business information on the website and changes to backup arrangements."
+          ],
+          "caption": "Product selection and communication developed alongside the digital experience."
+        },
+        {
+          "heading": "From a shared collection to a personal space",
+          "text": [
+            "The platform already supported storing, presenting, and sharing media. I used that foundation to develop configurable personal pages, with independent links, reusable layouts, and content drawn from existing collections. A portfolio offered a concrete first application: a way to present my work through a product I had helped build."
+          ],
+          "caption": "One media library, arranged for different stories and audiences."
+        },
+        {
+          "heading": "A clear path from choosing to publishing",
+          "text": [
+            "The editor separates selecting content, previewing it, and adding it to a page. Reusable content blocks support different formats, while viewing and editing permissions remain distinct. I developed these interactions directly in code, carrying the design through responsive layouts, media reading, and the deployed web experience."
+          ],
+          "caption": "Select, preview, arrange, and publish."
+        }
+      ],
+      "details": [
+        [
+          "Role",
+          "Co-founder & CTO, Product Design & Engineering"
+        ],
+        [
+          "Collaboration",
+          "Developed with my co-founder at Xiedao Renaissance"
+        ],
+        [
+          "Period",
+          "February 2026–present"
+        ],
+        [
+          "Scope",
+          "Product strategy, interaction design, frontend development, backend integration, deployment, promotional design"
+        ],
+        [
+          "Technology",
+          "Vue 3, TypeScript, uni-app, Python, NFC"
+        ]
+      ]
+    },
+    {
+      "id": "miaozhuang",
+      "name": "Miaozhuang",
+      "summary": "AI assistance built into the work of renovating a home. Product design and development across iOS, Android, and WeChat.",
+      "title": "Bringing AI into the work of renovating a home",
+      "lead": "Product design and cross-platform development connecting renovation advice with project plans, materials, and local service providers.",
+      "brief": [
+        "Introduce AI capabilities into an existing renovation platform. Give homeowners a connected way to plan work, document progress, and find relevant products and professionals, while fitting the platform’s established mobile experiences and client delivery requirements."
+      ],
+      "responseLabel": "Solution",
+      "response": [
+        "Working with my co-founder on Miaozhuang’s AI upgrade, I designed and developed interfaces across iOS, Android, and WeChat mini-programs. My work connected the assistant to renovation diaries and platform search, so a conversation could lead into a plan, a product page, or a service-provider profile.",
+        "I also built Python assistant workflows that bring project context and retrieved platform information into the conversation. Speech input and image-based material recognition provide additional ways to begin a task. Across these features, I focused on the relationship between what the assistant says and what the user can do next.",
+        "The completed engagement was accepted by the client."
+      ],
+      "caption": "",
+      "themes": [
+        {
+          "heading": "Advice with somewhere to go",
+          "text": [
+            "Product and provider recommendations appear as actionable cards built from platform records. The conversation provides context; the cards lead to the relevant information. I connected these elements across search, streamed responses, and conversation history, giving the assistant a practical role within the existing product."
+          ],
+          "caption": "From a question to a product or service-provider page."
+        },
+        {
+          "heading": "A plan organized around the home",
+          "text": [
+            "The renovation diary gives each project a structure of rooms and steps, with progress and media attached to the work they describe. I developed the interfaces and assistant integration around that structure, including the states that show when a plan is being generated, is ready, or needs another attempt."
+          ],
+          "caption": "Project, room, and task views bring the renovation into focus at different scales."
+        },
+        {
+          "heading": "A connected experience across three platforms",
+          "text": [
+            "I carried the interaction design into Swift, Kotlin, and uni-app implementations, aligning navigation, chat, diary behavior, and media input. Shared API contracts connected the clients to the same underlying workflows, while each implementation accounted for its platform’s behavior."
+          ],
+          "caption": "iOS, Android, and WeChat interfaces for the same renovation workflows."
+        }
+      ],
+      "details": [
+        [
+          "Role",
+          "Product Design & Engineering"
+        ],
+        [
+          "Engagement",
+          "Client project, undertaken with my co-founder"
+        ],
+        [
+          "Started",
+          "May 2026"
+        ],
+        [
+          "Delivery",
+          "Client acceptance completed"
+        ],
+        [
+          "Scope",
+          "Interaction design, cross-platform frontend development, Python assistant workflows, API integration"
+        ],
+        [
+          "Technology",
+          "Swift, Kotlin, uni-app, Python"
+        ]
+      ]
+    },
+    {
+      "id": "xiedao-renaissance",
+      "name": "Xiedao Renaissance",
+      "summary": "A writing assistant shaped around the writer’s intent. Conversational design, training-data development, and specialized language-model experiments.",
+      "title": "Making room for the writer’s intent",
+      "lead": "Conversational design and language-model experimentation for a writing assistant that helps people develop an idea through dialogue.",
+      "brief": [
+        "Develop an AI writing experience around the decisions that give a story its direction. Help writers articulate their ideas, explore a setting, and work through character motivations and narrative structure, with a specialized model suited to the venture’s computing resources."
+      ],
+      "responseLabel": "Approach",
+      "response": [
+        "I designed a conversational approach that begins with focused questions and builds on the writer’s answers. The interaction moves from an initial idea toward a more developed story, using each exchange to clarify choices about the world, its characters, and the events that connect them.",
+        "To support this direction, I built Python pipelines for collecting and organizing reference material, then preparing instruction and multi-turn conversation data. I experimented with Qwen fine-tuning through LLaMA-Factory and quantization using AWQ and GPTQ, bringing the interaction objective into the model-development process."
+      ],
+      "caption": "",
+      "themes": [
+        {
+          "heading": "The next question shapes the story",
+          "text": [
+            "The dialogue examples explore how an assistant can follow an idea across several levels: a character’s immediate goal, the rules of the setting, and the larger narrative. I used these examples to define the intended questioning behavior and guide training-data preparation."
+          ],
+          "caption": "A conversation structure for moving from an initial premise to a developed direction."
+        },
+        {
+          "heading": "Giving reference material a useful structure",
+          "text": [
+            "Worldbuilding material contains characters, places, events, and relationships. I developed tools to process those different forms, classify text, and prepare Alpaca and ShareGPT records. This work connected the organization of the source material with the kinds of exchanges the assistant was intended to support."
+          ],
+          "caption": "Reference material, structured records, and multi-turn training examples."
+        },
+        {
+          "heading": "Specialization within practical limits",
+          "text": [
+            "Model experiments ran on rented GPU infrastructure, including an RTX 4090 instance. Fine-tuning and quantization formed part of the exploration of a writing-focused model: how to shape its behavior and make it practical to run within the resources available."
+          ],
+          "caption": "Applied model experiments supporting a defined product direction."
+        }
+      ],
+      "details": [
+        [
+          "Role",
+          "Co-founder, Product & Technical Development"
+        ],
+        [
+          "Context",
+          "Early AI-writing work at Xiedao Renaissance"
+        ],
+        [
+          "Stage",
+          "Product exploration and model experiments"
+        ],
+        [
+          "Scope",
+          "Conversational design, data pipelines, training-example development, fine-tuning and quantization experiments"
+        ],
+        [
+          "Technology",
+          "Python, Qwen, LLaMA-Factory, Alpaca, ShareGPT, AWQ, GPTQ"
+        ]
+      ]
+    },
+    {
+      "id": "brookline",
+      "name": "Brookline Interactive Group",
+      "summary": "A more direct path from recorded meetings to public access. Workflow automation for community media.",
+      "title": "From a recorded meeting to a public resource",
+      "lead": "Python automation for a recurring municipal-video publishing workflow at Brookline Interactive Group.",
+      "brief": [
+        "Support the recurring work of making municipal meeting recordings available through the organization’s publishing system, alongside the demands of live media production."
+      ],
+      "responseLabel": "Solution",
+      "response": [
+        "During my media internship, I developed a Python and Selenium workflow to download, process, and upload meeting videos to Cablecast.tv. The automation connected repetitive publishing steps within an environment I also supported through camera operation, live production, and meeting displays."
+      ],
+      "caption": "A publishing workflow built around the needs of a working media organization.",
+      "themes": [],
+      "details": [
+        [
+          "Role",
+          "Media Intern"
+        ],
+        [
+          "Period",
+          "June–August 2025"
+        ],
+        [
+          "Scope",
+          "Workflow automation and media operations"
+        ],
+        [
+          "Technology",
+          "Python, Selenium, Cablecast.tv"
+        ]
+      ]
+    }
+  ],
+  "archiveLead": "Earlier work in reporting, visual communication, and production.",
+  "archive": [
+    {
+      "title": "Product communication",
+      "body": "Photography, film, and graphic layouts bringing rainwear construction and product details into commercial presentations."
+    },
+    {
+      "title": "Conservation stories",
+      "body": "Reporting and video work examining the relationship between Siberian crane conservation, local livelihoods, and the people supporting a sanctuary around Poyang Lake."
+    },
+    {
+      "title": "Technology and public life",
+      "body": "A profile of technology forecaster William E. Halal and an analysis of the Mexico Violence Resource Project, exploring how complex subjects are interpreted and communicated."
+    },
+    {
+      "title": "Launch planning",
+      "body": "A three-month communications proposal for the Minisforum V3 tablet, bringing audience engagement, brand credibility, and product positioning into a launch plan."
+    }
+  ],
+  "about": [
+    "I’m Yifang Wang, a product designer and developer, Media Science senior at Boston University, and co-founder of Xiedao Renaissance, a MiraclePlus-backed venture.",
+    "I work across product direction, interaction design, and implementation. In a small team, that has meant helping decide what to build, developing the experience directly in code, and staying with it through deployment and customer feedback.",
+    "My background in media production and communication informs how I present products as well as how I build them. I’m interested in the relationship between an idea, the way people encounter it, and the systems that make it work."
+  ],
+  "credit": "Built with Photolio’s personal-space platform, a product I co-developed."
+}

@@ -1,0 +1,123 @@
+/**
+ * 全局设计 tokens —— 严格对齐网页端 [annualreport/src/styles/globals/*.css]。
+ *
+ * 网页端是「暖色调」主题：
+ *   - 亮：暖白 #FDFBF8 背景 + 深咖啡 #2C2218 文字 + 暖灰 #6B5F52 副文字 + #3D2E1F 主按钮
+ *   - 暗：深暖黑 #100903 背景 + 米白 #F7F3EE 文字 + 暖金 #C4A882 主按钮
+ *
+ * 暖木 / 黄铜 / 纸质等装饰色仅在 wooden_box 等模板组件内部使用，全局通用页面不沾。
+ *
+ * 用法：
+ *   @use "@/styles/tokens.scss" as t;
+ *   .x { color: t.$color-text; border-radius: t.$radius-lg; }
+ */
+
+// ---------- 颜色：暖色主题（亮 / 暗） ----------
+
+// 亮色（暖白）
+$light-bg:           #FDFBF8;         // 暖白
+$light-surface:      #F7F3EE;         // 米白卡面
+$light-surface-2:    #EFE7DC;         // 米黄分隔
+$light-text:         #2C2218;         // 深咖啡
+$light-text-soft:    #6B5F52;         // 暖灰
+$light-text-mute:    #A89A8A;         // 弱暖灰
+$light-border:       rgba(61, 46, 31, 0.08);
+$light-accent:       #3D2E1F;         // 主按钮深咖啡
+
+// 暗色（深暖黑）
+$dark-bg:            #100903;
+$dark-surface:       #1A130B;
+$dark-surface-2:     #221A11;
+$dark-text:          #F7F3EE;         // 米白
+$dark-text-soft:     rgba(247, 243, 238, 0.66);
+$dark-text-mute:     rgba(247, 243, 238, 0.35);
+$dark-border:        rgba(247, 243, 238, 0.10);
+$dark-accent:        #C4A882;         // 暖金（用户感知的"橙色"主题色）
+
+// 默认（亮色）
+$color-bg:           $light-bg;
+$color-surface:      $light-surface;
+$color-surface-2:    $light-surface-2;
+$color-text:         $light-text;
+$color-text-soft:    $light-text-soft;
+$color-text-mute:    $light-text-mute;
+$color-text-invert:  #F7F3EE;
+$color-border:       $light-border;
+$color-accent:       $light-accent;
+$color-warn:         #C97A2B;
+$color-danger:       #C13939;
+$color-success:      #6B8E4E;
+
+// ---------- 圆角 ----------
+
+$radius-sm:    8rpx;
+$radius-md:    16rpx;
+$radius-lg:    24rpx;
+$radius-card:  40rpx;
+$radius-pill:  999rpx;
+
+// ---------- 间距：8 倍数 ----------
+
+$spacing-1: 8rpx;
+$spacing-2: 16rpx;
+$spacing-3: 24rpx;
+$spacing-4: 32rpx;
+$spacing-5: 48rpx;
+$spacing-6: 64rpx;
+$spacing-8: 96rpx;
+
+// ---------- 字号 ----------
+
+$font-xs:    22rpx;
+$font-sm:    26rpx;
+$font-md:    30rpx;
+$font-lg:    36rpx;
+$font-xl:    44rpx;
+$font-2xl:   60rpx;
+$font-3xl:   72rpx;
+
+// ---------- 字重 ----------
+
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-bold: 700;
+$weight-extrabold: 800;
+
+// ---------- 阴影：暖色阴影 ----------
+
+$shadow-card-light: 0 8rpx 32rpx rgba(61, 46, 31, 0.08);
+$shadow-card-dark:  0 16rpx 48rpx rgba(0, 0, 0, 0.4);
+$shadow-soft:       0 4rpx 16rpx rgba(61, 46, 31, 0.06);
+$shadow-pop:        0 24rpx 96rpx rgba(61, 46, 31, 0.20);
+$shadow-card: $shadow-card-light;
+
+// ---------- 字体栈 ----------
+
+$font-family-base: "Source Han Sans CN", "Noto Sans CJK SC", "Microsoft YaHei",
+  -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+
+// ---------- CSS 变量 ----------
+
+:root {
+  --color-bg: #{$light-bg};
+  --color-surface: #{$light-surface};
+  --color-surface-2: #{$light-surface-2};
+  --color-text: #{$light-text};
+  --color-text-soft: #{$light-text-soft};
+  --color-text-mute: #{$light-text-mute};
+  --color-border: #{$light-border};
+  --color-accent: #{$light-accent};
+  --color-text-invert: #F7F3EE;
+}
+
+.is-dark {
+  --color-bg: #{$dark-bg};
+  --color-surface: #{$dark-surface};
+  --color-surface-2: #{$dark-surface-2};
+  --color-text: #{$dark-text};
+  --color-text-soft: #{$dark-text-soft};
+  --color-text-mute: #{$dark-text-mute};
+  --color-border: #{$dark-border};
+  --color-accent: #{$dark-accent};
+  --color-text-invert: #2C2218;
+}

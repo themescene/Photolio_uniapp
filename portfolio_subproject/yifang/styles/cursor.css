@@ -1,0 +1,10 @@
+/* Owner: cursor. Change this surface only; layout locks cover other pages. */
+.folio-cursor { display:none; position:fixed; z-index:1600; left:0; top:0; translate:-50% -50%; width:16px; height:16px; box-sizing:border-box; background:#fff; border:0; border-radius:50%; mix-blend-mode:difference; pointer-events:none; opacity:0; }
+@media (hover:hover) and (pointer:fine) {
+ .folio-site,.folio-site * { cursor:none!important; }
+ .folio-cursor { display:block; }
+ .folio-cursor--visible { opacity:1; }
+ /* Geometry is animated by useFolioCursor's single clock; CSS adds no second transition. */
+ .folio-cursor--outline { background:transparent; border:2px solid #fff; }
+}
+@media (prefers-reduced-motion:reduce) { .folio-cursor { transition:none!important; } }

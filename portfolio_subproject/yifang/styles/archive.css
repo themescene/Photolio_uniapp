@@ -1,0 +1,27 @@
+/* Owner: archive. Change this surface only; layout locks cover other pages. */
+.folio-archive { padding-block:clamp(54px,9vw,145px); }
+.folio-archive h2 { font-size:clamp(43px,8vw,130px); max-width:16ch; line-height:.94; letter-spacing:-.045em; margin:32px 0 24px; }
+.folio-archive { background:#deddd3; }
+.folio-archive h2 { font-size:clamp(42px,6.4vw,92px); }
+.folio-archive__entries { margin-block:25px; }
+.folio-archive details { border-top:1px solid var(--line); }
+.folio-archive details:last-child { border-bottom:1px solid var(--line); }
+.folio-archive__row { display:block; position:relative; isolation:isolate; overflow:hidden; list-style:none; background:#deddd3; }
+.folio-archive__row::-webkit-details-marker { display:none; }
+.folio-archive__ink { position:relative; z-index:1; display:grid; grid-template-columns:28px minmax(0,1fr) auto; gap:14px; align-items:center; padding:14px; color:#fff; mix-blend-mode:difference; font-size:clamp(18px,2.7vw,32px); font-weight:640; letter-spacing:-.035em; }
+.folio-archive__toggle::before { content:"+"; }
+.folio-archive details[open] .folio-archive__toggle::before { content:"−"; }
+.folio-archive details p { max-width:68ch; padding:0 0 16px 42px; }
+.folio-archive { align-content:start; padding-block:var(--folio-section-pad); }
+.folio-archive__reveal { position:absolute; inset:0; display:grid; clip-path:inset(0 100% 0 0); transition:clip-path .7s cubic-bezier(.16,1,.3,1); pointer-events:none; }
+.folio-archive__reveal img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.folio-archive__reveal::after { content:""; position:absolute; inset:0; background:#111a; }
+.folio-archive__row:is(:hover,:focus-visible) .folio-archive__reveal { clip-path:inset(0); }
+@media (max-width:700px) {
+ .folio-archive__reveal { display:none; }
+}
+@media (prefers-reduced-motion:reduce) { .folio-site .folio-archive__reveal { transition:none!important; } }
+@media (max-width:700px) and (hover:hover) { .folio-archive__reveal { display:block; } }
+@media (orientation:portrait) {
+ .folio-archive h2 { overflow-wrap:anywhere; }
+}

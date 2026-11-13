@@ -1,0 +1,19 @@
+/* Owner: case-brief. Change this surface only; layout locks cover other pages. */
+.folio-brief { display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); gap:clamp(22px,8vw,160px); padding-block:clamp(44px,8vw,116px); }
+.folio-brief h3 { font-size:clamp(22px,3vw,44px); letter-spacing:-.045em; margin-bottom:15px; }
+.folio-brief p { max-width:63ch; font-size:clamp(16px,1.65vw,21px); }
+.folio-brief p+p { margin-top:16px; }
+@media (max-width:700px) {
+ .folio-brief { grid-template-columns:minmax(0,1fr); }
+}
+.folio-brief { align-content:start; padding-block:var(--folio-section-pad); }
+.folio-brief p { max-width:62ch; }
+@media (orientation:portrait) {
+ .folio-brief { grid-template-columns:minmax(0,1fr); }
+ .folio-brief { gap:var(--folio-reading-gap); padding-block:var(--folio-section-pad); }
+ .folio-brief { align-content:start; }
+ .folio-brief { grid-template-rows:auto auto; }
+ .folio-brief > div:nth-child(2) { border-top:1px solid var(--case-line); padding-top:clamp(20px,3.2dvh,44px); }
+ .folio-brief p { line-height:1.65; }
+ .folio-brief p { font-size:clamp(15px,2.4vw,25px); }
+}

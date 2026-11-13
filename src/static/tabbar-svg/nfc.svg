@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3D2E1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 左侧 N 字母（两条竖线 + 一条斜线） -->
+  <line x1="4" y1="6" x2="4" y2="18"/>
+  <line x1="11" y1="6" x2="11" y2="18"/>
+  <line x1="4" y1="6" x2="11" y2="18"/>
+  <!-- 右侧 NFC wifi 波纹（三段同心圆弧） -->
+  <path d="M14 9a4 4 0 0 1 0 6"/>
+  <path d="M16.5 7a7 7 0 0 1 0 10"/>
+  <path d="M19 5a10 10 0 0 1 0 14"/>
+</svg>

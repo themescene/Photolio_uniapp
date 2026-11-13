@@ -1,0 +1,19 @@
+/* Explicit ownership entry. Global contracts are locked; page layout belongs to its named module. */
+@import "./styles/foundation.css";
+@import "./styles/typography.css";
+@import "./styles/chrome.css";
+@import "./styles/controls.css";
+@import "./styles/motion.css";
+@import "./styles/case-palette.css";
+@import "./styles/media-controls.css";
+@import "./styles/cover.css";
+@import "./styles/work-index.css";
+@import "./styles/case-opening.css";
+@import "./styles/case-brief.css";
+@import "./styles/case-themes.css";
+@import "./styles/case-details.css";
+@import "./styles/archive.css";
+@import "./styles/about.css";
+@import "./styles/media-samples.css";
+@import "./styles/readers.css";
+@import "./styles/cursor.css";

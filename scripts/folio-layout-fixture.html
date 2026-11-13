@@ -1,0 +1,84 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#ddd}iframe{display:block;border:0}pre{font:12px monospace;white-space:pre-wrap}</style></head><body><script>
+const params = new URLSearchParams(location.search)
+const width = Number(params.get('w')) || 1120
+const height = Number(params.get('h')) || 2020
+document.body.style.width = (width + 600) + 'px'
+document.body.style.height = (height + 900) + 'px'
+const frame = document.createElement('iframe')
+frame.width = width
+frame.height = height
+frame.src = '/#/pages/yifang-wang?work=' + encodeURIComponent(params.get('work') || 'work')
+document.body.append(frame)
+if (params.has('cursor')) {
+  const output = document.createElement('pre')
+  output.id = 'cursor-trace'
+  document.body.append(output)
+  frame.addEventListener('load', () => {
+    const win = frame.contentWindow, doc = frame.contentDocument
+    const records = []
+    let until = 0, running = false, pointer = { x: 0, y: 0 }
+    function sample(now) {
+      const cursor = doc.querySelector('.folio-cursor')
+      if (cursor) {
+        const s = win.getComputedStyle(cursor), r = cursor.getBoundingClientRect()
+        const control = cursor.classList.contains('folio-cursor--control')
+        const solid = cursor.classList.contains('folio-cursor--solid')
+        const mode = cursor.dataset.mode || (control ? solid ? 'solid' : 'outline' : 'dot')
+        const transparent = s.backgroundColor === 'rgba(0, 0, 0, 0)' || s.backgroundColor === 'transparent'
+        const border = parseFloat(s.borderLeftWidth)
+        const hit = doc.elementFromPoint(pointer.x, pointer.y)
+        const hitControl = hit?.closest('button,a[href],summary,input,[role="button"]')
+        const bounds = mode !== 'dot' && hitControl?.getBoundingClientRect()
+        const outset = mode === 'solid' ? 3 : 0
+        records.push({ mode, visible: Number(s.opacity), width: r.width, height: r.height, background: s.backgroundColor, border,
+          x: pointer.x, y: pointer.y, centerX: r.left + r.width / 2, centerY: r.top + r.height / 2,
+          centerError: Math.hypot(r.left + r.width / 2 - pointer.x, r.top + r.height / 2 - pointer.y),
+          target: bounds ? { centerX: bounds.left + bounds.width / 2, centerY: bounds.top + bounds.height / 2,
+            width: bounds.width + outset * 2, height: bounds.height + outset * 2 }
+            : { centerX: pointer.x, centerY: pointer.y, width: 16, height: 16 },
+          unintendedHole: mode !== 'outline' && Number(s.opacity) > .9 && transparent && r.width > border * 2 + 2 && r.height > border * 2 + 2 })
+      }
+      output.textContent = JSON.stringify(records.slice(-160))
+      if (now < until) win.requestAnimationFrame(sample)
+      else running = false
+    }
+    doc.body.addEventListener('pointermove', event => {
+      pointer = { x: event.clientX, y: event.clientY }
+      until = win.performance.now() + 700
+      if (!running) { running = true; win.requestAnimationFrame(sample) }
+    }, { passive: true })
+  })
+}
+if (params.has('wheel')) {
+  const trace = document.createElement('pre')
+  trace.id = 'wheel-trace'
+  document.body.append(trace)
+  frame.addEventListener('load', () => {
+    const win = frame.contentWindow, doc = frame.contentDocument
+    let records = [], until = 0, running = false, previous = 0, pointer = { x: 0, y: 0 }
+    function sample(now) {
+      records.push({ time: now, interval: previous ? now - previous : 0, pointer,
+        dragging: !!doc.querySelector('.folio-wheel__face--dragging'),
+        images: [...doc.querySelectorAll('.folio-wheel__arc img')].map(img => ({
+          src: img.getAttribute('src'), opacity: win.getComputedStyle(img).opacity,
+          transform: win.getComputedStyle(img).transform, loaded: img.complete && img.naturalWidth > 0,
+          left: parseFloat(img.style.left), top: parseFloat(img.style.top),
+          width: img.getBoundingClientRect().width, height: img.getBoundingClientRect().height,
+          visibility: win.getComputedStyle(img).visibility,
+        })) })
+      previous = now
+      trace.textContent = JSON.stringify(records.slice(-100))
+      if (now < until) win.requestAnimationFrame(sample)
+      else running = false
+    }
+    function begin(event) {
+      if (!event.target.closest('.folio-wheel__face')) return
+      if ('clientX' in event) pointer = { x: event.clientX, y: event.clientY }
+      until = win.performance.now() + 700
+      if (!running) { records = []; previous = 0; running = true; win.requestAnimationFrame(sample) }
+    }
+    for (const type of ['keydown', 'pointerdown', 'pointermove', 'pointerup']) doc.addEventListener(type, begin)
+  })
+}
+</script></body></html>
