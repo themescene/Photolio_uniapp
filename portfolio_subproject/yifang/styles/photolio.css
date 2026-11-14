@@ -18,6 +18,9 @@
 .folio-case--photolio .folio-affiliations img { max-width:100%; max-height:65px; width:auto; height:65px; object-fit:contain; mix-blend-mode:multiply; }
 .folio-case--photolio .folio-affiliations img[src*="miracleplus"],.folio-case--photolio .folio-affiliations img[src*="beijinglanguageuniversity"] { filter:invert(1); }
 .photolio-organization-name { font:11px/1.4 'Courier New',monospace; letter-spacing:0; text-align:center; }
+@media(orientation:landscape) {
+ #photolio-theme-1 { --photolio-video-pad:clamp(16px,3dvh,28px); padding-block:var(--photolio-video-pad); }
+}
 @media(orientation:portrait) {
  .folio-case--photolio .folio-case__cover { min-height:var(--folio-view); padding-right:var(--gutter); justify-content:flex-start; padding-top:8dvh; }
  .folio-case--photolio .folio-case__cover h2 { font-size:clamp(36px,8.5vw,76px); margin-top:30px; }
@@ -34,8 +37,8 @@
 }
 @media(orientation:landscape) and (max-height:500px) { .folio-case--photolio .folio-case__cover h2 {font-size:clamp(28px,8dvh,45px);} }
 @media(orientation:landscape) and (max-height:850px) {
- #photolio-theme-3, #photolio-theme-4 { padding-block:clamp(18px,3dvh,28px); }
- #photolio-theme-3 h3, #photolio-theme-4 h3 { font-size:clamp(28px,3.2vw,46px); margin:8px 0 12px; }
- #photolio-theme-3 p, #photolio-theme-4 p { font-size:clamp(15px,1.35vw,18px); line-height:1.45; }
+ #photolio-theme-2, #photolio-theme-3, #photolio-theme-4 { padding-block:clamp(18px,3dvh,28px); }
+ #photolio-theme-1 h3, #photolio-theme-2 h3, #photolio-theme-3 h3, #photolio-theme-4 h3 { font-size:clamp(28px,3.2vw,46px); margin:8px 0 12px; }
+ #photolio-theme-1 p, #photolio-theme-2 p, #photolio-theme-3 p, #photolio-theme-4 p { font-size:clamp(15px,1.35vw,18px); line-height:1.45; }
  #photolio-theme-3 .photolio-link, #photolio-theme-4 .photolio-link { margin-top:12px; }
 }

@@ -47,7 +47,7 @@ onUnmounted(()=>{observer?.disconnect();clearInterval(timer);document.removeEven
    <div class="photolio-trust"><p class="trust-kicker">Designed for continuity</p><img class="trust-diagram" :src="'/folio-photolio/storage.svg'" alt="Memories connected to cloud storage and a separate encrypted local backup" @load="fitTrust" /><details v-if="compactTrust" class="trust-details"><summary>Storage details</summary><div class="trust-labels"><span>01 / Cloud + local</span><span>02 / Encrypted transfer</span><span>03 / Portable originals</span></div></details><div v-else class="trust-labels"><span>01 / Cloud + local</span><span>02 / Encrypted transfer</span><span>03 / Portable originals</span></div></div>
   </template>
   <template v-else>
-   <div class="photolio-screens"><component :is="'button'" v-for="n in 3" :key="n" type="button" data-folio-cursor="dot" :aria-label="'Enlarge Photolio interface '+n" @click="emit('image','/folio-photolio/p'+n+'.jpg')"><img :src="'/folio-photolio/p'+n+'.jpg'" :alt="'Photolio application screen '+n" /></component></div>
+   <div class="photolio-screens"><component :is="'button'" v-for="n in 3" :key="n" type="button" class="screen-phone" data-folio-cursor="dot" :aria-label="'Enlarge Photolio interface '+n" @click="emit('image','/folio-photolio/p'+n+'.jpg')"><span class="screen-phone__glass"><img class="screen-phone__image" :src="'/folio-photolio/p'+n+'.jpg'" :alt="'Photolio application screen '+n" /></span></component></div>
    <p class="screen-caption">A real collection. Your own way to publish.</p>
   </template>
  </div>
@@ -71,12 +71,14 @@ onUnmounted(()=>{observer?.disconnect();clearInterval(timer);document.removeEven
 .trust-details { border-top:1px solid var(--case-line); padding-top:8px; font:11px/1.6 'Courier New',monospace; }
 .trust-details summary { cursor:pointer; }
 .trust-details .trust-labels { margin-top:8px; }
-.photolio-screens { display:flex;align-items:center;justify-content:center;gap:3%;padding:30px 8px; }
-.folio-site .photolio-screens button { width:31%;border:4px solid #302921;border-radius:18px;overflow:hidden;box-shadow:0 14px 20px #0002; }
-.photolio-screens button:nth-child(2) { transform:translateY(-20px); }
-.photolio-screens img { width:100%;display:block; }
+.photolio-screens { display:flex;align-items:center;justify-content:center;gap:3%;padding:16px 4px; }
+.folio-site .photolio-screens .screen-phone[type="button"] { display:block; width:min(31%, calc((var(--folio-view) - 150px) * .45)); padding:4px; border:1px solid #a49886; border-radius:clamp(14px,1.8vw,28px); background:#302921; overflow:hidden; box-shadow:0 14px 24px #0004; }
+.screen-phone:nth-child(2) { transform:translateY(-12px); }
+.screen-phone__glass { display:block; overflow:hidden; border-radius:clamp(9px,1.35vw,23px); background:#201c18; }
+.screen-phone__image { display:block; width:100%; height:auto; }
 .screen-caption { text-align:center;font:11px/1.5 'Courier New',monospace!important; }
 @media(orientation:portrait) { .photolio-media {min-height:300px;height:auto;} .tap-video {width:min(76vw, calc((var(--folio-view) - 85px) * .5625 + 16px));} .photolio-photo{min-height:340px;} }
+@media(orientation:landscape) { .photolio-media--0 .tap-video { width:min(100%, calc((var(--folio-view) - 2 * var(--photolio-video-pad) - 54px) * .5625 + 16px)); } }
 @media(orientation:landscape) and (max-height:850px) { .trust-diagram { max-height:42dvh; object-fit:contain; } }
-@media(max-width:400px) { .photolio-screens{gap:2%;} .folio-site .photolio-screens button{border-width:3px;border-radius:12px;} }
+@media(max-width:400px) { .photolio-screens{gap:2%;} .folio-site .photolio-screens .screen-phone[type="button"] { padding:3px; } }
 </style>
