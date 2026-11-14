@@ -7,6 +7,7 @@ const active = ref(false)
   <div class="photolio-construction" :class="{ 'is-active': active }">
     <p class="construction-meta">01 / Physical objects. Digital memories.</p>
     <h3 class="construction-title">FUTURE<br /><em>MEDIA.</em></h3>
+    <div class="construction-diagram" aria-hidden="true"><svg viewBox="0 0 300 450" preserveAspectRatio="none"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M300 10A215 215 0 0 0 300 440M0 110h300M0 220h300M0 330h300M75 0v450M150 0v450M225 0v450"/><circle cx="150" cy="110" r="70"/><circle cx="150" cy="110" r="40"/><path d="m0 220 300-110L0 330l300 110M150 185v70M115 220h70"/><ellipse cx="150" cy="355" rx="100" ry="35"/><ellipse cx="150" cy="355" rx="38" ry="35"/></g></svg></div>
     <div class="construction-grid" aria-hidden="true"><span>TECH.<small>Systems &amp; interaction</small></span><span>ART.<small>Form &amp; expression</small></span><span>SOUND.<small>Timing &amp; rhythm</small></span><span>PLAY.<small>Rules &amp; possibilities</small></span></div>
     <svg class="construction-line" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path d="M270 365 C480 365 470 190 750 190 M270 365 C440 365 480 520 800 520"/><circle cx="270" cy="365" r="5"/><circle cx="750" cy="190" r="5"/><circle cx="800" cy="520" r="5"/></svg>
     <component :is="'button'" type="button" class="construction-object" data-folio-cursor="dot" aria-label="Explore the NFC keepsake" :aria-pressed="active" @mouseenter="active = true" @mouseleave="active = false" @focus="active = true" @blur="active = false" @click="active = !active">
@@ -20,10 +21,13 @@ const active = ref(false)
 </template>
 
 <style scoped>
-.photolio-construction { position:relative; min-height:var(--folio-view); width:100%; overflow:hidden; color:var(--ground); background:var(--tone); background-image:linear-gradient(#2c28221c 1px,transparent 1px),linear-gradient(90deg,#2c28221c 1px,transparent 1px); background-size:12.5% 16.666%; isolation:isolate; }
+.photolio-construction { position:relative; min-height:var(--folio-view); width:100%; overflow:hidden; color:var(--ground); background:var(--tone); background-image:linear-gradient(#2c282228 1px,transparent 1px),linear-gradient(90deg,#2c282228 1px,transparent 1px); background-size:12.5% 12.5%; isolation:isolate; }
+.photolio-construction::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.4; background:linear-gradient(125deg,transparent 18%,#fff4 18.3%,transparent 19%),linear-gradient(35deg,transparent 48%,#6b8c7814 48.3%,transparent 49%),linear-gradient(160deg,transparent 70%,#fff5 70.5%,transparent 71%); background-size:47% 73%,63% 51%,81% 87%; }
 .construction-meta { position:absolute; left:var(--gutter); top:4%; font:600 11px/1.4 'Courier New',monospace; letter-spacing:.12em; text-transform:uppercase; }
-.construction-title { position:absolute; top:10%; left:var(--gutter); font:850 clamp(38px,min(7vw,11dvh),108px)/.9 'Segoe UI',sans-serif; letter-spacing:-.065em; z-index:1; }
-.construction-title em { display:block; margin-left:14%; font:italic 1em/.95 Georgia,serif; }
+.construction-title { position:absolute; top:10%; left:var(--gutter); font:900 clamp(44px,min(11vw,14dvh),150px)/.83 'Arial Black','Segoe UI',sans-serif; letter-spacing:-.065em; z-index:1; }
+.construction-title em { display:block; margin-left:16%; font-family:Georgia,serif; font-weight:900; }
+.construction-diagram { position:absolute; inset:36% 51% 11% 4%; border:1px solid #2c282280; color:#2c2822; opacity:.65; }
+.construction-diagram svg { width:100%; height:100%; }
 .construction-grid { position:absolute; inset:38% 4% 13% 45%; border:1px solid #2c282240; display:grid; grid-template-rows:repeat(4,1fr); z-index:-1; }
 .construction-grid span { border-bottom:1px solid #2c282240; padding:5px 12px; font:700 clamp(18px,3vw,42px)/1 Georgia,serif; }
 .construction-grid span:last-child { border:0; }

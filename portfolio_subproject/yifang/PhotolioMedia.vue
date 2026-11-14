@@ -24,7 +24,7 @@ onUnmounted(()=>{observer?.disconnect();clearInterval(timer);document.removeEven
 <template>
  <div ref="root" class="photolio-media" :class="'photolio-media--'+section" data-reveal>
   <template v-if="section===0">
-   <div class="tap-video"><component :is="'video'" ref="player" data-playback-owner="component" :src="'/folio-photolio/tap-demo.mp4'" muted loop playsinline preload="metadata" @play="playing=true" @pause="playing=false" /></div>
+   <div class="tap-video"><component :is="'video'" ref="player" class="tap-video__screen" data-playback-owner="component" :src="'/folio-photolio/tap-demo.mp4'" muted loop playsinline preload="metadata" @play="playing=true" @pause="playing=false" /></div>
    <component :is="'button'" type="button" class="photolio-media-control" @click="toggleVideo">{{playing?'Pause film':'Play film'}} <span aria-hidden="true">↗</span></component>
   </template>
   <template v-else-if="section===1">
@@ -44,8 +44,8 @@ onUnmounted(()=>{observer?.disconnect();clearInterval(timer);document.removeEven
 .photolio-media { position:relative; min-width:0; height:100%; min-height:280px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; }
 .photolio-media.is-revealed { animation:photolio-arrive .75s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes photolio-arrive { from {transform:scale(.95);opacity:.55} to {transform:scale(1);opacity:1} }
-.tap-video { height: min(67dvh,720px); aspect-ratio:9/16; max-width:100%; margin-inline:auto; background:#201c18; overflow:hidden; }
-.tap-video video { width:100%;height:100%;object-fit:contain;display:block; }
+.tap-video { height:min(65dvh,680px); aspect-ratio:9/16; max-width:100%; flex-shrink:0; margin-inline:auto; padding:6px; border:2px solid #a49886; border-radius:clamp(20px,2.5vw,36px); background:#302921; box-shadow:0 18px 30px #3f2f2426; overflow:hidden; }
+.tap-video__screen { display:block; width:100%; height:100%; object-fit:contain; border-radius:clamp(13px,1.8vw,27px); background:#201c18; }
 .folio-site .photolio-media-control { align-self:center; display:flex;gap:32px; font:11px 'Courier New',monospace;padding:15px; }
 .photolio-photo { position:relative; flex:1; min-height:300px; width:100%; }
 .photolio-photo img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s; }

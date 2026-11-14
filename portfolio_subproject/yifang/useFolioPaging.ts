@@ -68,7 +68,8 @@ export function useFolioPaging(root: Ref<HTMLElement | null>) {
       const end = Math.max(start, (panels[index + 1] ? topOf(panels[index + 1], scroller) : scroller.scrollHeight - headerHeight()) - viewport)
       const points = [start]
       for (let top = start + viewport; top < end - 1; top += viewport) points.push(top)
-      if (end > points[points.length - 1] + 1) points.push(end)
+      // Small overflow must not create an almost invisible extra wheel stop.
+      if (end > points[points.length - 1] + viewport * .2) points.push(end)
       return points
     })
     const next = direction > 0 ? stops.find(top => top > position + 2) : stops.reverse().find(top => top < position - 2)
