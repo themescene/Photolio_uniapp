@@ -72,3 +72,8 @@ src/manifest.local.json
 /public/folio-local/
 /portfolio_subproject/yifang/local/
 /.local-backups/
+
+# Local agent settings and private environment files
+.codex/
+.env.*
+!.env.example

@@ -1,11 +1,11 @@
 /* 只在个人空间前台解除宿主宽度与顶部留白，离开页面恢复原管理页。 */
-html.personal-space-active, html.personal-space-active body, html.personal-space-active #app { background: #f5f5f3; }
+html.personal-space-active, html.personal-space-active body, html.personal-space-active #app { background: #f2f3f6; }
 html.personal-space-active uni-app, html.personal-space-active uni-page, html.personal-space-active uni-page-wrapper { max-width: none !important; width: 100% !important; margin: 0 !important; }
 html.personal-space-active uni-page-body { padding-top: 0 !important; }
-.personal-site { --space-bg: #f5f5f3; --space-card: #fff; --space-ink: #151515; --space-muted: #62625e; --space-border: #d6d6d0; --space-accent: #c5f8ca; --space-radius: 5px; --space-gap: 12px; --space-sidebar: 220px; min-height: 100dvh; color: var(--space-ink); background: var(--space-bg); font: 15px/1.5 -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif; }
+.personal-site { --space-bg: #f2f3f6; --space-card: #fff; --space-ink: #151515; --space-muted: #62625e; --space-border: #d6d6d0; --space-accent: #c5d5ed; --space-radius: 5px; --space-gap: 12px; --space-sidebar: 220px; min-height: 100dvh; color: var(--space-ink); background: var(--space-bg); font: 15px/1.5 -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif; }
 .personal-site *, .personal-site *::before, .personal-site *::after { box-sizing: border-box; }
 .personal-site :is(button, uni-button), .personal-site input, .personal-site select, .personal-site textarea { font-family: inherit; }
-.personal-site :is(button, uni-button):focus-visible, .personal-site a:focus-visible { outline: 2px solid #166c38; outline-offset: 3px; }
+.personal-site :is(button, uni-button):focus-visible, .personal-site a:focus-visible { outline: 2px solid #365b88; outline-offset: 3px; }
 .space-sidebar { position: fixed; inset: 0 auto 0 0; z-index: 60; width: var(--space-sidebar); padding: var(--space-gap); display: flex; flex-direction: column; gap: 12px; overflow-y: auto; background: var(--space-bg); }
 .space-brand { background: #111; color: #fff; font-weight: 600; padding: 12px; border-radius: var(--space-radius); overflow-wrap: anywhere; }
 .space-sidebar nav, .space-sidebar__actions { --ps-button-width: 100%; --ps-button-wrap: normal; --ps-button-justify: flex-start; --ps-button-align: left; display: grid; gap: 5px; }
@@ -51,7 +51,7 @@ html.personal-space-active uni-page-body { padding-top: 0 !important; }
 .personal-site--editing .space-message { margin: 12px 24px; }
 .space-create-form { display: grid; gap: 16px; } .space-create-form p { font-size: 13px; color: var(--space-muted); margin: 0; }
 .ps-select { appearance: auto; display: block; width: 100%; height: 44px; min-height: 44px; padding: 9px 12px; border: 1px solid var(--space-border); border-radius: 6px; background: #fff; color: #151515; font: inherit; font-size: 14px; }
-.ps-select:focus-visible { outline: 2px solid #387448; outline-offset: 1px; }
+.ps-select:focus-visible { outline: 2px solid #365b88; outline-offset: 1px; }
 
 /* 栏目只做进场，切换时立即移除旧媒体，避免同时加载两个栏目的内容。 */
 .space-fade-enter-active, .space-fade-leave-active, .space-section-enter-active { transition: opacity 160ms ease; }

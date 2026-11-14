@@ -243,13 +243,21 @@
       "owner": "shared-host",
       "sha256": "4f857637ca71e223ae2714e6cbdff02136568a428e98499fdb09e9198dc508f5"
     },
+    "portfolio_subproject/yifang/PhotolioMedia.vue": {
+      "owner": "shared-host",
+      "sha256": "639cf3c110a44d7e8c8f9091ee11c21a4ac96685c378cae361d5fe474a80249a"
+    },
+    "portfolio_subproject/yifang/PhotolioVisual.vue": {
+      "owner": "shared-host",
+      "sha256": "ddd24df6efb69904543ed7120521f03b522e58858ca4e6b70b5700e941dcbf13"
+    },
     "portfolio_subproject/yifang/YifangPortfolio.vue": {
       "owner": "shared-host",
-      "sha256": "3491937dc57f82b21ef47763bbaf0be1fd0ae0f62ad9e923c22c15e491f0851b"
+      "sha256": "792ecbddeea8ea1e8983f476bf4a0b6a3fadfe9b0e3bf583aa79a387a373a84a"
     },
     "portfolio_subproject/yifang/copy.json": {
       "owner": "approved-copy",
-      "sha256": "98f9d78a74de7da7a522fbee153537dc5106174e451139dc21386dab8d144190"
+      "sha256": "cedb2892d60eacad93c19de90eac46402f70171c339d9a0420a5e86ca6604b00"
     },
     "portfolio_subproject/yifang/folio.css": {
       "owner": "shared-host",
@@ -257,7 +265,7 @@
     },
     "portfolio_subproject/yifang/media.ts": {
       "owner": "shared-host",
-      "sha256": "aa54075d2afbf7e7fbddd2e3e466ae045963b4a19ad203d0ab5803fcf9877ca3"
+      "sha256": "81ff3dab0af5c9d57fffe2635c7044b292cd98bc5a7c43be53bf5dd14250097a"
     },
     "portfolio_subproject/yifang/styles/about.css": {
       "owner": "about",
@@ -319,6 +327,10 @@
       "owner": "motion",
       "sha256": "9ee82416da6e3c1f6b4335402d825d685cc0933af60ba816a253ec24e438bbde"
     },
+    "portfolio_subproject/yifang/styles/photolio.css": {
+      "owner": "photolio",
+      "sha256": "05ab477c35ad517d1e564b7531b3f600a987c7538cba06fd2fb3a52190607438"
+    },
     "portfolio_subproject/yifang/styles/readers.css": {
       "owner": "readers",
       "sha256": "37934735058eb3b730bcd5a1564752244f58a64e6333c44d9bf753b69d8b7a11"
@@ -337,7 +349,7 @@
     },
     "portfolio_subproject/yifang/useFolioCursor.ts": {
       "owner": "cursor",
-      "sha256": "cd3ff574bc5b84b77b0d520bb091615e24c183f3a484b197c007e8b9bb7f1d34"
+      "sha256": "aab1fe38e4cf5cb2119c6fb06315c4fbd06b99e0b22ebbdf3bcbceda776369b8"
     },
     "portfolio_subproject/yifang/useFolioPaging.ts": {
       "owner": "shared-host",
@@ -462,6 +474,16 @@
       ],
       "reason": "用户取消圆盘，授权改平直横向轮播；六画幅、水平跟手与10图循环已验",
       "date": "2026-11-13T11:02:50.152Z"
+    },
+    {
+      "owners": [
+        "shared-host",
+        "approved-copy",
+        "cursor",
+        "photolio"
+      ],
+      "reason": "User authorized Photolio media chapter, product-site links, logo and repeat entrance animation; desktop and portrait visual review completed",
+      "date": "2026-11-14T06:57:46.075Z"
     }
   ]
 }

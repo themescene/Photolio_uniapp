@@ -35,11 +35,12 @@
           "caption": "Product selection and communication developed alongside the digital experience."
         },
         {
-          "heading": "From a shared collection to a personal space",
+          "heading": "Built to keep. Free to take with you.",
           "text": [
-            "The platform already supported storing, presenting, and sharing media. I used that foundation to develop configurable personal pages, with independent links, reusable layouts, and content drawn from existing collections. A portfolio offered a concrete first application: a way to present my work through a product I had helped build."
+            "Trust is part of the product experience. Alongside the publishing interface, I worked on the website’s explanation of storage, backups, and content portability—making the service behind a keepsake easier to understand.",
+            "The product website presents cloud and local storage, encrypted transfer, and export arrangements through a series of simple illustrations."
           ],
-          "caption": "One media library, arranged for different stories and audiences."
+          "caption": "A visible account of where memories live and how they can leave."
         },
         {
           "heading": "A clear path from choosing to publishing",
@@ -68,7 +69,7 @@
         ],
         [
           "Technology",
-          "Vue 3, TypeScript, uni-app, Python, NFC"
+          "Vue 3, TypeScript, uni-app, Python, FastAPI, Tailscale, RAID, NFC, Umami"
         ]
       ]
     },

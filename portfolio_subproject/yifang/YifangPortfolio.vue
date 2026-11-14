@@ -12,6 +12,9 @@ import { affiliations, assets, demoImages, localImages, localDocuments, sampleDo
 import ImageWheel from './ImageWheel.vue'
 import FolioEntrance from './FolioEntrance.vue'
 import DesignLab from './DesignLab.vue'
+import PhotolioVisual from './PhotolioVisual.vue'
+import PhotolioMedia from './PhotolioMedia.vue'
+import './styles/photolio.css'
 import { useFolioPaging } from './useFolioPaging'
 import { useFolioCursor } from './useFolioCursor'
 import PageActions from './ui/PageActions.vue'
@@ -83,10 +86,7 @@ onMounted(async () => {
   }))
   if (root.value && 'IntersectionObserver' in window) {
     observer = new IntersectionObserver(entries => {
-      for (const entry of entries) if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed')
-        observer?.unobserve(entry.target)
-      }
+      for (const entry of entries) entry.target.classList.toggle('is-revealed', entry.isIntersecting)
     }, { threshold: .1 })
     root.value.querySelectorAll('[data-reveal]').forEach(node => observer?.observe(node))
   }
@@ -159,13 +159,14 @@ onUnmounted(() => {
 
     <article v-for="(project, i) in copy.projects" :id="project.id" :key="project.id" tabindex="-1" class="folio-case"
       :class="'folio-case--' + project.id" :data-chapter="'0' + (i + 1)">
-      <div class="folio-case__opening folio-page" :data-label="project.name">
+      <div :class="project.id === 'photolio' ? 'photolio-opening' : 'folio-case__opening folio-page'" :data-label="project.name">
       <div class="folio-case__cover folio-pad folio-page" :data-label="project.name">
         <div class="folio-eyebrow"><span class="folio-case__identity"><span class="folio-case__number">0{{ i + 1 }} /</span> <strong>{{ project.name }}</strong></span><span class="folio-case__counter">Case {{ i + 1 }} of {{ copy.projects.length }}</span></div>
-        <h2>{{ project.title }}</h2><p>{{ project.lead }}</p>
+        <img v-if="project.id === 'photolio'" class="photolio-cover-logo" :src="'/folio-photolio/brand.png'" alt="Photolio brand artwork" /><h2>{{ project.title }}</h2><p>{{ project.lead }}</p>
       </div>
       <figure class="folio-stage folio-page" :data-label="project.name + ' / Visual'" :class="'folio-stage--' + project.id" data-reveal>
-        <H5AnimatedImage v-if="media[project.id]?.kind === 'image'" class="folio-image-trigger" :src="media[project.id].url" :alt="project.name"
+        <PhotolioVisual v-if="project.id === 'photolio'" @navigate="jump" />
+        <H5AnimatedImage v-else-if="media[project.id]?.kind === 'image'" class="folio-image-trigger" :src="media[project.id].url" :alt="project.name"
           fit="contain" cropped @click="image = media[project.id].url" />
         <component v-else-if="media[project.id]?.kind === 'video'" :is="'button'" type="button" class="folio-video-cover"
           :aria-label="'Fullscreen preview: ' + project.name" @click="video = { url: media[project.id].url, title: project.name }">
@@ -175,7 +176,7 @@ onUnmounted(() => {
         <component v-else :is="'button'" type="button" class="folio-stage__photo folio-image-trigger" :aria-label="'View image: ' + project.name" @click="image = projectCover(project.id)">
           <img :src="projectCover(project.id)" alt="" loading="lazy" />
         </component>
-        <figcaption>
+        <figcaption v-if="project.id !== 'photolio'">
           <span>0{{ i + 1 }} / {{ project.name }}</span>
           <component :is="'button'" type="button" v-if="media[project.id]?.kind === 'image'" @click="image = media[project.id].url">View image ↗</component>
           <component :is="'button'" type="button" v-else-if="media[project.id]?.kind === 'video'" @click="video = { url: media[project.id].url, title: project.name }">View video ↗</component>
@@ -194,17 +195,10 @@ onUnmounted(() => {
           <h3>{{ theme.heading }}</h3>
           <p v-for="p in theme.text" :key="p">{{ p }}</p>
           <p class="folio-caption">{{ theme.caption }}</p>
+          <a v-if="project.id === 'photolio' && j === 2" class="photolio-link" href="/about.html?lang=en#about" target="_blank" rel="noopener">Explore the product website <span aria-hidden="true">↗</span></a>
+          <a v-if="project.id === 'photolio' && j === 3" class="photolio-link" href="/#/pages/index/index" target="_blank" rel="noopener">Open the Photolio web app <span aria-hidden="true">↗</span></a>
         </div>
-        <div v-if="project.id === 'photolio' && j === project.themes.length - 1" class="folio-demo" data-reveal>
-          <div class="folio-eyebrow"><span>Interactive sketch</span><span>Photolio / 0{{ step + 1 }}</span></div>
-          <div class="folio-demo__stage" aria-live="polite"><span class="folio-demo__number" aria-hidden="true">0{{ step + 1 }}</span>
-            <div :key="step" class="folio-demo__text"><strong>{{ demos[step].title }}</strong><p>{{ demos[step].note }}</p></div>
-          </div>
-          <div class="folio-demo__diagram" :data-step="step" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="folio-demo__steps" role="group" aria-label="Publishing sequence">
-            <component :is="'button'" type="button" v-for="(item, k) in demos" :key="item.label" :aria-pressed="step === k" @click="step = k">{{ item.label }}</component>
-          </div>
-        </div>
+        <PhotolioMedia v-if="project.id === 'photolio'" :section="j" @image="image = $event" />
         <div v-else class="folio-theme__visual" data-reveal>
           <H5AnimatedImage v-if="media[project.id + '-' + (j + 1)]?.kind === 'image'" class="folio-image-trigger"
             :src="media[project.id + '-' + (j + 1)].url" :alt="theme.heading" fit="contain" cropped
@@ -221,10 +215,12 @@ onUnmounted(() => {
       </section>
       <div :id="project.id + '-details'" class="folio-details folio-pad folio-page" :data-label="project.name + ' / Details'"><h3>Project details</h3>
         <dl><div v-for="detail in project.details" :key="detail[0]"><dt>{{ detail[0] }}</dt><dd>{{ detail[1] }}</dd></div></dl>
+        <div v-if="project.id === 'photolio'" class="photolio-destinations"><a href="/about.html?lang=en#about" target="_blank" rel="noopener">Product website ↗</a><a href="/#/pages/index/index" target="_blank" rel="noopener">Launch web app ↗</a><a href="/#/pages/personal/index" target="_blank" rel="noopener">Create a personal space ↗</a></div>
         <div class="folio-affiliations" aria-label="Related organizations">
           <span>Related organizations</span>
           <strong v-for="organization in affiliations[project.id]" :key="organization.name">
-            <img v-if="organization.logo && contentUrl(organization.logo)" :src="contentUrl(organization.logo)" :alt="organization.name" loading="lazy" />
+            <img v-if="organization.logo" :src="organization.logo" :alt="organization.name" loading="lazy" />
+            <span v-if="organization.logo" class="photolio-organization-name">{{ organization.name }}</span>
             <template v-else>{{ organization.name }}</template>
           </strong>
         </div>

@@ -62,7 +62,7 @@ export function useFolioCursor(cursor: Ref<HTMLElement | null>) {
       return
     }
     const control = hit.closest<HTMLElement>(controls)
-    const button = control?.matches('.folio-wheel__face') || (control?.closest('.folio-image-trigger') && !control.matches('.gif-control')) ? null : control
+    const button = control?.matches('.folio-wheel__face, [data-folio-cursor="dot"]') || (control?.closest('.folio-image-trigger') && !control.matches('.gif-control')) ? null : control
     const outline = !!button?.matches('.folio-sample-open, .folio-video-cover')
     const bounds = button?.getBoundingClientRect()
     const outset = outline ? 0 : 3

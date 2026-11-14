@@ -20,7 +20,7 @@ export function installViewportPlayback() {
   }, { threshold: [0, .5] })
   function scan() {
     for (const [video] of states) if (!video.isConnected) { observer.unobserve(video); states.delete(video) }
-    for (const video of document.querySelectorAll<HTMLVideoElement>('video')) if (!states.has(video)) { states.set(video, { visible: false, optedOut: false }); observer.observe(video) }
+    for (const video of document.querySelectorAll<HTMLVideoElement>('video:not([data-playback-owner="component"])')) if (!states.has(video)) { states.set(video, { visible: false, optedOut: false }); observer.observe(video) }
   }
   const mutations = new MutationObserver(records => {
     scan()

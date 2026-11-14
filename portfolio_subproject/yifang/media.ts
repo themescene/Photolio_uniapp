@@ -27,7 +27,7 @@ export const sampleDocument = localDocuments?.resume || '/folio-demo/reader-samp
 export const sampleVideo = '/folio-demo/flower.webm'
 
 export const affiliations: Record<string, { name: string; logo?: string }[]> = {
-  photolio: [{ name: 'Xiedao Renaissance' }],
+  photolio: [{ name: 'World Culture Festival', logo: '/about/svg/worldculturefestival.svg' }, { name: 'MiraclePlus', logo: '/about/svg/miracleplus.svg' }, { name: 'Beijing Language University', logo: '/about/svg/beijinglanguageuniversity.svg' }, { name: 'Photolio', logo: '/folio-photolio/brand.png' }],
   miaozhuang: [{ name: 'Miaozhuang / 秒装' }],
   'xiedao-renaissance': [{ name: 'Xiedao Renaissance' }, { name: 'MiraclePlus' }],
   brookline: [{ name: 'Brookline Interactive Group' }],

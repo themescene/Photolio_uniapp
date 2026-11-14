@@ -1047,6 +1047,9 @@
   @media (max-width:900px) and (orientation:landscape){
     .about-intro { padding-top:112px; }
   }
+html[lang="en"] #tab-about .about-lead { font-size:clamp(28px,4.5vw,62px); }
+html[lang="en"] #tab-about svg text { font-family:Arial,sans-serif; font-size:9px; }
+html[lang="en"] #tab-about .reg-list dd { overflow-wrap:anywhere; }
 </style>
 </head>
 <body>
@@ -1521,14 +1524,14 @@
 <div id="tab-about" class="tab-panel">
 
   <section class="about-intro fade-in">
-    <div class="about-eyebrow">关于画匣子</div>
-    <h2 class="section-title">存得住，更拿得走</h2>
-    <p class="section-desc">画匣子专注做一件事——把每个人的回忆，长久而完整地保存下来。下面是我们的存储架构、备份机制，以及公司本身。</p>
+    <div class="about-eyebrow" data-about-en="About Photolio">关于画匣子</div>
+    <h2 class="section-title" data-about-en="Built to keep. Free to take with you.">存得住，更拿得走</h2>
+    <p class="section-desc" data-about-en="Photolio focuses on preserving shared memories. Here is how storage, backups, and the company behind the service fit together.">画匣子专注做一件事——把每个人的回忆，长久而完整地保存下来。下面是我们的存储架构、备份机制，以及公司本身。</p>
   </section>
 
   <section class="about-stat-band fade-in">
-    <div class="about-lead">云端一份，本地再存一份</div>
-    <p class="about-stat-cap">你的每一份回忆，都同时存在<b>阿里云</b>和我们<b>自己的本地服务器</b>上——一处出问题，另一处还在。</p>
+    <div class="about-lead" data-about-en="One copy in the cloud. Another on our own server.">云端一份，本地再存一份</div>
+    <p class="about-stat-cap" data-about-en="Your memories are stored on Alibaba Cloud and our own local server, so a second copy remains if one location has a problem.">你的每一份回忆，都同时存在<b>阿里云</b>和我们<b>自己的本地服务器</b>上——一处出问题，另一处还在。</p>
   </section>
 
   <div class="section-divider"></div>
@@ -1538,14 +1541,14 @@
     <!-- 01 数据主权 -->
     <div class="timeline-node">
       <div class="t-text">
-        <div class="t-step">01 — 数据主权</div>
-        <h3>照片永远属于你，随时可以带走</h3>
-        <p>每一份照片和视频，都能在小程序里<b>一键下载原图</b>，存回自己的手机或电脑。云端一份、你手里也能有一份，导入导出完全由你掌控。</p>
+        <div class="t-step" data-about-en="01 — Your data">01 — 数据主权</div>
+        <h3 data-about-en="Your photographs belong to you">照片永远属于你，随时可以带走</h3>
+        <p data-about-en="Download original photographs and videos from the mini program to your phone or computer. Keep a copy yourself and stay in control of importing and exporting your content.">每一份照片和视频，都能在小程序里<b>一键下载原图</b>，存回自己的手机或电脑。云端一份、你手里也能有一份，导入导出完全由你掌控。</p>
         <ul class="about-tick">
-          <li><b>原图原画质</b>导出，不压缩、不加水印。</li>
-          <li>回忆里的<b>文字与结构</b>也能一起打包带走。</li>
+          <li data-about-en="Export original-quality files without added compression or watermarks."><b>原图原画质</b>导出，不压缩、不加水印。</li>
+          <li data-about-en="The writing and structure of your memories can be exported together.">回忆里的<b>文字与结构</b>也能一起打包带走。</li>
         </ul>
-        <div class="about-key">你的回忆，随时可以完整带走。</div>
+        <div class="about-key" data-about-en="Take your complete memories with you, whenever you need.">你的回忆，随时可以完整带走。</div>
       </div>
       <div class="t-image">
         <div class="diagram-card">
@@ -1564,12 +1567,12 @@
               <circle cx="184" cy="80" r="22"/><circle cx="216" cy="80" r="22"/>
               <circle cx="200" cy="68" r="33"/>
             </g>
-            <text x="200" y="80" text-anchor="middle" font-size="14" fill="#3D2E1F" font-weight="600">你的照片</text>
-            <text x="200" y="99" text-anchor="middle" font-size="10" fill="#8B7A68">云端 · 原图</text>
+            <text x="200" y="80" text-anchor="middle" font-size="14" fill="#3D2E1F" font-weight="600" data-about-en="Your photos">你的照片</text>
+            <text x="200" y="99" text-anchor="middle" font-size="10" fill="#8B7A68" data-about-en="Cloud · originals">云端 · 原图</text>
             <!-- arrow -->
             <line x1="200" y1="142" x2="200" y2="170" stroke="#C4A882" stroke-width="2" stroke-dasharray="5 4"/>
             <polygon points="200,180 192,168 208,168" fill="#C4A882"/>
-            <text x="214" y="160" font-size="11" fill="#8B7A68">一键下载原图</text>
+            <text x="214" y="160" font-size="11" fill="#8B7A68" data-about-en="Download originals">一键下载原图</text>
             <!-- phone -->
             <g transform="translate(110,190)">
               <rect x="0" y="0" width="72" height="106" rx="14" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="2"/>
@@ -1578,7 +1581,7 @@
               <path d="M13 63 L31 44 L44 57 L54 47 L61 63 Z" fill="#8B9A7E"/>
               <rect x="27" y="93" width="18" height="4" rx="2" fill="#E8E0D4"/>
             </g>
-            <text x="146" y="314" text-anchor="middle" font-size="11" fill="#6B5F52">手机</text>
+            <text x="146" y="314" text-anchor="middle" font-size="11" fill="#6B5F52" data-about-en="Phone">手机</text>
             <!-- laptop -->
             <g transform="translate(212,206)">
               <rect x="0" y="0" width="120" height="72" rx="8" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="2"/>
@@ -1587,23 +1590,23 @@
               <path d="M20 52 L44 32 L60 48 L78 34 L92 52 Z" fill="#8B9A7E"/>
             </g>
             <path d="M200 288 h150 a4 4 0 0 1 -4 6 h-142 a4 4 0 0 1 -4 -6 z" fill="#F7F3EE" stroke="#3D2E1F" stroke-width="1.6" stroke-linejoin="round"/>
-            <text x="272" y="314" text-anchor="middle" font-size="11" fill="#6B5F52">电脑</text>
+            <text x="272" y="314" text-anchor="middle" font-size="11" fill="#6B5F52" data-about-en="Computer">电脑</text>
           </svg>
         </div>
-        <p class="diagram-cap">云端原图 → 一键下载 → 你的手机 / 电脑</p>
+        <p class="diagram-cap" data-about-en="Cloud originals → Download → Your phone or computer">云端原图 → 一键下载 → 你的手机 / 电脑</p>
       </div>
     </div>
 
     <!-- 02 冗余与容灾 -->
     <div class="timeline-node reverse">
       <div class="t-text">
-        <div class="t-step">02 — 双重存储</div>
-        <h3>一份回忆，两个地方同时存着</h3>
-        <p>你的照片存在<b>阿里云的服务器</b>上，我们还在<b>自己的本地服务器</b>（异地）再备份一份。两处独立、互为兜底——一处出意外，另一处照样完整。</p>
+        <div class="t-step" data-about-en="02 — Two storage locations">02 — 双重存储</div>
+        <h3 data-about-en="One memory, stored in two places">一份回忆，两个地方同时存着</h3>
+        <p data-about-en="Photographs are stored on Alibaba Cloud, with a second backup on our own server in a separate location. Each location provides a fallback for the other.">你的照片存在<b>阿里云的服务器</b>上，我们还在<b>自己的本地服务器</b>（异地）再备份一份。两处独立、互为兜底——一处出意外，另一处照样完整。</p>
         <ul class="about-tick">
-          <li><b>异地双份</b>：云端 + 本地，物理上就分处两地。</li>
-          <li><b>全程加密</b>：数据传输走 HTTPS，本地备份落盘再加一层加密。</li>
-          <li><b>互为兜底</b>：任意一处出问题，另一处都是完整的一份。</li>
+          <li data-about-en="Separate locations: a cloud copy and a local copy, physically apart."><b>异地双份</b>：云端 + 本地，物理上就分处两地。</li>
+          <li data-about-en="Encryption: HTTPS during transfer, with an additional encryption layer for local backups."><b>全程加密</b>：数据传输走 HTTPS，本地备份落盘再加一层加密。</li>
+          <li data-about-en="Independent copies: if one location has a problem, the other retains a complete copy."><b>互为兜底</b>：任意一处出问题，另一处都是完整的一份。</li>
         </ul>
       </div>
       <div class="t-image">
@@ -1615,7 +1618,7 @@
               <circle cx="20" cy="22" r="6" fill="#D4836B"/>
               <path d="M8 55 L26 34 L40 48 L52 36 L58 55 Z" fill="#8B9A7E"/>
             </g>
-            <text x="54" y="198" text-anchor="middle" font-size="11" fill="#6B5F52">一份回忆</text>
+            <text x="54" y="198" text-anchor="middle" font-size="11" fill="#6B5F52" data-about-en="Your memories">一份回忆</text>
             <!-- arrows -->
             <path d="M92 146 C150 146 152 76 204 76" fill="none" stroke="#C4A882" stroke-width="1.8"/>
             <polygon points="205,76 194,71 196,82" fill="#C4A882"/>
@@ -1624,65 +1627,65 @@
             <!-- 阿里云 -->
             <rect x="208" y="40" width="168" height="76" rx="12" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="1.6"/>
             <g transform="translate(224,60) scale(1.7)" fill="#F7F3EE" stroke="#C4A882" stroke-width="1" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></g>
-            <text x="286" y="74" font-size="12.5" fill="#3D2E1F" font-weight="600">阿里云</text>
-            <text x="286" y="93" font-size="10" fill="#8B7A68">云端 · 随时访问</text>
+            <text x="286" y="74" font-size="12.5" fill="#3D2E1F" font-weight="600" data-about-en="Alibaba Cloud">阿里云</text>
+            <text x="286" y="93" font-size="10" fill="#8B7A68" data-about-en="Online access">云端 · 随时访问</text>
             <!-- 本地服务器 -->
             <rect x="208" y="184" width="168" height="76" rx="12" fill="#FFFFFF" stroke="#3D2E1F" stroke-width="1.6"/>
             <g transform="translate(224,200)" fill="#F7F3EE" stroke="#8B9A7E" stroke-width="1.6">
               <rect x="0" y="0" width="36" height="13" rx="2.5"/><rect x="0" y="17" width="36" height="13" rx="2.5"/><rect x="0" y="34" width="36" height="13" rx="2.5"/>
             </g>
             <circle cx="230" cy="206.5" r="1.8" fill="#8B9A7E"/><circle cx="230" cy="223.5" r="1.8" fill="#8B9A7E"/><circle cx="230" cy="240.5" r="1.8" fill="#8B9A7E"/>
-            <text x="286" y="216" font-size="12.5" fill="#3D2E1F" font-weight="600">本地服务器</text>
-            <text x="286" y="235" font-size="10" fill="#8B7A68">异地 · 加密备份</text>
+            <text x="286" y="216" font-size="12.5" fill="#3D2E1F" font-weight="600" data-about-en="Local server">本地服务器</text>
+            <text x="286" y="235" font-size="10" fill="#8B7A68" data-about-en="Encrypted · off-site">异地 · 加密备份</text>
           </svg>
         </div>
-        <p class="diagram-cap">一份回忆 → 阿里云 + 本地服务器，两处各存一份</p>
+        <p class="diagram-cap" data-about-en="One memory → Alibaba Cloud + local server, one copy in each location">一份回忆 → 阿里云 + 本地服务器，两处各存一份</p>
       </div>
     </div>
 
     <!-- 03 持续备份 -->
     <div class="timeline-node">
       <div class="t-text">
-        <div class="t-step">03 — 持续备份</div>
-        <h3>系统一直在为你的回忆做备份</h3>
-        <p>系统自动、持续地为你的回忆做备份：<b>账号与画匣子结构每小时增量备份一次</b>，<b>照片视频每天全量同步一次</b>——哪怕你昨天刚上传，今天就已经有备份。</p>
+        <div class="t-step" data-about-en="03 — Ongoing backups">03 — 持续备份</div>
+        <h3 data-about-en="Backups continue behind the scenes">系统一直在为你的回忆做备份</h3>
+        <p data-about-en="The system makes ongoing backups: incremental backups of accounts and collection structures every hour, and a full synchronization of photographs and videos each day.">系统自动、持续地为你的回忆做备份：<b>账号与画匣子结构每小时增量备份一次</b>，<b>照片视频每天全量同步一次</b>——哪怕你昨天刚上传，今天就已经有备份。</p>
         <ul class="about-tick">
-          <li><b>文字永久在线</b>：哪怕多年以后，回忆的文字与结构也一直都在。</li>
-          <li>任何数据转移，都<b>先确认备份完好</b>才执行——宁可不动，也绝不误删。</li>
+          <li data-about-en="Writing stays online: the text and structure of your memories remain available over time."><b>文字永久在线</b>：哪怕多年以后，回忆的文字与结构也一直都在。</li>
+          <li data-about-en="Before moving data, we verify that the backup is intact. Preserving your content comes first.">任何数据转移，都<b>先确认备份完好</b>才执行——宁可不动，也绝不误删。</li>
         </ul>
       </div>
       <div class="t-image">
         <div class="diagram-card">
           <svg viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans SC',sans-serif">
             <!-- 元数据 row -->
-            <text x="18" y="66" font-size="11" fill="#3D2E1F" font-weight="600">元数据</text>
-            <text x="18" y="82" font-size="9" fill="#9B8E7F">每小时</text>
+            <text x="18" y="66" font-size="11" fill="#3D2E1F" font-weight="600" data-about-en="Metadata">元数据</text>
+            <text x="18" y="82" font-size="9" fill="#9B8E7F" data-about-en="Hourly">每小时</text>
             <line x1="82" y1="64" x2="374" y2="64" stroke="#E0D6C8" stroke-width="2"/>
             <g fill="#C4A882">
               <circle cx="82" cy="64" r="3.4"/><circle cx="106" cy="64" r="3.4"/><circle cx="131" cy="64" r="3.4"/><circle cx="155" cy="64" r="3.4"/><circle cx="179" cy="64" r="3.4"/><circle cx="204" cy="64" r="3.4"/><circle cx="228" cy="64" r="3.4"/><circle cx="252" cy="64" r="3.4"/><circle cx="277" cy="64" r="3.4"/><circle cx="301" cy="64" r="3.4"/><circle cx="325" cy="64" r="3.4"/><circle cx="350" cy="64" r="3.4"/><circle cx="374" cy="64" r="3.4"/>
             </g>
             <!-- 媒体 row -->
-            <text x="18" y="146" font-size="11" fill="#3D2E1F" font-weight="600">媒体</text>
-            <text x="18" y="162" font-size="9" fill="#9B8E7F">每日</text>
+            <text x="18" y="146" font-size="11" fill="#3D2E1F" font-weight="600" data-about-en="Media">媒体</text>
+            <text x="18" y="162" font-size="9" fill="#9B8E7F" data-about-en="Daily">每日</text>
             <line x1="82" y1="144" x2="374" y2="144" stroke="#E0D6C8" stroke-width="2"/>
-            <text x="140" y="126" text-anchor="middle" font-size="9" fill="#3D2E1F">凌晨全量一次</text>
+            <text x="140" y="126" text-anchor="middle" font-size="9" fill="#3D2E1F" data-about-en="Full overnight sync">凌晨全量一次</text>
             <g transform="translate(140,144)"><rect x="-7" y="-7" width="14" height="14" transform="rotate(45)" fill="#3D2E1F"/></g>
             <!-- axis -->
-            <text x="82" y="192" font-size="9" fill="#9B8E7F">0h</text>
-            <text x="374" y="192" text-anchor="end" font-size="9" fill="#9B8E7F">24h</text>
+            <text x="82" y="192" font-size="9" fill="#9B8E7F" data-about-en="0h">0h</text>
+            <text x="374" y="192" text-anchor="end" font-size="9" fill="#9B8E7F" data-about-en="24h">24h</text>
           </svg>
         </div>
-        <p class="diagram-cap">元数据每小时、媒体每日的备份时刻表</p>
+        <p class="diagram-cap" data-about-en="Hourly metadata backups and daily media synchronization">元数据每小时、媒体每日的备份时刻表</p>
       </div>
     </div>
 
     <!-- 04 退出承诺 -->
     <div class="timeline-node reverse">
       <div class="t-text">
-        <div class="t-step">04 — 数据可携带</div>
-        <h3>你的数据，永远可以迁出</h3>
-        <p>数据可携带是我们写进承诺的底线：服务如有任何重大变更，我们会<b>提前 30 天通知</b>，并提供<b>不少于 90 天的免费导出期</b>，确保你能完整取回全部原始照片与视频，一张不少。</p>
-        <p>你的回忆，进得来，也随时出得去。</p>
+        <div class="t-step" data-about-en="04 — Portability">04 — 数据可携带</div>
+        <h3 data-about-en="Your data can move with you">你的数据，永远可以迁出</h3>
+        <p data-about-en="Data portability is part of our commitment. For major service changes, we provide 30 days’ advance notice and at least 90 days of free export access so you can retrieve all original photographs and videos.">数据可携带是我们写进承诺的底线：服务如有任何重大变更，我们会<b>提前 30 天通知</b>，并提供<b>不少于 90 天的免费导出期</b>，确保你能完整取回全部原始照片与视频，一张不少。</p>
+        <p data-about-en="Your memories can come in—and leave with you.">你的回忆，进得来，也随时出得去。</p>
       </div>
       <div class="t-image">
         <div class="diagram-card">
@@ -1691,52 +1694,52 @@
             <line x1="70" y1="88" x2="196" y2="88" stroke="#C4A882" stroke-width="5" stroke-linecap="round"/>
             <line x1="204" y1="88" x2="332" y2="88" stroke="#8B9A7E" stroke-width="5" stroke-linecap="round"/>
             <circle cx="70" cy="88" r="6" fill="#3D2E1F"/>
-            <text x="70" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F">提前通知</text>
+            <text x="70" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F" data-about-en="Advance notice">提前通知</text>
             <circle cx="200" cy="88" r="6" fill="#3D2E1F"/>
-            <text x="200" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F">导出期开始</text>
+            <text x="200" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F" data-about-en="Export begins">导出期开始</text>
             <circle cx="332" cy="88" r="6" fill="#3D2E1F"/>
-            <text x="332" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F">迁出完成</text>
-            <text x="133" y="112" text-anchor="middle" font-size="10" fill="#8C6014">提前 30 天通知</text>
-            <text x="268" y="112" text-anchor="middle" font-size="10" fill="#4E7350">≥ 90 天免费导出</text>
+            <text x="332" y="66" text-anchor="middle" font-size="10" fill="#3D2E1F" data-about-en="Transfer complete">迁出完成</text>
+            <text x="133" y="112" text-anchor="middle" font-size="10" fill="#8C6014" data-about-en="30 days’ notice">提前 30 天通知</text>
+            <text x="268" y="112" text-anchor="middle" font-size="10" fill="#4E7350" data-about-en="90+ days to export">≥ 90 天免费导出</text>
           </svg>
         </div>
-        <p class="diagram-cap">提前 30 天通知 · 不少于 90 天导出期</p>
+        <p class="diagram-cap" data-about-en="30 days’ advance notice · At least 90 days to export">提前 30 天通知 · 不少于 90 天导出期</p>
       </div>
     </div>
 
     <!-- 05 正规主体 -->
     <div class="timeline-node">
       <div class="t-text">
-        <div class="t-step">05 — 正规主体</div>
-        <h3>一家依法登记、依法备案的实体公司</h3>
-        <p>画匣子的运营主体是一家依法登记的公司，网站已通过工信部 ICP 备案。以下信息均可在国家企业信用信息公示系统和工信部备案系统查询核实。</p>
+        <div class="t-step" data-about-en="05 — Registered business">05 — 正规主体</div>
+        <h3 data-about-en="A registered company and a registered website">一家依法登记、依法备案的实体公司</h3>
+        <p data-about-en="Photolio is operated by a legally registered company, and its website has an ICP filing with China’s Ministry of Industry and Information Technology. The records can be checked in the official company and website registries.">画匣子的运营主体是一家依法登记的公司，网站已通过工信部 ICP 备案。以下信息均可在国家企业信用信息公示系统和工信部备案系统查询核实。</p>
         <dl class="reg-list">
-          <div><dt>公司全称</dt><dd>上海奏星人工智能科技有限责任公司</dd></div>
-          <div><dt>统一社会信用代码</dt><dd>91310104MAG2695N58</dd></div>
-          <div><dt>法定代表人</dt><dd>魏万韬</dd></div>
-          <div><dt>成立日期</dt><dd>2025 年 10 月 31 日</dd></div>
-          <div><dt>注册地址</dt><dd>上海市徐汇区古美路 1528 号 6 幢 9 层 904 室</dd></div>
-          <div><dt>ICP 备案号</dt><dd><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="reg-beian-link">沪ICP备2025153256号-2</a></dd></div>
-          <div><dt>备案网站名称</dt><dd>奏星画匣子（hxiazi.com）</dd></div>
+          <div><dt data-about-en="Company name">公司全称</dt><dd data-about-en="Shanghai Zouxing Artificial Intelligence Technology Co., Ltd.">上海奏星人工智能科技有限责任公司</dd></div>
+          <div><dt data-about-en="Unified Social Credit Code">统一社会信用代码</dt><dd data-about-en="91310104MAG2695N58">91310104MAG2695N58</dd></div>
+          <div><dt data-about-en="Legal representative">法定代表人</dt><dd data-about-en="Wei Wantao">魏万韬</dd></div>
+          <div><dt data-about-en="Established">成立日期</dt><dd data-about-en="October 31, 2025">2025 年 10 月 31 日</dd></div>
+          <div><dt data-about-en="Registered address">注册地址</dt><dd data-about-en="Room 904, Floor 9, Building 6, 1528 Gumei Road, Xuhui District, Shanghai">上海市徐汇区古美路 1528 号 6 幢 9 层 904 室</dd></div>
+          <div><dt data-about-en="ICP filing">ICP 备案号</dt><dd><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="reg-beian-link">沪ICP备2025153256号-2</a></dd></div>
+          <div><dt data-about-en="Registered website">备案网站名称</dt><dd data-about-en="Zouxing Photolio (hxiazi.com)">奏星画匣子（hxiazi.com）</dd></div>
         </dl>
       </div>
       <div class="t-image">
         <div class="license-card">
           <img data-zoom src="about/business-license.jpg" alt="上海奏星人工智能科技有限责任公司 营业执照" data-alt-zh="上海奏星人工智能科技有限责任公司 营业执照" data-alt-en="Photolio product and customer photograph">
         </div>
-        <p class="diagram-cap">点击查看营业执照大图</p>
+        <p class="diagram-cap" data-about-en="Open the business registration certificate">点击查看营业执照大图</p>
       </div>
     </div>
 
   </section>
 
   <section class="about-company fade-in">
-    <div class="ac-eyebrow">关于我们</div>
-    <p class="ac-body">画匣子由 <b>奇绩创坛</b>（国内知名科技孵化器）投资孵化，创始团队来自 <b>斯坦福大学</b>、<b>波士顿大学</b> 与 <b>中山大学</b>，并先后与 <b>北京语言大学</b>、<b>中国地质大学（北京）</b> 等院校达成合作。我们长期专注于一件事：把每个人的回忆，长久而完整地保存下来。</p>
+    <div class="ac-eyebrow" data-about-en="About us">关于我们</div>
+    <p class="ac-body" data-about-en="Photolio is backed and incubated by MiraclePlus. Our founding team comes from Stanford University, Boston University, and Sun Yat-sen University, and has worked with Beijing Language University and China University of Geosciences (Beijing). We focus on preserving people’s memories, completely and for the long term.">画匣子由 <b>奇绩创坛</b>（国内知名科技孵化器）投资孵化，创始团队来自 <b>斯坦福大学</b>、<b>波士顿大学</b> 与 <b>中山大学</b>，并先后与 <b>北京语言大学</b>、<b>中国地质大学（北京）</b> 等院校达成合作。我们长期专注于一件事：把每个人的回忆，长久而完整地保存下来。</p>
     <div class="ac-legal">
-      <div class="ac-legal-row"><span class="ac-legal-k">运营主体</span><span class="ac-legal-v">上海奏星人工智能科技有限责任公司</span></div>
-      <div class="ac-legal-row"><span class="ac-legal-k">网站备案</span><span class="ac-legal-v"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></span></div>
-      <div class="ac-legal-row"><span class="ac-legal-k">服务域名</span><span class="ac-legal-v">hxiazi.com</span></div>
+      <div class="ac-legal-row"><span class="ac-legal-k" data-about-en="Operated by">运营主体</span><span class="ac-legal-v" data-about-en="Shanghai Zouxing Artificial Intelligence Technology Co., Ltd.">上海奏星人工智能科技有限责任公司</span></div>
+      <div class="ac-legal-row"><span class="ac-legal-k" data-about-en="Website registration">网站备案</span><span class="ac-legal-v"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></span></div>
+      <div class="ac-legal-row"><span class="ac-legal-k" data-about-en="Service domain">服务域名</span><span class="ac-legal-v" data-about-en="hxiazi.com">hxiazi.com</span></div>
     </div>
   </section>
 </div>
@@ -1790,7 +1793,7 @@
       <div class="icon-circle">
         <svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9z"/></svg>
       </div>
-      <span class="icon-label" id="contact-taobao">淘宝</span>
+      <span class="icon-label" id="contact-taobao" data-static-zh="淘宝" data-static-en="Taobao">淘宝</span>
     </button>
     <!-- WeChat -->
     <button class="contact-icon-btn" onclick="openModal('wechatModal')">
@@ -1942,39 +1945,39 @@
   <div class="modal">
     <button class="modal-close" onclick="closeModal('privacyModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     <h2 id="modal-privacy-title">隐私保护协议</h2>
-    <p class="updated">最后更新：2026年8月</p>
+    <p class="updated" data-about-en="Last updated: August 2026">最后更新：2026年8月</p>
     <div class="legal-entity">
-      <div><span>个人信息处理者</span>上海奏星人工智能科技有限责任公司</div>
-      <div><span>服务名称</span>画匣子 PHOTOLIO（hxiazi.com）</div>
+      <div><span data-static-zh="个人信息处理者" data-static-en="Data controller">个人信息处理者</span>上海奏星人工智能科技有限责任公司</div>
+      <div><span data-static-zh="服务名称" data-static-en="Service">服务名称</span>画匣子 PHOTOLIO（hxiazi.com）</div>
       <div><span>ICP 备案号</span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></div>
     </div>
-    <p>画匣子（PHOTOLIO，下称“我们”）由上海奏星人工智能科技有限责任公司运营，深知个人信息对您的重要性。我们将按照《中华人民共和国个人信息保护法》《中华人民共和国网络安全法》等法律法规的规定，保护您的个人信息及隐私安全。</p>
-    <h3>一、我们收集的信息</h3>
-    <p>在您使用画匣子服务时，我们可能会收集以下信息：</p>
+    <p data-about-en="Photolio (&quot;we&quot;), operated by Shanghai Zouxing Artificial Intelligence Technology Co., Ltd., respects the importance of your personal information. We protect it in accordance with applicable PRC laws, including the Personal Information Protection Law and Cybersecurity Law.">画匣子（PHOTOLIO，下称“我们”）由上海奏星人工智能科技有限责任公司运营，深知个人信息对您的重要性。我们将按照《中华人民共和国个人信息保护法》《中华人民共和国网络安全法》等法律法规的规定，保护您的个人信息及隐私安全。</p>
+    <h3 data-about-en="1. Information we collect">一、我们收集的信息</h3>
+    <p data-about-en="When you use Photolio, we may collect:">在您使用画匣子服务时，我们可能会收集以下信息：</p>
     <ul>
-      <li>您上传的照片、视频及文字内容</li>
-      <li>您的昵称和头像（用于多人协作时的身份识别）</li>
-      <li>设备信息和访问日志（用于服务优化和故障排查）</li>
+      <li data-about-en="Photographs, videos, and text you upload">您上传的照片、视频及文字内容</li>
+      <li data-about-en="Your nickname and profile picture, to identify contributors">您的昵称和头像（用于多人协作时的身份识别）</li>
+      <li data-about-en="Device information and access logs, for service improvements and troubleshooting">设备信息和访问日志（用于服务优化和故障排查）</li>
     </ul>
-    <h3>二、信息的使用</h3>
-    <p>您上传的所有内容仅用于生成您的回忆录成品，我们不会将您的照片、视频或文字内容用于以下任何用途：</p>
+    <h3 data-about-en="2. How we use information">二、信息的使用</h3>
+    <p data-about-en="Your uploads are used only to create your memory collections. We do not use your photographs, videos, or text for:">您上传的所有内容仅用于生成您的回忆录成品，我们不会将您的照片、视频或文字内容用于以下任何用途：</p>
     <ul>
-      <li>AI 模型训练</li>
-      <li>广告投放或商业推广</li>
-      <li>向任何第三方出售或分享</li>
-      <li>未经您许可的任何其他用途</li>
+      <li data-about-en="AI model training">AI 模型训练</li>
+      <li data-about-en="Advertising or commercial promotion">广告投放或商业推广</li>
+      <li data-about-en="Sale or sharing with third parties">向任何第三方出售或分享</li>
+      <li data-about-en="Any other use without your permission">未经您许可的任何其他用途</li>
     </ul>
-    <h3>三、信息的存储与保护</h3>
-    <p>我们采用行业标准的安全措施保护您的数据。您的内容存储在安全的云服务器上，仅授权人员可以访问，且仅在提供服务所必需时访问。</p>
-    <h3>四、信息的删除</h3>
-    <p>您可以随时要求我们删除您上传的所有内容。收到删除请求后，我们将在 7 个工作日内完成删除，且不可恢复。</p>
-    <h3>五、未成年人保护</h3>
-    <p>我们高度重视未成年人的隐私保护。如果您是未满 18 周岁的未成年人，请在监护人的指导下使用我们的服务。涉及未成年人照片的内容，我们将格外谨慎处理，严格遵守《未成年人保护法》相关规定。</p>
-    <h3>六、协议更新</h3>
-    <p>我们可能会不定期更新本协议。更新后的协议将在本页面公布，重大变更时我们会通过显著方式通知您。</p>
-    <h3>七、联系我们</h3>
-    <p>如您对本协议有任何疑问，或需要行使查阅、复制、更正、删除个人信息等权利，请通过页面上的联系方式与我们取得联系。</p>
-    <p>运营主体：上海奏星人工智能科技有限责任公司<br>注册地址：上海市徐汇区古美路 1528 号 6 幢 9 层 904 室<br>ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></p>
+    <h3 data-about-en="3. Storage and protection">三、信息的存储与保护</h3>
+    <p data-about-en="We use industry-standard safeguards. Content is stored on secure cloud servers and accessed only by authorized personnel when necessary to provide the service.">我们采用行业标准的安全措施保护您的数据。您的内容存储在安全的云服务器上，仅授权人员可以访问，且仅在提供服务所必需时访问。</p>
+    <h3 data-about-en="4. Deletion">四、信息的删除</h3>
+    <p data-about-en="You may request deletion of all uploaded content at any time. We complete deletion within seven business days of receiving a request; deletion is irreversible.">您可以随时要求我们删除您上传的所有内容。收到删除请求后，我们将在 7 个工作日内完成删除，且不可恢复。</p>
+    <h3 data-about-en="5. Protection of minors">五、未成年人保护</h3>
+    <p data-about-en="Users under 18 should use the service under a guardian’s guidance. We handle content featuring minors with particular care and comply with the PRC Law on the Protection of Minors.">我们高度重视未成年人的隐私保护。如果您是未满 18 周岁的未成年人，请在监护人的指导下使用我们的服务。涉及未成年人照片的内容，我们将格外谨慎处理，严格遵守《未成年人保护法》相关规定。</p>
+    <h3 data-about-en="6. Policy updates">六、协议更新</h3>
+    <p data-about-en="We may update this policy periodically. Updated versions appear on this page, and significant changes will be prominently communicated.">我们可能会不定期更新本协议。更新后的协议将在本页面公布，重大变更时我们会通过显著方式通知您。</p>
+    <h3 data-about-en="7. Contact">七、联系我们</h3>
+    <p data-about-en="For questions or requests to access, copy, correct, or delete personal information, please use the contact options on this page.">如您对本协议有任何疑问，或需要行使查阅、复制、更正、删除个人信息等权利，请通过页面上的联系方式与我们取得联系。</p>
+    <p data-about-en="Operator: Shanghai Zouxing Artificial Intelligence Technology Co., Ltd. · Registered address: Room 904, Floor 9, Building 6, 1528 Gumei Road, Xuhui District, Shanghai. · ICP filing: 沪ICP备2025153256号-2">运营主体：上海奏星人工智能科技有限责任公司<br>注册地址：上海市徐汇区古美路 1528 号 6 幢 9 层 904 室<br>ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></p>
   </div>
 </div>
 
@@ -1983,32 +1986,32 @@
   <div class="modal">
     <button class="modal-close" onclick="closeModal('termsModal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     <h2 id="modal-terms-title">用户服务协议</h2>
-    <p class="updated">最后更新：2026年8月</p>
+    <p class="updated" data-about-en="Last updated: August 2026">最后更新：2026年8月</p>
     <div class="legal-entity">
-      <div><span>服务提供方</span>上海奏星人工智能科技有限责任公司</div>
-      <div><span>服务名称</span>画匣子 PHOTOLIO（hxiazi.com）</div>
+      <div><span data-static-zh="服务提供方" data-static-en="Service provider">服务提供方</span>上海奏星人工智能科技有限责任公司</div>
+      <div><span data-static-zh="服务名称" data-static-en="Service">服务名称</span>画匣子 PHOTOLIO（hxiazi.com）</div>
       <div><span>ICP 备案号</span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></div>
     </div>
-    <p>欢迎使用画匣子（PHOTOLIO）提供的服务。本服务由上海奏星人工智能科技有限责任公司提供并运营。使用我们的服务即表示您同意以下条款。</p>
-    <h3>一、服务内容</h3>
-    <p>画匣子提供多人共创回忆录的在线平台服务，包括但不限于：照片和文字的上传与整合、回忆录的自动排版与生成、实体纪念册的印制与 NFC 功能嵌入。</p>
-    <h3>二、用户责任</h3>
+    <p data-about-en="Welcome to Photolio, provided and operated by Shanghai Zouxing Artificial Intelligence Technology Co., Ltd. By using the service, you agree to the following terms.">欢迎使用画匣子（PHOTOLIO）提供的服务。本服务由上海奏星人工智能科技有限责任公司提供并运营。使用我们的服务即表示您同意以下条款。</p>
+    <h3 data-about-en="1. Services">一、服务内容</h3>
+    <p data-about-en="Photolio provides an online platform for collaborative memory collections, including photo and text uploads, layout and collection generation, printed memory books, and embedded NFC features.">画匣子提供多人共创回忆录的在线平台服务，包括但不限于：照片和文字的上传与整合、回忆录的自动排版与生成、实体纪念册的印制与 NFC 功能嵌入。</p>
+    <h3 data-about-en="2. User responsibilities">二、用户责任</h3>
     <ul>
-      <li>您应确保上传的内容不侵犯他人的肖像权、著作权等合法权益</li>
-      <li>多人共创时，您应确保已获得其他参与者的知情同意</li>
-      <li>您不得上传违反法律法规或公序良俗的内容</li>
+      <li data-about-en="Ensure uploaded content does not infringe others’ portrait rights, copyright, or other lawful rights">您应确保上传的内容不侵犯他人的肖像权、著作权等合法权益</li>
+      <li data-about-en="Obtain informed consent from other participants when creating a shared collection">多人共创时，您应确保已获得其他参与者的知情同意</li>
+      <li data-about-en="Do not upload content that violates applicable laws or public order and morals">您不得上传违反法律法规或公序良俗的内容</li>
     </ul>
-    <h3>三、知识产权</h3>
-    <p>您上传的原始内容（照片、文字）的知识产权归您所有。画匣子生成的排版设计的知识产权归画匣子所有，但您享有永久的、非排他性的使用权。</p>
-    <h3>四、服务费用</h3>
-    <p>在线回忆录生成功能免费使用。实体纪念册印制、NFC 嵌入等增值服务按照具体方案收费，具体价格以双方确认的订单为准。</p>
-    <h3>五、免责声明</h3>
-    <p>因不可抗力、第三方服务中断等非我们原因导致的服务中断或数据丢失，我们不承担赔偿责任，但会尽最大努力协助恢复。</p>
-    <h3>六、争议解决</h3>
-    <p>本协议适用中华人民共和国法律。如发生争议，双方应友好协商解决。</p>
-    <h3>七、联系方式</h3>
-    <p>如有疑问，请通过页面上的联系方式与我们取得联系。</p>
-    <p>服务提供方：上海奏星人工智能科技有限责任公司<br>统一社会信用代码：91310104MAG2695N58<br>注册地址：上海市徐汇区古美路 1528 号 6 幢 9 层 904 室<br>ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></p>
+    <h3 data-about-en="3. Intellectual property">三、知识产权</h3>
+    <p data-about-en="You retain intellectual property rights in your original photographs and writing. Photolio owns its generated layout designs, and grants you a perpetual, non-exclusive right to use them.">您上传的原始内容（照片、文字）的知识产权归您所有。画匣子生成的排版设计的知识产权归画匣子所有，但您享有永久的、非排他性的使用权。</p>
+    <h3 data-about-en="4. Fees">四、服务费用</h3>
+    <p data-about-en="Online memory collection generation is free. Printed books, NFC integration, and other additional services are charged according to the order confirmed by both parties.">在线回忆录生成功能免费使用。实体纪念册印制、NFC 嵌入等增值服务按照具体方案收费，具体价格以双方确认的订单为准。</p>
+    <h3 data-about-en="5. Disclaimer">五、免责声明</h3>
+    <p data-about-en="We are not liable for interruptions or data loss caused by force majeure, third-party service interruptions, or other circumstances outside our responsibility, but will make every effort to assist recovery.">因不可抗力、第三方服务中断等非我们原因导致的服务中断或数据丢失，我们不承担赔偿责任，但会尽最大努力协助恢复。</p>
+    <h3 data-about-en="6. Disputes">六、争议解决</h3>
+    <p data-about-en="These terms are governed by the laws of the People’s Republic of China. Disputes should be resolved through friendly consultation.">本协议适用中华人民共和国法律。如发生争议，双方应友好协商解决。</p>
+    <h3 data-about-en="7. Contact">七、联系方式</h3>
+    <p data-about-en="Please use the contact options on this page if you have questions.">如有疑问，请通过页面上的联系方式与我们取得联系。</p>
+    <p data-about-en="Provider: Shanghai Zouxing Artificial Intelligence Technology Co., Ltd. · Unified Social Credit Code: 91310104MAG2695N58. · Registered address: Room 904, Floor 9, Building 6, 1528 Gumei Road, Xuhui District, Shanghai. · ICP filing: 沪ICP备2025153256号-2">服务提供方：上海奏星人工智能科技有限责任公司<br>统一社会信用代码：91310104MAG2695N58<br>注册地址：上海市徐汇区古美路 1528 号 6 幢 9 层 904 室<br>ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2025153256号-2</a></p>
   </div>
 </div>
 
@@ -2327,10 +2330,17 @@
   const originalDescription = document.querySelector('meta[name=description]')?.content || '';
   let savedLang = '';
   try { savedLang = localStorage.getItem('pianyu_lang') || ''; } catch {}
+  const requestedLang = new URLSearchParams(location.search).get('lang');
+  if (['zh','en'].includes(requestedLang)) savedLang = requestedLang;
   let currentLang = ['zh', 'en'].includes(savedLang) ? savedLang : (/^zh/i.test(navigator.language || 'zh') ? 'zh' : 'en');
 
   function applyLang(lang) {
     const t = i18n[lang];
+    document.querySelectorAll('[data-about-en]').forEach(el => {
+      if (el.dataset.aboutZh === undefined) el.dataset.aboutZh = el.innerHTML;
+      if (lang === 'en') el.textContent = el.dataset.aboutEn;
+      else el.innerHTML = el.dataset.aboutZh;
+    });
     document.querySelectorAll('[data-static-zh]').forEach(el => { el.textContent = lang === 'zh' ? el.dataset.staticZh : el.dataset.staticEn; });
     document.querySelectorAll('[data-alt-zh]').forEach(el => { el.alt = lang === 'zh' ? el.dataset.altZh : el.dataset.altEn; });
     for (const [id, text] of Object.entries(t)) {
@@ -2382,7 +2392,7 @@
     }
     if (btn) btn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    try { history.replaceState(null, '', name === 'album' ? '#album' : location.pathname); } catch (e) {}
+    try { history.replaceState(null, '', location.pathname + location.search + (name === 'album' ? '#album' : name === 'about' ? '#about' : '')); } catch (e) {}
   }
 
   function toggleMpQr() {
@@ -2391,6 +2401,7 @@
   }
 
   if (location.hash === '#album') switchTab('album');
+  if (location.hash === '#about') switchTab('about');
 
   // ===== Hero carousel =====
   (function () {
