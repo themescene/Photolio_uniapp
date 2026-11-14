@@ -67,9 +67,14 @@ export function useFolioPaging(root: Ref<HTMLElement | null>) {
       const start = topOf(page, scroller)
       const end = Math.max(start, (panels[index + 1] ? topOf(panels[index + 1], scroller) : scroller.scrollHeight - headerHeight()) - viewport)
       const points = [start]
-      for (let top = start + viewport; top < end - 1; top += viewport) points.push(top)
-      // Small overflow must not create an almost invisible extra wheel stop.
-      if (end > points[points.length - 1] + viewport * .2) points.push(end)
+      const heading = portrait() && page.closest('.folio-case--photolio')
+        ? page.querySelector<HTMLElement>('.folio-theme__heading, .folio-details > h3') : null
+      const interval = Math.max(viewport * .5, viewport - (heading?.offsetHeight || 0))
+      for (let top = start + interval; top < end - interval * .25; top += interval) points.push(top)
+      const contentBottom = page.closest('.folio-case--photolio') && !portrait()
+        ? Math.max(start, ...Array.from(page.querySelectorAll<HTMLElement>('h2,h3,p,dl,img,video,button,a,summary')).filter(node => node.getClientRects().length).map(node => scroller.scrollTop + node.getBoundingClientRect().bottom - scroller.getBoundingClientRect().top - headerHeight())) : end
+      const threshold = portrait() || contentBottom > start + viewport + 2 ? 2 : viewport * .2
+      if (end > points[points.length - 1] + threshold) points.push(end)
       return points
     })
     const next = direction > 0 ? stops.find(top => top > position + 2) : stops.reverse().find(top => top < position - 2)

@@ -7,14 +7,13 @@ const active = ref(false)
   <div class="photolio-construction" :class="{ 'is-active': active }">
     <p class="construction-meta">01 / Physical objects. Digital memories.</p>
     <h3 class="construction-title">FUTURE<br /><em>MEDIA.</em></h3>
-    <div class="construction-diagram" aria-hidden="true"><svg viewBox="0 0 300 450" preserveAspectRatio="none"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M300 10A215 215 0 0 0 300 440M0 110h300M0 220h300M0 330h300M75 0v450M150 0v450M225 0v450"/><circle cx="150" cy="110" r="70"/><circle cx="150" cy="110" r="40"/><path d="m0 220 300-110L0 330l300 110M150 185v70M115 220h70"/><ellipse cx="150" cy="355" rx="100" ry="35"/><ellipse cx="150" cy="355" rx="38" ry="35"/></g></svg></div>
-    <div class="construction-grid" aria-hidden="true"><span>TECH.<small>Systems &amp; interaction</small></span><span>ART.<small>Form &amp; expression</small></span><span>SOUND.<small>Timing &amp; rhythm</small></span><span>PLAY.<small>Rules &amp; possibilities</small></span></div>
+    <div class="construction-body" aria-hidden="true"><div class="construction-diagram"><svg viewBox="0 0 300 450"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M300 10A215 215 0 0 0 300 440M0 110h300M0 220h300M0 330h300M75 0v450M150 0v450M225 0v450"/><circle cx="150" cy="110" r="70"/><circle cx="150" cy="110" r="40"/><path d="m0 220 300-110L0 330l300 110M150 185v70M115 220h70"/><ellipse cx="150" cy="355" rx="100" ry="35"/><ellipse cx="150" cy="355" rx="38" ry="35"/></g></svg></div><div class="construction-grid"><span>TECH.<small>Systems &amp; interaction</small></span><span>ART.<small>Form &amp; expression</small></span><span>SOUND.<small>Timing &amp; rhythm</small></span><span>PLAY.<small>Rules &amp; possibilities</small></span></div></div>
     <svg class="construction-line" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path d="M270 365 C480 365 470 190 750 190 M270 365 C440 365 480 520 800 520"/><circle cx="270" cy="365" r="5"/><circle cx="750" cy="190" r="5"/><circle cx="800" cy="520" r="5"/></svg>
     <component :is="'button'" type="button" class="construction-object" data-folio-cursor="dot" aria-label="Explore the NFC keepsake" :aria-pressed="active" @mouseenter="active = true" @mouseleave="active = false" @focus="active = true" @blur="active = false" @click="active = !active">
       <img :src="'/folio-photolio/product.png'" alt="Photolio's open ring-bound memory book" />
       <span>THE OBJECT / NFC KEEPSAKE</span>
     </component>
-    <a class="construction-phone" data-folio-cursor="dot" href="/#/pages/index/index" target="_blank" rel="noopener" aria-label="Open the Photolio web app"><img :src="'/folio-photolio/p1.jpg'" alt="Photolio home screen with personal memory collections" /></a>
+    <a class="construction-phone" data-folio-cursor="dot" href="/#/pages/index/index" target="_blank" rel="noopener" aria-label="Open the Photolio web app"><img :src="'/folio-photolio/future-p1.jpg'" alt="Photolio home screen with personal memory collections" /></a>
     <component :is="'button'" type="button" class="construction-banner" @click="$emit('navigate','photolio-theme-1')"><span class="construction-light"></span> A keepsake opens a living collection <span aria-hidden="true">↗</span></component>
     <p class="construction-foot">A physical home for photographs, voices &amp; shared stories.</p>
   </div>
@@ -26,10 +25,11 @@ const active = ref(false)
 .construction-meta { position:absolute; left:var(--gutter); top:4%; font:600 11px/1.4 'Courier New',monospace; letter-spacing:.12em; text-transform:uppercase; }
 .construction-title { position:absolute; top:10%; left:var(--gutter); font:900 clamp(44px,min(11vw,14dvh),150px)/.83 'Arial Black','Segoe UI',sans-serif; letter-spacing:-.065em; z-index:1; }
 .construction-title em { display:block; margin-left:16%; font-family:Georgia,serif; font-weight:900; }
-.construction-diagram { position:absolute; inset:36% 51% 11% 4%; border:1px solid #2c282280; color:#2c2822; opacity:.65; }
+.construction-body { position:absolute; inset:36% 4% 11%; display:grid; grid-template-columns:1fr 1.15fr; border:1px solid #2c282280; pointer-events:none; }
+.construction-diagram { overflow:hidden; border-right:1px solid #2c282280; }
 .construction-diagram svg { width:100%; height:100%; }
-.construction-grid { position:absolute; inset:38% 4% 13% 45%; border:1px solid #2c282240; display:grid; grid-template-rows:repeat(4,1fr); z-index:-1; }
-.construction-grid span { border-bottom:1px solid #2c282240; padding:5px 12px; font:700 clamp(18px,3vw,42px)/1 Georgia,serif; }
+.construction-grid { display:grid; grid-template-rows:repeat(4,1fr); }
+.construction-grid span { display:flex; flex-direction:column; justify-content:center; border-bottom:1px solid #2c282280; padding:6px 12px; font:800 clamp(17px,3.6vw,52px)/1 Georgia,serif; }
 .construction-grid span:last-child { border:0; }
 .construction-grid small { display:block; font:9px/1.8 'Courier New',monospace; letter-spacing:.08em; }
 .construction-line { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; z-index:2; }
@@ -53,7 +53,7 @@ const active = ref(false)
  .construction-phone { top:36%; right:9%; height:42%; max-width:37%; border-width:5px; transform:rotate(7deg); }
  .folio-site .construction-object { top:39%; left:2%; width:51%; height:31%; }
  .construction-object span { max-width:85%; font-size:8px; text-align:center; }
- .construction-grid { inset:32% 5% 17%; opacity:.45; }
+ .construction-body { inset-block-start:31%; }
  .construction-grid span { font-size:24px; }
  .folio-site .photolio-construction .construction-banner { bottom:10%; right:5%; max-width:90%; font-size:11px; }
  .construction-line path { d:path('M270 330 C480 330 470 340 750 340 M270 330 C440 330 480 510 600 510'); }

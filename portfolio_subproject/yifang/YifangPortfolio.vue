@@ -30,6 +30,7 @@ const step = ref(0)
 const media = ref<Record<string, MediaSlot>>({})
 const reading = ref<'resume' | 'archive' | 'sample' | null>(null)
 const video = ref<{ url: string; title: string } | null>(null)
+const openPhotolio = ref(false)
 const cursor = ref<HTMLElement | null>(null)
 const { pointerMove, updateCursor, hideCursor } = useFolioCursor(cursor)
 const image = ref('')
@@ -52,7 +53,10 @@ const wheelImages = computed(() => {
   if (!images.has(sampleImage)) images.set(sampleImage, 'Reader sample')
   return Array.from(images, ([url, title]) => ({ url, title }))
 })
-const gallery = computed(() => wheelImages.value.map(item => item.url))
+const gallery = computed(() => {
+  const images = wheelImages.value.map(item => item.url)
+  return image.value && !images.includes(image.value) ? [image.value] : images
+})
 const readingSlot = computed(() => {
   if (reading.value === 'sample') return { url: sampleDocument }
   if (!reading.value) return
@@ -60,7 +64,7 @@ const readingSlot = computed(() => {
   return url ? { url } : undefined
 })
 const readingTitle = computed(() => reading.value === 'sample' ? 'Sample PDF' : reading.value === 'resume' ? 'Résumé' : 'Work Collection 2020–2024')
-watch(() => !!(entering.value || reading.value || image.value || video.value), open => {
+watch(() => !!(entering.value || reading.value || image.value || video.value || openPhotolio.value), open => {
   pause(open)
   if (open) hideCursor()
 }, { immediate: true })
@@ -162,7 +166,7 @@ onUnmounted(() => {
       <div :class="project.id === 'photolio' ? 'photolio-opening' : 'folio-case__opening folio-page'" :data-label="project.name">
       <div class="folio-case__cover folio-pad folio-page" :data-label="project.name">
         <div class="folio-eyebrow"><span class="folio-case__identity"><span class="folio-case__number">0{{ i + 1 }} /</span> <strong>{{ project.name }}</strong></span><span class="folio-case__counter">Case {{ i + 1 }} of {{ copy.projects.length }}</span></div>
-        <img v-if="project.id === 'photolio'" class="photolio-cover-logo" :src="'/folio-photolio/brand.png'" alt="Photolio brand artwork" /><h2>{{ project.title }}</h2><p>{{ project.lead }}</p>
+        <img v-if="project.id === 'photolio'" class="photolio-cover-logo" :src="'/folio-photolio/brand.jpg'" alt="Photolio brand artwork" /><h2>{{ project.title }}</h2><p>{{ project.lead }}</p>
       </div>
       <figure class="folio-stage folio-page" :data-label="project.name + ' / Visual'" :class="'folio-stage--' + project.id" data-reveal>
         <PhotolioVisual v-if="project.id === 'photolio'" @navigate="jump" />
@@ -191,12 +195,13 @@ onUnmounted(() => {
       </div>
       <section v-for="(theme, j) in project.themes" :id="project.id + '-theme-' + (j + 1)" :key="theme.heading" class="folio-theme folio-pad folio-page" :class="{ 'folio-theme--dark': j % 2 === 1 }" :data-label="theme.heading">
         <div class="folio-theme__copy">
-          <span class="folio-code">0{{ i + 1 }}.0{{ j + 1 }}</span>
-          <h3>{{ theme.heading }}</h3>
+          <div class="folio-theme__heading"><span class="folio-code">0{{ i + 1 }}.0{{ j + 1 }}</span><h3>{{ theme.heading }}</h3></div>
+          <div class="folio-theme__text">
           <p v-for="p in theme.text" :key="p">{{ p }}</p>
           <p class="folio-caption">{{ theme.caption }}</p>
           <a v-if="project.id === 'photolio' && j === 2" class="photolio-link" href="/about.html?lang=en#about" target="_blank" rel="noopener">Explore the product website <span aria-hidden="true">↗</span></a>
-          <a v-if="project.id === 'photolio' && j === 3" class="photolio-link" href="/#/pages/index/index" target="_blank" rel="noopener">Open the Photolio web app <span aria-hidden="true">↗</span></a>
+          <component :is="'button'" v-if="project.id === 'photolio' && j === 3" type="button" class="photolio-link" @click="openPhotolio = true">Open Photolio <span aria-hidden="true">↗</span></component>
+          </div>
         </div>
         <PhotolioMedia v-if="project.id === 'photolio'" :section="j" @image="image = $event" />
         <div v-else class="folio-theme__visual" data-reveal>
@@ -215,7 +220,7 @@ onUnmounted(() => {
       </section>
       <div :id="project.id + '-details'" class="folio-details folio-pad folio-page" :data-label="project.name + ' / Details'"><h3>Project details</h3>
         <dl><div v-for="detail in project.details" :key="detail[0]"><dt>{{ detail[0] }}</dt><dd>{{ detail[1] }}</dd></div></dl>
-        <div v-if="project.id === 'photolio'" class="photolio-destinations"><a href="/about.html?lang=en#about" target="_blank" rel="noopener">Product website ↗</a><a href="/#/pages/index/index" target="_blank" rel="noopener">Launch web app ↗</a><a href="/#/pages/personal/index" target="_blank" rel="noopener">Create a personal space ↗</a></div>
+        <div v-if="project.id === 'photolio'" class="photolio-destinations"><a href="/about.html?lang=en#about" target="_blank" rel="noopener">Product website ↗</a><component :is="'button'" type="button" @click="openPhotolio = true">Open Photolio ↗</component><a href="/#/pages/personal/index" target="_blank" rel="noopener">Create a personal space ↗</a></div>
         <div class="folio-affiliations" aria-label="Related organizations">
           <span>Related organizations</span>
           <strong v-for="organization in affiliations[project.id]" :key="organization.name">
@@ -297,5 +302,8 @@ onUnmounted(() => {
     <Teleport v-if="image" to="body">
       <H5ImagePreview :visible="true" :urls="gallery" :initial-idx="gallery.indexOf(image)" @close="image = ''" />
     </Teleport>
+    <SpaceDialog v-if="openPhotolio" title="Open Photolio" @close="openPhotolio = false">
+      <div class="photolio-open-options"><div><strong>WeChat mini program</strong><p>Scan with WeChat, or press and hold to recognize the code.</p><img :src="'/about/miniprogram-qr.png'" alt="Photolio WeChat mini program code" /></div><a href="/#/pages/index/index" target="_blank" rel="noopener">Open the web app <span aria-hidden="true">↗</span></a></div>
+    </SpaceDialog>
   </main>
 </template>

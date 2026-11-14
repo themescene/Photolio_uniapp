@@ -1,12 +1,18 @@
 /* Photolio-specific media composition. Other case layouts remain independent. */
 .photolio-opening { display:contents; }
+.folio-case.folio-case--photolio { --case-paper:var(--tone); }
 .folio-case--photolio .folio-case__cover { position:relative; isolation:isolate; overflow:hidden; padding-right:33%; }
-.photolio-cover-logo { position:absolute; right:0; top:50%; transform:translateY(-50%); width:34%; max-height:80%; object-fit:contain; z-index:0; mix-blend-mode:multiply; pointer-events:none; }
+.photolio-cover-logo { position:absolute; right:0; top:50%; transform:translateY(-50%); width:34%; max-height:80%; object-fit:contain; z-index:0; pointer-events:none; mask-image:radial-gradient(ellipse at center,#000 65%,transparent 100%); }
 .folio-case--photolio .folio-case__cover h2 { font-size:clamp(40px,min(6.5vw,12dvh),110px); }
 .folio-case--photolio .folio-stage { background:var(--tone); }
 .photolio-link { display:inline-flex; gap:24px; margin-top:25px; padding:12px 0; border-bottom:1px solid currentColor; font-size:14px; color:inherit; text-decoration:none; }
 .photolio-destinations { grid-column:1/-1; display:flex; flex-wrap:wrap; gap:12px 28px; margin-block:12px; }
 .photolio-destinations a { color:inherit; text-underline-offset:6px; font-size:14px; }
+.folio-site .photolio-destinations button { font-size:14px; text-decoration:underline; text-underline-offset:6px; }
+.photolio-open-options { display:grid; gap:22px; color:#2c2822; }
+.photolio-open-options p { margin:8px 0 12px; font-size:14px; }
+.photolio-open-options img { display:block; width:160px; max-width:100%; }
+.photolio-open-options a { display:flex; justify-content:space-between; padding:16px; background:#2c2822; color:#e8ddcf; text-decoration:none; }
 .folio-case--photolio .folio-affiliations { align-items:center; flex-wrap:wrap; }
 .folio-case--photolio .folio-affiliations strong { display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center; width:clamp(100px,15vw,190px); min-height:110px; border:0; padding:8px; }
 .folio-case--photolio .folio-affiliations img { max-width:100%; max-height:65px; width:auto; height:65px; object-fit:contain; mix-blend-mode:multiply; }
@@ -18,5 +24,18 @@
  .photolio-cover-logo { position:relative; order:3; width:80%; height:38dvh; margin:10px 0 0 auto; top:auto; right:auto; transform:none; }
  .folio-case--photolio .folio-case__cover p { max-width:42ch; }
  .folio-case--photolio .folio-theme { grid-template-rows:auto minmax(280px,1fr); }
+ .folio-case--photolio .folio-theme { display:block; }
+ .folio-case--photolio .folio-theme__copy { display:contents; }
+ .folio-case--photolio .folio-theme__heading { position:sticky; top:var(--folio-bar-height); z-index:8; background:var(--case-paper); padding:12px 0; }
+ .folio-case--photolio .folio-theme--dark .folio-theme__heading { background:var(--ground); }
+ .folio-case--photolio .folio-theme__heading h3 { margin:6px 0 0; }
+ .folio-case--photolio .folio-theme__text { padding:12px 0 24px; }
+ .folio-case--photolio .folio-details h3 { position:sticky; top:var(--folio-bar-height); z-index:8; background:var(--case-paper); padding:10px 0; margin:0; }
 }
 @media(orientation:landscape) and (max-height:500px) { .folio-case--photolio .folio-case__cover h2 {font-size:clamp(28px,8dvh,45px);} }
+@media(orientation:landscape) and (max-height:850px) {
+ #photolio-theme-3, #photolio-theme-4 { padding-block:clamp(18px,3dvh,28px); }
+ #photolio-theme-3 h3, #photolio-theme-4 h3 { font-size:clamp(28px,3.2vw,46px); margin:8px 0 12px; }
+ #photolio-theme-3 p, #photolio-theme-4 p { font-size:clamp(15px,1.35vw,18px); line-height:1.45; }
+ #photolio-theme-3 .photolio-link, #photolio-theme-4 .photolio-link { margin-top:12px; }
+}

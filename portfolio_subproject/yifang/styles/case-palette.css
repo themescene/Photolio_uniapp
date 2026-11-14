@@ -1,6 +1,6 @@
 /* Owner: case-palette. Change this surface only; layout locks cover other pages. */
 .folio-case { border-top:1px solid var(--line); }
-.folio-case--photolio { --tone:#efe0c6; --ground:#2c2822; }
+.folio-case--photolio { --tone:#eae5de; --ground:#2c2822; --case-paper:#eae5de; }
 .folio-case--miaozhuang { --tone:#ff9a48; --ground:#3b2115; }
 .folio-case--xiedao-renaissance { --tone:#c4c6fa; --ground:#222344; }
 .folio-case--brookline { --tone:#acdae0; --ground:#123b49; }
