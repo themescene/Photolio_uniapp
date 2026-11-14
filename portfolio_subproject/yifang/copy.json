@@ -75,7 +75,7 @@
     },
     {
       "id": "miaozhuang",
-      "name": "Miaozhuang",
+      "name": "MIAOZER",
       "summary": "AI assistance built into the work of renovating a home. Product design and development across iOS, Android, and WeChat.",
       "title": "Bringing AI into the work of renovating a home",
       "lead": "Product design and cross-platform development connecting renovation advice with project plans, materials, and local service providers.",
@@ -84,8 +84,9 @@
       ],
       "responseLabel": "Solution",
       "response": [
-        "Working with my co-founder on Miaozhuang’s AI upgrade, I designed and developed interfaces across iOS, Android, and WeChat mini-programs. My work connected the assistant to renovation diaries and platform search, so a conversation could lead into a plan, a product page, or a service-provider profile.",
+        "Working with my co-founder on MIAOZER’s AI upgrade, I designed and developed interfaces across iOS, Android, and WeChat mini-programs. My work connected the assistant to renovation diaries and platform search, so a conversation could lead into a plan, a product page, or a service-provider profile.",
         "I also built Python assistant workflows that bring project context and retrieved platform information into the conversation. Speech input and image-based material recognition provide additional ways to begin a task. Across these features, I focused on the relationship between what the assistant says and what the user can do next.",
+        "I developed the backend agent workflows; my co-founder developed the RAG-based intelligent search. I integrated the two into the cross-platform experience.",
         "The completed engagement was accepted by the client."
       ],
       "caption": "",

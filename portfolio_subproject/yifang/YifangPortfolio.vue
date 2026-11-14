@@ -14,7 +14,10 @@ import FolioEntrance from './FolioEntrance.vue'
 import DesignLab from './DesignLab.vue'
 import PhotolioVisual from './PhotolioVisual.vue'
 import PhotolioMedia from './PhotolioMedia.vue'
+import MiaoPhones from './MiaoPhones.vue'
+import MiaoFeatures from './MiaoFeatures.vue'
 import './styles/photolio.css'
+import './styles/miaozer.css'
 import { useFolioPaging } from './useFolioPaging'
 import { useFolioCursor } from './useFolioCursor'
 import PageActions from './ui/PageActions.vue'
@@ -170,6 +173,7 @@ onUnmounted(() => {
       </div>
       <figure class="folio-stage folio-page" :data-label="project.name + ' / Visual'" :class="'folio-stage--' + project.id" data-reveal>
         <PhotolioVisual v-if="project.id === 'photolio'" @navigate="jump" />
+        <MiaoPhones v-else-if="project.id === 'miaozhuang'" :screens="[1]" @image="image = $event" />
         <H5AnimatedImage v-else-if="media[project.id]?.kind === 'image'" class="folio-image-trigger" :src="media[project.id].url" :alt="project.name"
           fit="contain" cropped @click="image = media[project.id].url" />
         <component v-else-if="media[project.id]?.kind === 'video'" :is="'button'" type="button" class="folio-video-cover"
@@ -180,7 +184,7 @@ onUnmounted(() => {
         <component v-else :is="'button'" type="button" class="folio-stage__photo folio-image-trigger" :aria-label="'View image: ' + project.name" @click="image = projectCover(project.id)">
           <img :src="projectCover(project.id)" alt="" loading="lazy" />
         </component>
-        <figcaption v-if="project.id !== 'photolio'">
+        <figcaption v-if="project.id !== 'photolio' && project.id !== 'miaozhuang'">
           <span>0{{ i + 1 }} / {{ project.name }}</span>
           <component :is="'button'" type="button" v-if="media[project.id]?.kind === 'image'" @click="image = media[project.id].url">View image ↗</component>
           <component :is="'button'" type="button" v-else-if="media[project.id]?.kind === 'video'" @click="video = { url: media[project.id].url, title: project.name }">View video ↗</component>
@@ -204,6 +208,7 @@ onUnmounted(() => {
           </div>
         </div>
         <PhotolioMedia v-if="project.id === 'photolio'" :section="j" @image="image = $event" />
+        <MiaoPhones v-else-if="project.id === 'miaozhuang'" :screens="[[2,6],[7,8],[9]][j]" @image="image = $event" />
         <div v-else class="folio-theme__visual" data-reveal>
           <H5AnimatedImage v-if="media[project.id + '-' + (j + 1)]?.kind === 'image'" class="folio-image-trigger"
             :src="media[project.id + '-' + (j + 1)].url" :alt="theme.heading" fit="contain" cropped
@@ -218,9 +223,11 @@ onUnmounted(() => {
           </component>
         </div>
       </section>
+      <MiaoFeatures v-if="project.id === 'miaozhuang'" @image="image = $event" />
       <div :id="project.id + '-details'" class="folio-details folio-pad folio-page" :data-label="project.name + ' / Details'"><h3>Project details</h3>
         <dl><div v-for="detail in project.details" :key="detail[0]"><dt>{{ detail[0] }}</dt><dd>{{ detail[1] }}</dd></div></dl>
         <div v-if="project.id === 'photolio'" class="photolio-destinations"><a href="/about.html?lang=en#about" target="_blank" rel="noopener">Product website ↗</a><component :is="'button'" type="button" @click="openPhotolio = true">Open Photolio ↗</component><a href="/#/pages/personal/index" target="_blank" rel="noopener">Create a personal space ↗</a></div>
+        <div v-if="project.id === 'miaozhuang'" class="miao-brand"><img :src="'/folio-miaozer/logo.jpg'" alt="MIAOZER 秒装同城" /></div>
         <div class="folio-affiliations" aria-label="Related organizations">
           <span>Related organizations</span>
           <strong v-for="organization in affiliations[project.id]" :key="organization.name">

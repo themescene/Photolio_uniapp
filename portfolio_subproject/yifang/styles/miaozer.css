@@ -1,0 +1,5 @@
+.folio-case--miaozhuang .folio-stage .miao-phone-item figcaption {display:block; padding:0; border:0; text-align:left; font:10px/1.35 'Courier New',monospace; letter-spacing:.04em;}
+.folio-case--miaozhuang .folio-stage > .miao-phones {flex:1; padding:20px; min-height:0;}
+.folio-case--miaozhuang .folio-theme > .miao-phones {min-height:0;}
+.miao-brand {margin-top:24px; max-width:300px;}
+.miao-brand img {display:block; width:100%;}
