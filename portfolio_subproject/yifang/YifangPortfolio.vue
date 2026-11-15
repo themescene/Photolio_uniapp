@@ -16,6 +16,8 @@ import PhotolioVisual from './PhotolioVisual.vue'
 import PhotolioMedia from './PhotolioMedia.vue'
 import MiaoPhones from './MiaoPhones.vue'
 import MiaoFeatures from './MiaoFeatures.vue'
+import XiedaoVisual from './XiedaoVisual.vue'
+import XiedaoFeatures from './XiedaoFeatures.vue'
 import './styles/photolio.css'
 import './styles/miaozer.css'
 import { useFolioPaging } from './useFolioPaging'
@@ -173,6 +175,7 @@ onUnmounted(() => {
       </div>
       <figure class="folio-stage folio-page" :data-label="project.name + ' / Visual'" :class="'folio-stage--' + project.id" data-reveal>
         <PhotolioVisual v-if="project.id === 'photolio'" @navigate="jump" />
+        <XiedaoVisual v-else-if="project.id === 'xiedao-renaissance'" />
         <MiaoPhones v-else-if="project.id === 'miaozhuang'" :screens="[1]" @image="image = $event" />
         <H5AnimatedImage v-else-if="media[project.id]?.kind === 'image'" class="folio-image-trigger" :src="media[project.id].url" :alt="project.name"
           fit="contain" cropped @click="image = media[project.id].url" />
@@ -184,7 +187,7 @@ onUnmounted(() => {
         <component v-else :is="'button'" type="button" class="folio-stage__photo folio-image-trigger" :aria-label="'View image: ' + project.name" @click="image = projectCover(project.id)">
           <img :src="projectCover(project.id)" alt="" loading="lazy" />
         </component>
-        <figcaption v-if="project.id !== 'photolio' && project.id !== 'miaozhuang'">
+        <figcaption v-if="project.id !== 'photolio' && project.id !== 'miaozhuang' && project.id !== 'xiedao-renaissance'">
           <span>0{{ i + 1 }} / {{ project.name }}</span>
           <component :is="'button'" type="button" v-if="media[project.id]?.kind === 'image'" @click="image = media[project.id].url">View image ↗</component>
           <component :is="'button'" type="button" v-else-if="media[project.id]?.kind === 'video'" @click="video = { url: media[project.id].url, title: project.name }">View video ↗</component>
@@ -197,7 +200,7 @@ onUnmounted(() => {
         <div><h3>Brief</h3><p v-for="p in project.brief" :key="p">{{ p }}</p></div>
         <div><h3>{{ project.responseLabel }}</h3><p v-for="p in project.response" :key="p">{{ p }}</p><p v-if="project.caption" class="folio-caption">{{ project.caption }}</p></div>
       </div>
-      <section v-for="(theme, j) in project.themes" :id="project.id + '-theme-' + (j + 1)" :key="theme.heading" class="folio-theme folio-pad folio-page" :class="{ 'folio-theme--dark': j % 2 === 1 }" :data-label="theme.heading">
+      <section v-for="(theme, j) in (project.id === 'xiedao-renaissance' ? [] : project.themes)" :id="project.id + '-theme-' + (j + 1)" :key="theme.heading" class="folio-theme folio-pad folio-page" :class="{ 'folio-theme--dark': j % 2 === 1 }" :data-label="theme.heading">
         <div class="folio-theme__copy">
           <div class="folio-theme__heading"><span class="folio-code">0{{ i + 1 }}.0{{ j + 1 }}</span><h3>{{ theme.heading }}</h3></div>
           <div class="folio-theme__text">
@@ -223,6 +226,7 @@ onUnmounted(() => {
           </component>
         </div>
       </section>
+      <XiedaoFeatures v-if="project.id === 'xiedao-renaissance'" :research="project.themes" @image="image = $event" />
       <MiaoFeatures v-if="project.id === 'miaozhuang'" @image="image = $event" />
       <div :id="project.id + '-details'" class="folio-details folio-pad folio-page" :data-label="project.name + ' / Details'"><h3>Project details</h3>
         <dl><div v-for="detail in project.details" :key="detail[0]"><dt>{{ detail[0] }}</dt><dd>{{ detail[1] }}</dd></div></dl>
