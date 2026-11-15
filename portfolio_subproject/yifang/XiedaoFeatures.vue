@@ -12,7 +12,7 @@ const pages=[
   <header class="xd-feature__header"><span>03.0{{i+1}} / {{page.label}}</span><span>2025 · Archived interface</span></header>
   <div class="xd-feature__intro"><h3>{{page.title}}</h3><p>{{page.body}}</p></div>
   <figure class="xd-feature__figure" data-reveal>
-   <component :is="'button'" type="button" class="xd-screen" data-folio-cursor="dot" :aria-label="'Enlarge: '+page.title" @click="emit('image','/folio-xiedao/x'+(i+1)+'.png')"><img :src="'/folio-xiedao/x'+(i+1)+'.png'" :alt="page.alt" loading="lazy" /></component>
+   <component :is="'button'" type="button" class="xd-screen" data-folio-cursor="dot" :aria-label="'Enlarge: '+page.title" @click="emit('image','/folio-xiedao/x'+(i+1)+'.png')"><img :src="'/folio-xiedao/x'+(i+1)+'.png'" :alt="page.alt" :width="[2271,2174,2193][i]" :height="[1439,1376,1373][i]" loading="lazy" /></component>
    <figcaption><span>{{page.steps}}</span><span>Explore the interface ↗</span></figcaption>
   </figure>
   <p class="xd-feature__note">{{page.note}}</p>
