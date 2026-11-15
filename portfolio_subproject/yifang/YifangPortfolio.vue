@@ -228,7 +228,7 @@ onUnmounted(() => {
         <dl><div v-for="detail in project.details" :key="detail[0]"><dt>{{ detail[0] }}</dt><dd>{{ detail[1] }}</dd></div></dl>
         <div v-if="project.id === 'photolio'" class="photolio-destinations"><a href="/about.html?lang=en#about" target="_blank" rel="noopener">Product website ↗</a><component :is="'button'" type="button" @click="openPhotolio = true">Open Photolio ↗</component><a href="/#/pages/personal/index" target="_blank" rel="noopener">Create a personal space ↗</a></div>
         <div v-if="project.id === 'miaozhuang'" class="miao-brand"><img :src="'/folio-miaozer/logo.jpg'" alt="MIAOZER 秒装同城" /></div>
-        <div class="folio-affiliations" aria-label="Related organizations">
+        <div v-if="project.id !== 'miaozhuang'" class="folio-affiliations" aria-label="Related organizations">
           <span>Related organizations</span>
           <strong v-for="organization in affiliations[project.id]" :key="organization.name">
             <img v-if="organization.logo" :src="organization.logo" :alt="organization.name" loading="lazy" />
