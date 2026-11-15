@@ -16,6 +16,8 @@ import PhotolioVisual from './PhotolioVisual.vue'
 import PhotolioMedia from './PhotolioMedia.vue'
 import MiaoPhones from './MiaoPhones.vue'
 import MiaoFeatures from './MiaoFeatures.vue'
+import MiaoOpening from './MiaoOpening.vue'
+import BigChapter from './BigChapter.vue'
 import XiedaoVisual from './XiedaoVisual.vue'
 import XiedaoFeatures from './XiedaoFeatures.vue'
 import './styles/photolio.css'
@@ -27,9 +29,10 @@ import './folio.css'
 
 provide(previewLocaleKey, 'en')
 
+const labMode = new URLSearchParams(location.search).get('view') === 'lab'
 const root = ref<HTMLElement | null>(null)
 const { progress, activeLabel, activeProject, jump, onScroll, pause } = useFolioPaging(root)
-const entering = ref(!new URLSearchParams(location.hash.split('?')[1]).has('work') && !matchMedia('(prefers-reduced-motion: reduce)').matches)
+const entering = ref(!labMode && !new URLSearchParams(location.hash.split('?')[1]).has('work') && !matchMedia('(prefers-reduced-motion: reduce)').matches)
 const wheelArriving = ref(false)
 const step = ref(0)
 const media = ref<Record<string, MediaSlot>>({})
@@ -63,6 +66,7 @@ const gallery = computed(() => {
   return image.value && !images.includes(image.value) ? [image.value] : images
 })
 const readingSlot = computed(() => {
+  if (reading.value === 'resume') return { url: '/folio-documents/Yifang-Wang-Resume-2026-11.docx' }
   if (reading.value === 'sample') return { url: sampleDocument }
   if (!reading.value) return
   const url = media.value[reading.value]?.url || localDocuments?.[reading.value]
@@ -73,6 +77,10 @@ watch(() => !!(entering.value || reading.value || image.value || video.value || 
   pause(open)
   if (open) hideCursor()
 }, { immediate: true })
+function labNavigate(id: string) {
+  if (id === 'archive') location.assign('/#/pages/yifang-wang?work=archive')
+  else jump(id)
+}
 function projectCover(id: string) {
   const slot = media.value[id]
   return slot?.kind === 'image' ? slot.url : localImages[copy.projects.findIndex(item => item.id === id)] || demoImages[id as keyof typeof demoImages] || demoImages.photolio
@@ -125,10 +133,11 @@ onUnmounted(() => {
   <FolioEntrance v-if="entering" @arrive="wheelArriving = true" @complete="entering = false" />
   <main ref="root" class="folio-site" :class="{ 'folio-site--entering': entering, 'folio-site--arriving': wheelArriving }" :inert="entering" lang="en" @scroll.passive="onScroll(); updateCursor()" @pointermove="pointerMove" @pointerleave="hideCursor">
     <Teleport to="body"><span ref="cursor" class="folio-cursor" aria-hidden="true"></span></Teleport>
-    <a class="folio-skip" href="#work" @click.prevent="jump('work')">Skip to selected work</a>
+    <a v-if="!labMode" class="folio-skip" href="#work" @click.prevent="jump('work')">Skip to selected work</a>
     <header class="folio-bar" :class="[activeProject ? 'folio-case--' + activeProject : '', { 'folio-bar--paper': activeLabel === 'Home' || activeLabel === 'Selected work' }]">
-      <component :is="'button'" type="button" class="folio-mark" aria-label="Yifang Wang, back to top" @click="jump('top')">YW<span>.</span></component>
-      <nav aria-label="Portfolio">
+      <component :is="'button'" type="button" class="folio-mark" aria-label="Yifang Wang, back to top" @click="jump(labMode ? 'media-samples' : 'top')">YW<span>.</span></component>
+      <nav v-if="labMode" aria-label="Design lab"><a href="/#/pages/yifang-wang">← Portfolio</a><component :is="'button'" type="button" @click="jump('media-samples')">Media</component><component :is="'button'" type="button" @click="jump('design-lab')">Studies</component></nav>
+      <nav v-else aria-label="Portfolio">
         <component :is="'button'" v-if="activeProject" type="button" class="folio-back-work" aria-label="Back to selected work" @click="jump('work')">← Work</component>
         <component :is="'button'" v-else type="button" @click="jump('work')">Work</component><component :is="'button'" type="button" @click="jump('archive')">Archive</component><component :is="'button'" type="button" @click="jump('about')">About</component>
         <component :is="'button'" type="button" class="folio-resume" @click="reading = 'resume'">Résumé <span aria-hidden="true">↗</span></component>
@@ -136,7 +145,7 @@ onUnmounted(() => {
       <div class="folio-progress" aria-hidden="true" :style="{ transform: 'scaleX(' + progress + ')' }"></div>
     </header>
 
-    <section id="top" tabindex="-1" class="folio-hero folio-page" data-label="Home">
+    <section v-if="!labMode" id="top" tabindex="-1" class="folio-hero folio-page" data-label="Home">
       <div class="folio-hero__label"><span class="folio-dot"></span> Independent portfolio <span class="folio-hero__year">Image gallery · drag to browse</span></div>
       <div class="folio-hero__composition">
         <ImageWheel :images="wheelImages">
@@ -153,7 +162,7 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <section id="work" tabindex="-1" class="folio-index folio-pad folio-page" data-label="Selected work">
+    <section v-if="!labMode" id="work" tabindex="-1" class="folio-index folio-pad folio-page" data-label="Selected work">
       <div class="folio-eyebrow"><span>Index</span><span>01 — 04</span></div>
       <h2>Selected work<span>.</span></h2>
       <div class="folio-index__rows">
@@ -166,9 +175,11 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <article v-for="(project, i) in copy.projects" :id="project.id" :key="project.id" tabindex="-1" class="folio-case"
+    <article v-for="(project, i) in (labMode ? [] : copy.projects)" :id="project.id" :key="project.id" tabindex="-1" class="folio-case"
       :class="'folio-case--' + project.id" :data-chapter="'0' + (i + 1)">
-      <div v-if="project.id === 'xiedao-renaissance'" class="xiedao-opening folio-page" :data-label="project.name"><XiedaoVisual :lead="project.lead" /></div>
+      <BigChapter v-if="project.id === 'brookline'" @video="video = $event" />
+      <MiaoOpening v-else-if="project.id === 'miaozhuang'" :lead="project.lead" @image="image = $event" />
+      <div v-else-if="project.id === 'xiedao-renaissance'" class="xiedao-opening folio-page" :data-label="project.name"><XiedaoVisual :lead="project.lead" /></div>
       <div v-else :class="project.id === 'photolio' ? 'photolio-opening' : 'folio-case__opening folio-page'" :data-label="project.name">
       <div class="folio-case__cover folio-pad folio-page" :data-label="project.name">
         <div class="folio-eyebrow"><span class="folio-case__identity"><span class="folio-case__number">0{{ i + 1 }} /</span> <strong>{{ project.name }}</strong></span><span class="folio-case__counter">Case {{ i + 1 }} of {{ copy.projects.length }}</span></div>
@@ -196,7 +207,7 @@ onUnmounted(() => {
         </figcaption>
       </figure>
       </div>
-      <div :id="project.id + '-brief'" class="folio-brief folio-pad folio-page" :data-label="project.name + ' / Brief'">
+      <div v-if="project.id !== 'brookline'" :id="project.id + '-brief'" class="folio-brief folio-pad folio-page" :data-label="project.name + ' / Brief'">
         <div><h3>Brief</h3><p v-for="p in project.brief" :key="p">{{ p }}</p></div>
         <div><h3>{{ project.responseLabel }}</h3><p v-for="p in project.response" :key="p">{{ p }}</p><p v-if="project.caption" class="folio-caption">{{ project.caption }}</p></div>
       </div>
@@ -240,11 +251,11 @@ onUnmounted(() => {
             <template v-else>{{ organization.name }}</template>
           </strong>
         </div>
-      <PageActions :actions="[{ target: copy.projects[i + 1]?.id || 'media-samples', title: copy.projects[i + 1]?.name || 'Media previews', eyebrow: 'Continue', arrow: '↘' }]" @navigate="jump" />
+      <PageActions :actions="[{ target: copy.projects[i + 1]?.id || 'archive', title: copy.projects[i + 1]?.name || 'Selected media & communication', eyebrow: 'Continue', arrow: '↘' }]" @navigate="jump" />
       </div>
     </article>
 
-    <section id="media-samples" tabindex="-1" class="folio-samples folio-pad folio-page" data-label="Media samples">
+    <section v-if="labMode" id="media-samples" tabindex="-1" class="folio-samples folio-pad folio-page" data-label="Media samples">
       <div class="folio-eyebrow"><span>Reader test</span><span>Sample media</span></div>
       <h2>Media previews</h2>
       <div class="folio-samples__grid">
@@ -270,8 +281,8 @@ onUnmounted(() => {
         </article>
       </div>
     </section>
-    <DesignLab @navigate="jump" />
-    <section id="archive" tabindex="-1" class="folio-archive folio-pad folio-page" data-label="Archive">
+    <DesignLab v-if="labMode" @navigate="labNavigate" />
+    <section v-if="!labMode" id="archive" tabindex="-1" class="folio-archive folio-pad folio-page" data-label="Archive">
       <div class="folio-eyebrow"><span>05 / Archive</span><span>2020 — 2024</span></div>
       <h2>Selected media and communication</h2><p>{{ copy.archiveLead }}</p>
       <div class="folio-archive__entries">
@@ -286,7 +297,7 @@ onUnmounted(() => {
       <component :is="'button'" type="button" class="folio-outline" @click="reading = 'archive'">Work Collection 2020–2024 <span aria-hidden="true">↗</span></component>
     </section>
 
-    <section id="about" tabindex="-1" class="folio-about folio-pad folio-page" data-label="About">
+    <section v-if="!labMode" id="about" tabindex="-1" class="folio-about folio-pad folio-page" data-label="About">
       <div class="folio-eyebrow"><span>06 / About</span><span>Yifang Wang</span></div>
       <h2>About<span>.</span></h2>
       <div><p v-for="p in copy.about" :key="p">{{ p }}</p><component :is="'button'" type="button" class="folio-outline" @click="reading = 'resume'">Open résumé <span aria-hidden="true">↗</span></component></div>
@@ -296,11 +307,11 @@ onUnmounted(() => {
 
     <Transition name="folio-dialog">
       <SpaceDialog v-if="reading" :class="{ 'folio-fullscreen-dialog': reading === 'sample' }" :title="readingTitle" reader @close="reading = null">
-        <DocumentPreview v-if="readingSlot" :src="readingSlot.url" kind="pdf" :title="readingTitle" @escape="reading = null" />
+        <DocumentPreview v-if="readingSlot" :src="readingSlot.url" :kind="reading === 'resume' ? 'docx' : 'pdf'" :title="readingTitle" @escape="reading = null" />
         <p v-else class="folio-document-empty">{{ reading === 'resume' ? 'The résumé PDF has not been added to this preview.' : 'The original PDF will be available here when its public file is connected.' }}</p>
         <template v-if="readingSlot" #footer>
           <a v-if="reading === 'sample'" :href="readingSlot.url" download>Download sample PDF ↓</a>
-          <a v-else :href="readingSlot.url" target="_blank" rel="noopener noreferrer">Open original PDF ↗</a>
+          <a v-else :href="readingSlot.url" target="_blank" rel="noopener noreferrer">{{ reading === 'resume' ? 'Download résumé · DOCX ↗' : 'Open original PDF ↗' }}</a>
         </template>
       </SpaceDialog>
     </Transition>

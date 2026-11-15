@@ -204,9 +204,9 @@
     {
       "id": "brookline",
       "name": "Brookline Interactive Group",
-      "summary": "A more direct path from recorded meetings to public access. Workflow automation for community media.",
-      "title": "From a recorded meeting to a public resource",
-      "lead": "Python automation for a recurring municipal-video publishing workflow at Brookline Interactive Group.",
+      "summary": "Community media in practice. Location shoots, live production, editing, and workflow automation during a summer internship.",
+      "title": "On site. On air.",
+      "lead": "Camera operation, live production, editing, and a small automation tool at Brookline Interactive Group.",
       "brief": [
         "Support the recurring work of making municipal meeting recordings available through the organization’s publishing system, alongside the demands of live media production."
       ],
@@ -227,11 +227,11 @@
         ],
         [
           "Scope",
-          "Workflow automation and media operations"
+          "10+ on-location shoots, two edited video projects, live multi-camera production, Town Meeting voting displays, and workflow automation"
         ],
         [
           "Technology",
-          "Python, Selenium, Cablecast.tv"
+          "Python, Selenium, FFmpeg, Broadcast Pix, Panasonic HC-X2, Cablecast.tv, Premiere Pro, DaVinci Resolve, Motion Array"
         ]
       ]
     }
