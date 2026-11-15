@@ -166,14 +166,14 @@
         {
           "heading": "Giving reference material a useful structure",
           "text": [
-            "Worldbuilding material contains characters, places, events, and relationships. I developed tools to process those different forms, classify text, and prepare Alpaca and ShareGPT records. This work connected the organization of the source material with the kinds of exchanges the assistant was intended to support."
+            "I scraped public-domain classics and open wikis, then built Python pipelines to classify and organize the material into Alpaca instruction records and ShareGPT conversations. I adjusted semantic-layer parameters while exploring style mimicry and worldbuilding depth."
           ],
           "caption": "Reference material, structured records, and multi-turn training examples."
         },
         {
           "heading": "Specialization within practical limits",
           "text": [
-            "Model experiments ran on rented GPU infrastructure, including an RTX 4090 instance. Fine-tuning and quantization formed part of the exploration of a writing-focused model: how to shape its behavior and make it practical to run within the resources available."
+            "I deployed Dockerized training environments on AutoDL GPU instances and used LLaMA-Factory to fine-tune Qwen, followed by AWQ and GPTQ quantization experiments. I served fine-tuned models with vLLM, Nginx frontend services and Cloudflare domain routing."
           ],
           "caption": "Applied model experiments supporting a defined product direction."
         }
@@ -197,7 +197,7 @@
         ],
         [
           "Technology",
-          "Python, Qwen, LLaMA-Factory, Alpaca, ShareGPT, AWQ, GPTQ"
+          "Python, Qwen, LLaMA-Factory, Alpaca, ShareGPT, Docker, AutoDL, AWQ, GPTQ, vLLM, Nginx, FastAPI, Cloudflare"
         ]
       ]
     },

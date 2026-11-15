@@ -168,14 +168,14 @@ onUnmounted(() => {
 
     <article v-for="(project, i) in copy.projects" :id="project.id" :key="project.id" tabindex="-1" class="folio-case"
       :class="'folio-case--' + project.id" :data-chapter="'0' + (i + 1)">
-      <div :class="project.id === 'photolio' ? 'photolio-opening' : 'folio-case__opening folio-page'" :data-label="project.name">
+      <div v-if="project.id === 'xiedao-renaissance'" class="xiedao-opening folio-page" :data-label="project.name"><XiedaoVisual :lead="project.lead" /></div>
+      <div v-else :class="project.id === 'photolio' ? 'photolio-opening' : 'folio-case__opening folio-page'" :data-label="project.name">
       <div class="folio-case__cover folio-pad folio-page" :data-label="project.name">
         <div class="folio-eyebrow"><span class="folio-case__identity"><span class="folio-case__number">0{{ i + 1 }} /</span> <strong>{{ project.name }}</strong></span><span class="folio-case__counter">Case {{ i + 1 }} of {{ copy.projects.length }}</span></div>
         <img v-if="project.id === 'photolio'" class="photolio-cover-logo" :src="'/folio-photolio/brand.jpg'" alt="Photolio brand artwork" /><h2>{{ project.title }}</h2><p>{{ project.lead }}</p>
       </div>
       <figure class="folio-stage folio-page" :data-label="project.name + ' / Visual'" :class="'folio-stage--' + project.id" data-reveal>
         <PhotolioVisual v-if="project.id === 'photolio'" @navigate="jump" />
-        <XiedaoVisual v-else-if="project.id === 'xiedao-renaissance'" />
         <MiaoPhones v-else-if="project.id === 'miaozhuang'" :screens="[1]" @image="image = $event" />
         <H5AnimatedImage v-else-if="media[project.id]?.kind === 'image'" class="folio-image-trigger" :src="media[project.id].url" :alt="project.name"
           fit="contain" cropped @click="image = media[project.id].url" />

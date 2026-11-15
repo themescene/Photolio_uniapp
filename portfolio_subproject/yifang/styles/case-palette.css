@@ -2,9 +2,10 @@
 .folio-case { border-top:1px solid var(--line); }
 .folio-case--photolio { --tone:#eae5de; --ground:#2c2822; --case-paper:#eae5de; }
 .folio-case--miaozhuang { --tone:#ff9a48; --ground:#3b2115; }
-.folio-case--xiedao-renaissance { --tone:#c4c6fa; --ground:#222344; }
+.folio-case--xiedao-renaissance { --tone:#e6e9ee; --ground:#252b36; --case-paper:#e6e9ee; }
 .folio-case--brookline { --tone:#acdae0; --ground:#123b49; }
 .folio-case { --case-paper:color-mix(in srgb,var(--tone) 60%,#f0eee6); --case-line:color-mix(in srgb,var(--ground) 24%,transparent); --line:var(--case-line); background:var(--case-paper); color:var(--ground); }
+.folio-case--xiedao-renaissance { --case-paper:#e6e9ee; }
 .folio-case :is(.folio-brief,.folio-details) { background:var(--case-paper); color:var(--ground); }
 .folio-case .folio-theme--dark { background:var(--ground); color:var(--tone); }
 .folio-case .folio-theme .folio-caption { color:inherit; opacity:.78; }
