@@ -14,9 +14,9 @@ const url = (n:number) => `/folio-miaozer/m${n}.jpg`
 </template>
 <style scoped>
 .miao-phones {display:flex; align-items:center; justify-content:center; gap:clamp(12px,3vw,40px); min-width:0; height:100%;}
-.miao-phone-item {min-width:0; width:min(46%,calc((var(--folio-view) - 155px)*.49)); display:flex; flex-direction:column; gap:9px;}
-.folio-site .miao-phone[type="button"] {display:block; width:100%; padding:4px; border:1px solid #a49886; border-radius:12% / 6%; background:#302921; overflow:hidden; box-shadow:0 14px 24px #0004;}
-.miao-phone img {display:block; width:100%; height:auto; border-radius:9.4% / 4.6%;}
+.miao-phone-item {container-type:inline-size; min-width:0; width:min(46%,calc((var(--folio-view) - 155px)*.49)); display:flex; flex-direction:column; gap:9px;}
+.folio-site .miao-phone[type="button"] {display:block; width:100%; padding:4px; border:1px solid #a49886; border-radius:12cqw; background:#302921; overflow:hidden; box-shadow:0 14px 24px #0004;}
+.miao-phone img {display:block; width:100%; height:auto; border-radius:calc(12cqw - 5px);}
 .miao-phone-item figcaption {font:10px/1.35 'Courier New',monospace; text-transform:uppercase; letter-spacing:.04em;}
 .miao-phones--single .miao-phone-item {width:min(70%,calc((var(--folio-view) - 140px)*.49));}
 @media (orientation:portrait) {.miao-phones {height:auto; align-items:start;} .miao-phone-item {width:min(46%, 210px);} .miao-phones--single .miao-phone-item {width:min(50%,180px);} }
