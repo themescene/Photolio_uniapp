@@ -382,3 +382,10 @@ ssh hz "awk '\$4 ~ /$(date +%d/%b/%Y)/' /var/log/nginx/access.log | wc -l"
 
 
 2026-11-13 项目名实心快修：前端发布包/校验清单/旧站备份位于/var/backups/photolio/20261113-solid-names/，frontend-before.tar.gz可恢复上一版首页。沿用先资源后原子切index流程，不删除旧资产，无后端改动。
+
+## 2026-11-16 作品集媒体框与开场排版发布
+
+- 前端源码 `7addcf4` 已推送 `themescene/Photolio_uniapp` 的 main。H5 本地构建及资源复制通过，经 `ssh hz` 发布至 `/var/www/photolio-h5`。本次不发布后端、不改 nginx。
+- 备份及发布记录位于 `/var/backups/photolio/20261116-yifang-7addcf4/`：`frontend-before.tar.gz` 为原站完整备份，`h5.tar.gz`、`manifest.json`、`deploy.py` 为本次发布包与校验脚本。本地副本为 `.local-backups/release-20261116/`。
+- 先校验暂存目录，再 rsync 资源（不加 `--delete`），最后原子替换 index.html。429 文件 SHA256 校验一致；公网首页 SHA256 为 `697d555ca8265d3626866a80981b6d09999b6eb9d0e4b6c50536d77360b9f1d6`，与本地匹配。新 logo、秒装截图、最新简历及 `/health` 均返回 200，nginx/backend 均 active。未重新上传 `folio-local`，保留线上既有文件。
+- 回退首页：`ssh hz 'tar -xOf /var/backups/photolio/20261116-yifang-7addcf4/frontend-before.tar.gz ./index.html > /var/www/photolio-h5/index.html.next && mv /var/www/photolio-h5/index.html.next /var/www/photolio-h5/index.html'`。旧 assets 保留，可随入口恢复；用户数据不作改动。
