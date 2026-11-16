@@ -8,7 +8,8 @@ import H5AnimatedImage from '@/components/H5AnimatedImage.vue'
 import { fetchSpace } from '../api'
 import { blockContent, contentUrl } from '../reading/content'
 import copy from './copy.json'
-import { affiliations, assets, demoImages, localImages, localDocuments, sampleDocument, sampleVideo, spaceId, type MediaSlot } from './media'
+import { affiliations, assets, demoImages, localImages, localDocuments, sampleDocument, sampleVideo, spaceId, portfolioImages, projectImages, type MediaSlot } from './media'
+import ProjectImage from './ProjectImage.vue'
 import ImageWheel from './ImageWheel.vue'
 import FolioEntrance from './FolioEntrance.vue'
 import DesignLab from './DesignLab.vue'
@@ -47,20 +48,7 @@ function themeImage(project: string, index: number) {
   const projectIndex = copy.projects.findIndex(item => item.id === project)
   return localImages[(4 + projectIndex * 3 + index) % localImages.length] || projectCover(project)
 }
-const wheelImages = computed(() => {
-  const images = new Map<string, string>()
-  for (const project of copy.projects) {
-    const slot = media.value[project.id]
-    images.set(slot?.kind === 'image' ? slot.url : projectCover(project.id), project.name)
-  }
-  for (const [key, slot] of Object.entries(media.value)) if (slot.kind === 'image' && !images.has(slot.url)) {
-    const project = copy.projects.find(item => key.startsWith(item.id + '-'))
-    images.set(slot.url, project?.name || 'Portfolio image')
-  }
-  for (const url of localImages) if (!images.has(url)) images.set(url, 'Photolio photo archive')
-  if (!images.has(sampleImage)) images.set(sampleImage, 'Reader sample')
-  return Array.from(images, ([url, title]) => ({ url, title }))
-})
+const wheelImages = computed(() => portfolioImages)
 const gallery = computed(() => {
   const images = wheelImages.value.map(item => item.url)
   return image.value && !images.includes(image.value) ? [image.value] : images
@@ -83,7 +71,7 @@ function labNavigate(id: string) {
 }
 function projectCover(id: string) {
   const slot = media.value[id]
-  return slot?.kind === 'image' ? slot.url : localImages[copy.projects.findIndex(item => item.id === id)] || demoImages[id as keyof typeof demoImages] || demoImages.photolio
+  return slot?.kind === 'image' ? slot.url : projectImages[id]?.url || demoImages[id as keyof typeof demoImages] || demoImages.photolio
 }
 const demos = [
   { label: 'Select', title: 'Choose a memory', note: 'Start with something already in the collection.' },
@@ -169,7 +157,7 @@ onUnmounted(() => {
         <component :is="'button'" type="button" v-for="(project, i) in copy.projects" :key="project.id" class="folio-index__row" @click="jump(project.id)">
           <span class="folio-index__ink"><span class="folio-code">0{{ i + 1 }}</span><strong>{{ project.name }}</strong><span>{{ project.summary }}</span><span aria-hidden="true">↘</span></span>
           <span class="folio-index__reveal" aria-hidden="true">
-            <img :src="projectCover(project.id)" alt="" />
+            <ProjectImage :item="projectImages[project.id]" reveal />
           </span>
         </component>
       </div>
@@ -242,10 +230,9 @@ onUnmounted(() => {
       <div :id="project.id + '-details'" class="folio-details folio-pad folio-page" :data-label="project.name + ' / Details'"><h3>Project details</h3>
         <dl><div v-for="detail in project.details" :key="detail[0]"><dt>{{ detail[0] }}</dt><dd>{{ detail[1] }}</dd></div></dl>
         <div v-if="project.id === 'photolio'" class="photolio-destinations"><a href="/about.html?lang=en#about" target="_blank" rel="noopener">Product website ↗</a><component :is="'button'" type="button" @click="openPhotolio = true">Open Photolio ↗</component><a href="/#/pages/personal/index" target="_blank" rel="noopener">Create a personal space ↗</a></div>
-        <div v-if="project.id === 'miaozhuang'" class="miao-brand"><img :src="'/folio-miaozer/logo.jpg'" alt="MIAOZER 秒装同城" /></div>
-        <div v-if="project.id !== 'miaozhuang'" class="folio-affiliations" aria-label="Related organizations">
+        <div class="folio-affiliations" aria-label="Related organizations">
           <span>Related organizations</span>
-          <strong v-for="organization in affiliations[project.id]" :key="organization.name">
+          <strong v-for="organization in affiliations[project.id]" :key="organization.name" :class="{'folio-affiliation--wordmark':!organization.logo}" :data-organization="organization.name">
             <img v-if="organization.logo" :src="organization.logo" :alt="organization.name" loading="lazy" />
             <span v-if="organization.logo" class="photolio-organization-name">{{ organization.name }}</span>
             <template v-else>{{ organization.name }}</template>

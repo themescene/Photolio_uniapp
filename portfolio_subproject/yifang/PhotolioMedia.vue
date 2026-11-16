@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
+import DeviceImage from './DeviceImage.vue'
 const props = defineProps<{ section: number }>()
 const emit = defineEmits<{ image: [url:string] }>()
 const root = ref<HTMLElement|null>(null)
@@ -47,7 +48,7 @@ onUnmounted(()=>{observer?.disconnect();clearInterval(timer);document.removeEven
    <div class="photolio-trust"><p class="trust-kicker">Designed for continuity</p><img class="trust-diagram" :src="'/folio-photolio/storage.svg'" alt="Memories connected to cloud storage and a separate encrypted local backup" @load="fitTrust" /><details v-if="compactTrust" class="trust-details"><summary>Storage details</summary><div class="trust-labels"><span>01 / Cloud + local</span><span>02 / Encrypted transfer</span><span>03 / Portable originals</span></div></details><div v-else class="trust-labels"><span>01 / Cloud + local</span><span>02 / Encrypted transfer</span><span>03 / Portable originals</span></div></div>
   </template>
   <template v-else>
-   <div class="photolio-screens"><component :is="'button'" v-for="n in 3" :key="n" type="button" class="screen-phone" data-folio-cursor="dot" :aria-label="'Enlarge Photolio interface '+n" @click="emit('image','/folio-photolio/p'+n+'.jpg')"><span class="screen-phone__glass"><img class="screen-phone__image" :src="'/folio-photolio/p'+n+'.jpg'" :alt="'Photolio application screen '+n" /></span></component></div>
+   <div class="photolio-screens"><component :is="'button'" v-for="n in 3" :key="n" type="button" class="screen-phone" data-folio-cursor="dot" :aria-label="'Enlarge Photolio interface '+n" @click="emit('image','/folio-photolio/p'+n+'.jpg')"><DeviceImage :src="'/folio-photolio/p'+n+'.jpg'" :alt="'Photolio application screen '+n" :width="[652,653,767][n-1]" :height="[1439,1439,1662][n-1]" /></component></div>
    <p class="screen-caption">A real collection. Your own way to publish.</p>
   </template>
  </div>
@@ -56,8 +57,8 @@ onUnmounted(()=>{observer?.disconnect();clearInterval(timer);document.removeEven
 .photolio-media { position:relative; min-width:0; height:100%; min-height:280px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; }
 .photolio-media.is-revealed { animation:photolio-arrive .75s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes photolio-arrive { from {transform:scale(.95);opacity:.55} to {transform:scale(1);opacity:1} }
-.tap-video { width:min(100%, calc((var(--folio-view) - 75px) * .5625 + 16px)); flex-shrink:0; margin-inline:auto; padding:6px; border:2px solid #a49886; border-radius:36px; background:#302921; box-shadow:0 18px 30px #3f2f2426; overflow:hidden; }
-.tap-video__screen { display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:contain; border-radius:28px; background:#201c18; }
+.tap-video { --tap-radius:27px; width:min(100%, calc((var(--folio-view) - 75px) * .5625 + 6px)); flex-shrink:0; margin-inline:auto; padding:3px; border:0; border-radius:var(--tap-radius); background:#292b29; box-shadow:none; }
+.tap-video__screen { display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:contain; border-radius:calc(var(--tap-radius) - 3px); background:#201c18; }
 .folio-site .photolio-media-control { align-self:center; display:flex;gap:32px; font:11px 'Courier New',monospace;padding:15px; }
 .photolio-photo { position:relative; flex:1; min-height:300px; width:100%; }
 .photolio-photo img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s; }
@@ -72,13 +73,11 @@ onUnmounted(()=>{observer?.disconnect();clearInterval(timer);document.removeEven
 .trust-details summary { cursor:pointer; }
 .trust-details .trust-labels { margin-top:8px; }
 .photolio-screens { display:flex;align-items:center;justify-content:center;gap:3%;padding:16px 4px; }
-.folio-site .photolio-screens .screen-phone[type="button"] { display:block; width:min(31%, calc((var(--folio-view) - 150px) * .45)); padding:4px; border:1px solid #a49886; border-radius:clamp(14px,1.8vw,28px); background:#302921; overflow:hidden; box-shadow:0 14px 24px #0004; }
+.folio-site .photolio-screens .screen-phone[type="button"] { container-type:inline-size; display:block; width:min(31%, calc((var(--folio-view) - 150px) * .45)); padding:0; border:0; border-radius:0; background:transparent; overflow:visible; box-shadow:none; }
 .screen-phone:nth-child(2) { transform:translateY(-12px); }
-.screen-phone__glass { display:block; overflow:hidden; border-radius:clamp(9px,1.35vw,23px); background:#201c18; }
-.screen-phone__image { display:block; width:100%; height:auto; }
 .screen-caption { text-align:center;font:11px/1.5 'Courier New',monospace!important; }
 @media(orientation:portrait) { .photolio-media {min-height:300px;height:auto;} .tap-video {width:min(76vw, calc((var(--folio-view) - 85px) * .5625 + 16px));} .photolio-photo{min-height:340px;} }
 @media(orientation:landscape) { .photolio-media--0 .tap-video { width:min(100%, calc((var(--folio-view) - 2 * var(--photolio-video-pad) - 54px) * .5625 + 16px)); } }
 @media(orientation:landscape) and (max-height:850px) { .trust-diagram { max-height:42dvh; object-fit:contain; } }
-@media(max-width:400px) { .photolio-screens{gap:2%;} .folio-site .photolio-screens .screen-phone[type="button"] { padding:3px; } }
+@media(max-width:400px) { .photolio-screens{gap:2%;} }
 </style>

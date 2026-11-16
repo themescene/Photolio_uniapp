@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import ProjectImage from './ProjectImage.vue'
+import type { PortfolioImage } from './media'
 const geometry = { width: 1000, height: 540, cardWidth: 300, cardHeight: 480, step: 340 }
 function wrap(value: number, count: number) { return count ? ((value % count) + count) % count : 0 }
-const props = defineProps<{ images: { url: string; title: string }[] }>()
+const props = defineProps<{ images: PortfolioImage[] }>()
 const images = computed(() => props.images.slice(0, 10))
 const rotation = ref(Math.floor(Math.random() * Math.max(1, images.value.length)))
 const displayedRotation = ref(rotation.value)
@@ -49,10 +51,12 @@ onUnmounted(() => { cancelAnimationFrame(frame); resize?.disconnect() })
 function cardStyle(i: number) {
   const count = images.value.length
   const distance = wrap(i - displayedRotation.value + count / 2, count) - count / 2
+  const treatment = images.value[i].treatment
+  const emphasis = 1 - Math.min(Math.abs(distance), 1) * .12
   return {
     left: `${geometry.width / 2 + distance * geometry.step}px`, top: `${geometry.height / 2}px`,
-    width: `${geometry.cardWidth}px`, height: `${geometry.cardHeight}px`,
-    transform: 'translate(-50%,-50%)',
+    width: `${treatment === 'screen' ? 350 : geometry.cardWidth}px`, height: `${treatment === 'screen' ? 240 : treatment === 'photo' ? 380 : geometry.cardHeight}px`,
+    transform: `translate(-50%,-50%) scale(${emphasis})`,
     visibility: Math.abs(distance) > 2 ? 'hidden' as const : 'visible' as const,
   }
 }
@@ -92,8 +96,8 @@ function up(event: PointerEvent) {
       @keydown.left.prevent="rotation--" @keydown.right.prevent="rotation++">
       <span class="folio-wheel__viewport" :style="{ height: geometry.height * fit + 'px' }" aria-hidden="true">
         <span class="folio-wheel__strip" :style="{ width: geometry.width + 'px', height: geometry.height + 'px', transform: `translate(-50%,-50%) scale(${fit})` }">
-          <img v-for="(item, i) in images" :key="item.url" :src="item.url" alt="" draggable="false"
-            :class="{ 'folio-wheel__card--active': i === index }" :style="cardStyle(i)" />
+          <span v-for="(item, i) in images" :key="item.url" class="folio-wheel__card"
+            :class="{ 'folio-wheel__card--active': i === index }" :style="cardStyle(i)"><ProjectImage :item="item" /></span>
         </span>
       </span>
       <span ref="caption" class="folio-wheel__caption" aria-live="polite"><span>{{ images[index]?.title }}</span><span>{{ index + 1 }} / {{ images.length }}</span></span>

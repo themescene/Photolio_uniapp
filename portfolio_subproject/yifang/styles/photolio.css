@@ -2,7 +2,7 @@
 .photolio-opening { display:contents; }
 .folio-case.folio-case--photolio { --case-paper:var(--tone); }
 .folio-case--photolio .folio-case__cover { position:relative; isolation:isolate; overflow:hidden; padding-right:33%; }
-.photolio-cover-logo { position:absolute; right:0; top:50%; transform:translateY(-50%); width:34%; max-height:80%; object-fit:contain; z-index:0; pointer-events:none; mask-image:radial-gradient(ellipse at center,#000 65%,transparent 100%); }
+.photolio-cover-logo { position:absolute; right:3%; top:50%; transform:translateY(-50%); width:25%; max-height:65%; object-fit:contain; z-index:0; pointer-events:none; mask-image:radial-gradient(ellipse at center,#000 65%,transparent 100%); }
 .folio-case--photolio .folio-case__cover h2 { font-size:clamp(40px,min(6.5vw,12dvh),110px); }
 .folio-case--photolio .folio-stage { background:var(--tone); }
 .photolio-link { display:inline-flex; gap:24px; margin-top:25px; padding:12px 0; border-bottom:1px solid currentColor; font-size:14px; color:inherit; text-decoration:none; }
@@ -13,18 +13,21 @@
 .photolio-open-options p { margin:8px 0 12px; font-size:14px; }
 .photolio-open-options img { display:block; width:160px; max-width:100%; }
 .photolio-open-options a { display:flex; justify-content:space-between; padding:16px; background:#2c2822; color:#e8ddcf; text-decoration:none; }
-.folio-case--photolio .folio-affiliations { align-items:center; flex-wrap:wrap; }
-.folio-case--photolio .folio-affiliations strong { display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center; width:clamp(100px,15vw,190px); min-height:110px; border:0; padding:8px; }
-.folio-case--photolio .folio-affiliations img { max-width:100%; max-height:65px; width:auto; height:65px; object-fit:contain; mix-blend-mode:multiply; }
+.folio-case--photolio .folio-affiliations { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:center; gap:14px 18px; }
+.folio-case--photolio .folio-affiliations > span {grid-column:1/-1;}
+.folio-case--photolio .folio-affiliations strong { display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center; width:100%; min-height:120px; border:0; padding:8px; }
+.folio-case--photolio .folio-affiliations img { max-width:100%; max-height:88px; width:auto; height:88px; object-fit:contain; mix-blend-mode:multiply; }
+.folio-case--photolio .folio-affiliations [data-organization="Photolio"] img {height:58px;max-width:118px;}
 .folio-case--photolio .folio-affiliations img[src*="miracleplus"],.folio-case--photolio .folio-affiliations img[src*="beijinglanguageuniversity"] { filter:invert(1); }
 .photolio-organization-name { font:11px/1.4 'Courier New',monospace; letter-spacing:0; text-align:center; }
 @media(orientation:landscape) {
  #photolio-theme-1 { --photolio-video-pad:clamp(16px,3dvh,28px); padding-block:var(--photolio-video-pad); }
 }
 @media(orientation:portrait) {
+ .folio-case--photolio .folio-affiliations {grid-template-columns:repeat(2,minmax(0,1fr));}
  .folio-case--photolio .folio-case__cover { min-height:var(--folio-view); padding-right:var(--gutter); justify-content:flex-start; padding-top:8dvh; }
  .folio-case--photolio .folio-case__cover h2 { font-size:clamp(36px,8.5vw,76px); margin-top:30px; }
- .photolio-cover-logo { position:relative; order:3; width:80%; height:38dvh; margin:10px 0 0 auto; top:auto; right:auto; transform:none; }
+ .photolio-cover-logo { position:relative; order:3; width:60%; height:30dvh; margin:16px 0 0 auto; top:auto; right:auto; transform:none; }
  .folio-case--photolio .folio-case__cover p { max-width:42ch; }
  .folio-case--photolio .folio-theme { grid-template-rows:auto minmax(280px,1fr); }
  .folio-case--photolio .folio-theme { display:block; }
